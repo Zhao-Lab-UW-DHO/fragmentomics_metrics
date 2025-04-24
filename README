@@ -1,0 +1,188 @@
+Extracting Fragmentomics Metrics from BED files
+
+System Requirements:
+	Software Dependencies:
+		Linux operating system
+		R v4.3.0 or greater
+		snakemake v7.15.1 or greater
+		bedtools v2.26.0 or greater
+		sambamba v0.8.2 or greater
+		bedops v2.4.40 or greater
+
+		R packages:
+		tidyverse v2.0
+		entropy v1.3.1
+		tidymodels v1.1.0
+		glmnet v4.1-7
+		fmsb v0.7.5
+		pROC v1.18.2
+		doSNOW v1.0.20
+		themis v1.0.1
+		patchwork v1.1.2
+		pals v1.8
+		RColorBrewer v1.1-3
+	
+	Versions the software has been tested on:
+		 Linux Ubuntu 20.04.6 LTS
+		 R v4.3.0
+		 snakemake v7.15.1
+		 tidyverse v2.0
+		 entropy v1.3.1
+		 bedtools v2.26.0
+		 
+	Any required non-standard hardward:
+		None
+	
+Installation Guide:
+	Instructions:
+		1. Follow default installation instructions for R, and the packages tidyverse, and entropy. Links for these packages are listed below:
+			tidyverse: https://tidyverse.tidyverse.org/
+			entropy: https://cran.r-project.org/web/packages/entropy/index.html
+		2. Create a conda environment to install snakemake and bedtools:
+			(replace ENV_NAME with whatever name you choose for the conda environment)
+		
+			conda create --name ENV_NAME
+			
+		3. Perform the following commands to install snakemake and bedtools:
+		
+			conda activate ENV_NAME
+			conda install snakemake
+			conda install bedtools
+			conda install bioconda::sambamba
+			conda install bioconda::bedops
+		
+		Documentation for tools are listed below:
+			snakemake: https://snakemake.readthedocs.io/en/stable/getting_started/installation.html
+			bedtools: https://bedtools.readthedocs.io/en/latest/content/installation.html
+			
+		4. You will need to download the hg38 genome build (hg38.fa) from here:
+			http://hgdownload.soe.ucsc.edu/goldenpath/hg38/bigZips/
+			
+		5. Once the genome has been downloaded, alter the code in "get_fragmentomics_metrics_from_bed.snakemake.py" so that
+			the /path/to/genome.fa line at the top points to the genome. This is required to calculate the MDS metric.
+
+	Typical install time:
+		Assuming Linux and R are already installed, installed of dependencies should not take longer than 30 min to an hour.
+
+Demo:
+	Instructions to run on data:
+		1. Once source code and all dependencies have been installed, activate conda environment by entering:
+		
+			conda activate ENV_NAME
+			
+		2. Three test samples have been provided (sample1, sample2, and sample3) which are located in the data/ directory.
+		To perform a dryrun without running the actual analysis, enter:
+		
+			snakemake -s get_fragmentomics_metrics_from_bed.snakemake.py -n
+			
+		This will test to see if all of the files are accessible and no errors are present in the snakemake code.
+		If no errors occur you should get an output that looks something like this:
+		
+			Job stats:
+			job                           count
+			--------------------------  -------
+			all                               1
+			calculate_ATAC_entropy            3
+			calculate_MDS                     3
+			calculate_SE                      3
+			calculate_TFBS_entropy            3
+			calculate_frag_bins               3
+			calculate_full_gene_depth         3
+			calculate_normalized_depth        3
+			calculate_small_frags             3
+			get_SE_fragstats                  3
+			get_depth_fragstats               3
+			get_left_4mer                     3
+			get_right_4mer                    3
+			overlap_ATAC                      3
+			overlap_TFBS                      3
+			total                            43
+
+		
+		3. To run the code and extract the features, run the following:
+		
+			snakemake -s get_fragmentomics_metrics_from_bed.snakemake.py --cores 16
+			
+		This will run the code using 16 cores. If your machine has fewer cores, specify up to the max number of cores on the machine.
+		More cores can be specified if your system has more than 16 cores.
+		
+	Expected Output:
+		After completion, there should a number of files written to the output/ directory:
+			output/fragstats/depth_files/
+				Read depth files for each sample
+				file columns: gene, exon, read_count
+			output/fragstats/SE_files/
+				Fragment size ditribution files for each sample
+				file columns: gene, exon, read_size, read_count
+			output/metrics/ATAC_entropy/
+				*_ATAC_entropy.txt: Shannon entropy at open chromatin sites specific for cancer types for each sample
+				file columns: sample, cancer_type, ATAC_entropy
+				*_ATAC_frag_count.txt.gz: ATAC entropy for each sample
+				file columns: read_count, cancer_type, read_size
+			output/metrics/depth/
+				Normalized fragment depth files at the exon level for each sample
+				file columns: sample, exon_id, normalized_depth
+			output/metrics/frag_bins/
+				Fragment bin distribution files for each sample
+				file columns: sample, exon_bin_id, fragment_proportion
+			output/metrics/full_gene_depth/
+				Normalized fragment depth files across full genes for each sample
+				file columns: gene, normalized_depth
+			output/metrics/mds/
+				*_mds.txt: Motif diversity score (MDS) calculated for each sample
+				file columns: sample, exon_id, MDS
+				*_left_4mers.txt.gz: left 4bp of reads
+				file columns: read_count, gene, exon, 4mer
+				*_right_4mers.txt.gz: right 4bp of reads
+				file columns: read_count, gene, exon, 4mer
+			output/metrics/se/
+				Shannon Entropy calculated at the exon level for each sample
+				file columns: sample, exon_id, shannon_entropy
+			output/metrics/small_frags/
+				Proportion of small fragments at the exon level for each sample
+				file columns: sample, exon_id, small_frag_proportion
+			output/metrics/TFBS_entropy/
+				*_TFBS_entropy.txt: Shannon entropy of reads overlapping with TFBS
+				file columns: sample, TF, TF_entropy
+				*_TFBS_frag_count.txt.gz: Fragment size counts by TF overlap
+				file columns: read_count, read_size, TF
+				
+	Expected Runtime:
+		With 16 cores as listed above, the 3 samples provided should take approximately 2-3 minutes to run.
+		
+Instructions for Use:
+	How to Run Software on Your Data:
+		Input Files:
+		1. The main input file for this analysis is an 8-column gzipped BED file of reads from a sequencing run with additional information along side.
+		The column format for the BED files is as follows:
+			1. Chromosome (chr* format)
+			2. Start position
+			3. Stop position
+			4. Ensembl ID (field can be anything, not used in analysis)
+			5. RefSeq ID (field can be anything, not used in analysis)
+			6. Gene Symbol
+			7. Exon Number (Number is ordered from left to right on the genome, i.e. (-) strand genes number is reversed)
+			8. Strand (+ or - ; This needs to be + or - to specify strand, cannot be ".")
+		
+		2. To generate this file, raw sequencing reads should be aligned, BAMs should be deduplicated, and BAM converted to BED.
+		   To get gene and exon data, a file has been provided in files/UCSC_hg38_canonical_exons.bed which can be overlapped with the BED
+		   file above to generate the necessary BED file for fragmentomics analysis.
+		   
+		3. Once these BED files are generated, move them to the data/ folder in the code directory, and alter the files/samples.txt file to 
+		   contain the names of the new BED file, one sample per line, and without the ".bed.gz".
+		   
+		4. Activate the conda environment with snakemake and bedtools as described above in the Demo section. Also replcate the genome path in
+		   the get_fragmentomics_metrics_from_bed.snakemake.py file to point to the hg38.fa genome location.
+		
+		5. Run the following command for a dry run:
+			
+				snakemake -s get_fragmentomics_metrics_from_bed.snakemake.py -n
+	
+		6. If no errors occur, run:
+		
+				snakemake -s get_fragmentomics_metrics_from_bed.snakemake.py --cores 16
+				
+				(you can change the number of cores to speed up runtime)
+		
+		
+	

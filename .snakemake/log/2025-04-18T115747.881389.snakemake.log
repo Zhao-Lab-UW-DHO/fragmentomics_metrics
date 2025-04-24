@@ -1,0 +1,237 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 16
+Rules claiming more threads will be scaled down.
+Job stats:
+job                      count    min threads    max threads
+---------------------  -------  -------------  -------------
+all                          1              1              1
+cat_and_overlap_exons        5              1              1
+downsample_cancer            5              1              1
+downsample_normal            5              1              1
+total                       16              1              1
+
+Select jobs to execute...
+
+[Fri Apr 18 11:57:48 2025]
+rule downsample_normal:
+    input: data/grail/beds/MRL0001CH.bed.gz, files/UCSC_hg19_canonical_cds_grail_panel.bed
+    output: data/grail/mixed_samples/MRL0002CH_MRL0001CH_1_99_normal_reads.bed.gz
+    jobid: 3
+    reason: Missing output files: data/grail/mixed_samples/MRL0002CH_MRL0001CH_1_99_normal_reads.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_1_99
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 11:57:48 2025]
+rule downsample_cancer:
+    input: data/grail/beds/MRL0002CH.bed.gz, files/UCSC_hg19_canonical_cds_grail_panel.bed
+    output: data/grail/mixed_samples/MRL0002CH_MRL0001CH_10_90_cancer_reads.bed.gz
+    jobid: 8
+    reason: Missing output files: data/grail/mixed_samples/MRL0002CH_MRL0001CH_10_90_cancer_reads.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_10_90
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 11:57:48 2025]
+rule downsample_normal:
+    input: data/grail/beds/MRL0001CH.bed.gz, files/UCSC_hg19_canonical_cds_grail_panel.bed
+    output: data/grail/mixed_samples/MRL0002CH_MRL0001CH_50_50_normal_reads.bed.gz
+    jobid: 15
+    reason: Missing output files: data/grail/mixed_samples/MRL0002CH_MRL0001CH_50_50_normal_reads.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_50_50
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 11:57:48 2025]
+rule downsample_normal:
+    input: data/grail/beds/MRL0001CH.bed.gz, files/UCSC_hg19_canonical_cds_grail_panel.bed
+    output: data/grail/mixed_samples/MRL0002CH_MRL0001CH_10_90_normal_reads.bed.gz
+    jobid: 9
+    reason: Missing output files: data/grail/mixed_samples/MRL0002CH_MRL0001CH_10_90_normal_reads.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_10_90
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 11:57:48 2025]
+rule downsample_normal:
+    input: data/grail/beds/MRL0001CH.bed.gz, files/UCSC_hg19_canonical_cds_grail_panel.bed
+    output: data/grail/mixed_samples/MRL0002CH_MRL0001CH_5_95_normal_reads.bed.gz
+    jobid: 6
+    reason: Missing output files: data/grail/mixed_samples/MRL0002CH_MRL0001CH_5_95_normal_reads.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_5_95
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 11:57:48 2025]
+rule downsample_cancer:
+    input: data/grail/beds/MRL0002CH.bed.gz, files/UCSC_hg19_canonical_cds_grail_panel.bed
+    output: data/grail/mixed_samples/MRL0002CH_MRL0001CH_50_50_cancer_reads.bed.gz
+    jobid: 14
+    reason: Missing output files: data/grail/mixed_samples/MRL0002CH_MRL0001CH_50_50_cancer_reads.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_50_50
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 11:57:48 2025]
+rule downsample_cancer:
+    input: data/grail/beds/MRL0002CH.bed.gz, files/UCSC_hg19_canonical_cds_grail_panel.bed
+    output: data/grail/mixed_samples/MRL0002CH_MRL0001CH_1_99_cancer_reads.bed.gz
+    jobid: 2
+    reason: Missing output files: data/grail/mixed_samples/MRL0002CH_MRL0001CH_1_99_cancer_reads.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_1_99
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 11:57:48 2025]
+rule downsample_cancer:
+    input: data/grail/beds/MRL0002CH.bed.gz, files/UCSC_hg19_canonical_cds_grail_panel.bed
+    output: data/grail/mixed_samples/MRL0002CH_MRL0001CH_5_95_cancer_reads.bed.gz
+    jobid: 5
+    reason: Missing output files: data/grail/mixed_samples/MRL0002CH_MRL0001CH_5_95_cancer_reads.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_5_95
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 11:57:48 2025]
+rule downsample_normal:
+    input: data/grail/beds/MRL0001CH.bed.gz, files/UCSC_hg19_canonical_cds_grail_panel.bed
+    output: data/grail/mixed_samples/MRL0002CH_MRL0001CH_25_75_normal_reads.bed.gz
+    jobid: 12
+    reason: Missing output files: data/grail/mixed_samples/MRL0002CH_MRL0001CH_25_75_normal_reads.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_25_75
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 11:57:48 2025]
+rule downsample_cancer:
+    input: data/grail/beds/MRL0002CH.bed.gz, files/UCSC_hg19_canonical_cds_grail_panel.bed
+    output: data/grail/mixed_samples/MRL0002CH_MRL0001CH_25_75_cancer_reads.bed.gz
+    jobid: 11
+    reason: Missing output files: data/grail/mixed_samples/MRL0002CH_MRL0001CH_25_75_cancer_reads.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_25_75
+    resources: tmpdir=/tmp
+
+[Fri Apr 18 11:57:48 2025]
+Finished job 3.
+1 of 16 steps (6%) done
+[Fri Apr 18 11:57:48 2025]
+Finished job 8.
+2 of 16 steps (12%) done
+[Fri Apr 18 11:57:48 2025]
+Finished job 15.
+3 of 16 steps (19%) done
+[Fri Apr 18 11:57:48 2025]
+Finished job 9.
+4 of 16 steps (25%) done
+Select jobs to execute...
+
+[Fri Apr 18 11:57:48 2025]
+rule cat_and_overlap_exons:
+    input: files/UCSC_hg19_canonical_cds_grail_panel.bed, data/grail/mixed_samples/MRL0002CH_MRL0001CH_10_90_cancer_reads.bed.gz, data/grail/mixed_samples/MRL0002CH_MRL0001CH_10_90_normal_reads.bed.gz
+    output: data/grail/mixed_samples/MRL0002CH_MRL0001CH_10_90.bed.gz
+    jobid: 7
+    reason: Missing output files: data/grail/mixed_samples/MRL0002CH_MRL0001CH_10_90.bed.gz; Input files updated by another job: data/grail/mixed_samples/MRL0002CH_MRL0001CH_10_90_cancer_reads.bed.gz, data/grail/mixed_samples/MRL0002CH_MRL0001CH_10_90_normal_reads.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_10_90
+    resources: tmpdir=/tmp
+
+[Fri Apr 18 11:57:48 2025]
+Finished job 6.
+5 of 16 steps (31%) done
+[Fri Apr 18 11:57:48 2025]
+Finished job 14.
+6 of 16 steps (38%) done
+Select jobs to execute...
+
+[Fri Apr 18 11:57:48 2025]
+rule cat_and_overlap_exons:
+    input: files/UCSC_hg19_canonical_cds_grail_panel.bed, data/grail/mixed_samples/MRL0002CH_MRL0001CH_50_50_cancer_reads.bed.gz, data/grail/mixed_samples/MRL0002CH_MRL0001CH_50_50_normal_reads.bed.gz
+    output: data/grail/mixed_samples/MRL0002CH_MRL0001CH_50_50.bed.gz
+    jobid: 13
+    reason: Missing output files: data/grail/mixed_samples/MRL0002CH_MRL0001CH_50_50.bed.gz; Input files updated by another job: data/grail/mixed_samples/MRL0002CH_MRL0001CH_50_50_normal_reads.bed.gz, data/grail/mixed_samples/MRL0002CH_MRL0001CH_50_50_cancer_reads.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_50_50
+    resources: tmpdir=/tmp
+
+[Fri Apr 18 11:57:48 2025]
+Finished job 2.
+7 of 16 steps (44%) done
+Select jobs to execute...
+
+[Fri Apr 18 11:57:48 2025]
+rule cat_and_overlap_exons:
+    input: files/UCSC_hg19_canonical_cds_grail_panel.bed, data/grail/mixed_samples/MRL0002CH_MRL0001CH_1_99_cancer_reads.bed.gz, data/grail/mixed_samples/MRL0002CH_MRL0001CH_1_99_normal_reads.bed.gz
+    output: data/grail/mixed_samples/MRL0002CH_MRL0001CH_1_99.bed.gz
+    jobid: 1
+    reason: Missing output files: data/grail/mixed_samples/MRL0002CH_MRL0001CH_1_99.bed.gz; Input files updated by another job: data/grail/mixed_samples/MRL0002CH_MRL0001CH_1_99_cancer_reads.bed.gz, data/grail/mixed_samples/MRL0002CH_MRL0001CH_1_99_normal_reads.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_1_99
+    resources: tmpdir=/tmp
+
+[Fri Apr 18 11:57:48 2025]
+Finished job 5.
+8 of 16 steps (50%) done
+[Fri Apr 18 11:57:48 2025]
+Finished job 7.
+9 of 16 steps (56%) done
+Removing temporary output data/grail/mixed_samples/MRL0002CH_MRL0001CH_10_90_cancer_reads.bed.gz.
+Removing temporary output data/grail/mixed_samples/MRL0002CH_MRL0001CH_10_90_normal_reads.bed.gz.
+Select jobs to execute...
+
+[Fri Apr 18 11:57:48 2025]
+rule cat_and_overlap_exons:
+    input: files/UCSC_hg19_canonical_cds_grail_panel.bed, data/grail/mixed_samples/MRL0002CH_MRL0001CH_5_95_cancer_reads.bed.gz, data/grail/mixed_samples/MRL0002CH_MRL0001CH_5_95_normal_reads.bed.gz
+    output: data/grail/mixed_samples/MRL0002CH_MRL0001CH_5_95.bed.gz
+    jobid: 4
+    reason: Missing output files: data/grail/mixed_samples/MRL0002CH_MRL0001CH_5_95.bed.gz; Input files updated by another job: data/grail/mixed_samples/MRL0002CH_MRL0001CH_5_95_cancer_reads.bed.gz, data/grail/mixed_samples/MRL0002CH_MRL0001CH_5_95_normal_reads.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_5_95
+    resources: tmpdir=/tmp
+
+[Fri Apr 18 11:57:48 2025]
+Finished job 12.
+10 of 16 steps (62%) done
+[Fri Apr 18 11:57:48 2025]
+Finished job 11.
+11 of 16 steps (69%) done
+[Fri Apr 18 11:57:48 2025]
+Finished job 13.
+12 of 16 steps (75%) done
+Removing temporary output data/grail/mixed_samples/MRL0002CH_MRL0001CH_50_50_cancer_reads.bed.gz.
+Removing temporary output data/grail/mixed_samples/MRL0002CH_MRL0001CH_50_50_normal_reads.bed.gz.
+Select jobs to execute...
+
+[Fri Apr 18 11:57:48 2025]
+rule cat_and_overlap_exons:
+    input: files/UCSC_hg19_canonical_cds_grail_panel.bed, data/grail/mixed_samples/MRL0002CH_MRL0001CH_25_75_cancer_reads.bed.gz, data/grail/mixed_samples/MRL0002CH_MRL0001CH_25_75_normal_reads.bed.gz
+    output: data/grail/mixed_samples/MRL0002CH_MRL0001CH_25_75.bed.gz
+    jobid: 10
+    reason: Missing output files: data/grail/mixed_samples/MRL0002CH_MRL0001CH_25_75.bed.gz; Input files updated by another job: data/grail/mixed_samples/MRL0002CH_MRL0001CH_25_75_cancer_reads.bed.gz, data/grail/mixed_samples/MRL0002CH_MRL0001CH_25_75_normal_reads.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_25_75
+    resources: tmpdir=/tmp
+
+[Fri Apr 18 11:57:48 2025]
+Finished job 1.
+13 of 16 steps (81%) done
+Removing temporary output data/grail/mixed_samples/MRL0002CH_MRL0001CH_1_99_cancer_reads.bed.gz.
+Removing temporary output data/grail/mixed_samples/MRL0002CH_MRL0001CH_1_99_normal_reads.bed.gz.
+[Fri Apr 18 11:57:48 2025]
+Finished job 4.
+14 of 16 steps (88%) done
+Removing temporary output data/grail/mixed_samples/MRL0002CH_MRL0001CH_5_95_cancer_reads.bed.gz.
+Removing temporary output data/grail/mixed_samples/MRL0002CH_MRL0001CH_5_95_normal_reads.bed.gz.
+[Fri Apr 18 11:57:48 2025]
+Finished job 10.
+15 of 16 steps (94%) done
+Removing temporary output data/grail/mixed_samples/MRL0002CH_MRL0001CH_25_75_cancer_reads.bed.gz.
+Removing temporary output data/grail/mixed_samples/MRL0002CH_MRL0001CH_25_75_normal_reads.bed.gz.
+Select jobs to execute...
+
+[Fri Apr 18 11:57:48 2025]
+localrule all:
+    input: data/grail/mixed_samples/MRL0002CH_MRL0001CH_1_99.bed.gz, data/grail/mixed_samples/MRL0002CH_MRL0001CH_5_95.bed.gz, data/grail/mixed_samples/MRL0002CH_MRL0001CH_10_90.bed.gz, data/grail/mixed_samples/MRL0002CH_MRL0001CH_25_75.bed.gz, data/grail/mixed_samples/MRL0002CH_MRL0001CH_50_50.bed.gz
+    jobid: 0
+    reason: Input files updated by another job: data/grail/mixed_samples/MRL0002CH_MRL0001CH_1_99.bed.gz, data/grail/mixed_samples/MRL0002CH_MRL0001CH_50_50.bed.gz, data/grail/mixed_samples/MRL0002CH_MRL0001CH_10_90.bed.gz, data/grail/mixed_samples/MRL0002CH_MRL0001CH_5_95.bed.gz, data/grail/mixed_samples/MRL0002CH_MRL0001CH_25_75.bed.gz
+    resources: tmpdir=/tmp
+
+[Fri Apr 18 11:57:48 2025]
+Finished job 0.
+16 of 16 steps (100%) done
+Complete log: .snakemake/log/2025-04-18T115747.881389.snakemake.log

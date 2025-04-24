@@ -1,0 +1,35 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 16
+Rules claiming more threads will be scaled down.
+Job stats:
+job                     count    min threads    max threads
+--------------------  -------  -------------  -------------
+all                         1              1              1
+build_feature_tables        1              1              1
+total                       2              1              1
+
+Select jobs to execute...
+
+[Tue Apr 22 17:34:54 2025]
+rule build_feature_tables:
+    input: output/mixing_data/metrics/se/MRL0002CH_MRL0001CH_1_99.SE.tsv, output/mixing_data/metrics/se/MRL0002CH_MRL0001CH_5_95.SE.tsv, output/mixing_data/metrics/se/MRL0002CH_MRL0001CH_10_90.SE.tsv, output/mixing_data/metrics/se/MRL0002CH_MRL0001CH_25_75.SE.tsv, output/mixing_data/metrics/se/MRL0002CH_MRL0001CH_50_50.SE.tsv, output/mixing_data/metrics/depth/MRL0002CH_MRL0001CH_1_99.depth.tsv, output/mixing_data/metrics/depth/MRL0002CH_MRL0001CH_5_95.depth.tsv, output/mixing_data/metrics/depth/MRL0002CH_MRL0001CH_10_90.depth.tsv, output/mixing_data/metrics/depth/MRL0002CH_MRL0001CH_25_75.depth.tsv, output/mixing_data/metrics/depth/MRL0002CH_MRL0001CH_50_50.depth.tsv, output/mixing_data/metrics/frag_bins/MRL0002CH_MRL0001CH_1_99.fragbins.tsv, output/mixing_data/metrics/frag_bins/MRL0002CH_MRL0001CH_5_95.fragbins.tsv, output/mixing_data/metrics/frag_bins/MRL0002CH_MRL0001CH_10_90.fragbins.tsv, output/mixing_data/metrics/frag_bins/MRL0002CH_MRL0001CH_25_75.fragbins.tsv, output/mixing_data/metrics/frag_bins/MRL0002CH_MRL0001CH_50_50.fragbins.tsv, output/mixing_data/metrics/small_frags/MRL0002CH_MRL0001CH_1_99.smallfrag.tsv, output/mixing_data/metrics/small_frags/MRL0002CH_MRL0001CH_5_95.smallfrag.tsv, output/mixing_data/metrics/small_frags/MRL0002CH_MRL0001CH_10_90.smallfrag.tsv, output/mixing_data/metrics/small_frags/MRL0002CH_MRL0001CH_25_75.smallfrag.tsv, output/mixing_data/metrics/small_frags/MRL0002CH_MRL0001CH_50_50.smallfrag.tsv, output/mixing_data/metrics/full_gene_depth/MRL0002CH_MRL0001CH_1_99.fullgenedepth.tsv, output/mixing_data/metrics/full_gene_depth/MRL0002CH_MRL0001CH_5_95.fullgenedepth.tsv, output/mixing_data/metrics/full_gene_depth/MRL0002CH_MRL0001CH_10_90.fullgenedepth.tsv, output/mixing_data/metrics/full_gene_depth/MRL0002CH_MRL0001CH_25_75.fullgenedepth.tsv, output/mixing_data/metrics/full_gene_depth/MRL0002CH_MRL0001CH_50_50.fullgenedepth.tsv, output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_1_99_mds.txt, output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_5_95_mds.txt, output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_10_90_mds.txt, output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_25_75_mds.txt, output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_50_50_mds.txt, output/mixing_data/metrics/TFBS_entropy/MRL0002CH_MRL0001CH_1_99_TFBS_entropy.txt, output/mixing_data/metrics/TFBS_entropy/MRL0002CH_MRL0001CH_5_95_TFBS_entropy.txt, output/mixing_data/metrics/TFBS_entropy/MRL0002CH_MRL0001CH_10_90_TFBS_entropy.txt, output/mixing_data/metrics/TFBS_entropy/MRL0002CH_MRL0001CH_25_75_TFBS_entropy.txt, output/mixing_data/metrics/TFBS_entropy/MRL0002CH_MRL0001CH_50_50_TFBS_entropy.txt, output/mixing_data/metrics/ATAC_entropy/MRL0002CH_MRL0001CH_1_99_ATAC_entropy.txt, output/mixing_data/metrics/ATAC_entropy/MRL0002CH_MRL0001CH_5_95_ATAC_entropy.txt, output/mixing_data/metrics/ATAC_entropy/MRL0002CH_MRL0001CH_10_90_ATAC_entropy.txt, output/mixing_data/metrics/ATAC_entropy/MRL0002CH_MRL0001CH_25_75_ATAC_entropy.txt, output/mixing_data/metrics/ATAC_entropy/MRL0002CH_MRL0001CH_50_50_ATAC_entropy.txt
+    output: output/mixing_data/feature_tables/grail_se.rds, output/mixing_data/feature_tables/grail_depth.rds, output/mixing_data/feature_tables/grail_frag_bins.rds, output/mixing_data/feature_tables/grail_small_frags.rds, output/mixing_data/feature_tables/grail_full_gene_depth.rds, output/mixing_data/feature_tables/grail_mds.rds, output/mixing_data/feature_tables/grail_TFBS_entropy.rds, output/mixing_data/feature_tables/grail_ATAC_entropy.rds
+    jobid: 16
+    reason: Missing output files: output/mixing_data/feature_tables/grail_se.rds, output/mixing_data/feature_tables/grail_ATAC_entropy.rds, output/mixing_data/feature_tables/grail_small_frags.rds, output/mixing_data/feature_tables/grail_frag_bins.rds, output/mixing_data/feature_tables/grail_TFBS_entropy.rds, output/mixing_data/feature_tables/grail_mds.rds, output/mixing_data/feature_tables/grail_depth.rds, output/mixing_data/feature_tables/grail_full_gene_depth.rds
+    resources: tmpdir=/tmp
+
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule build_feature_tables in line 279 of /mnt/Data01/projects/fragmentomics/scripts/paper_2_code_upload/fragmentomics_metrics/grail_mixing_generate_samples_FTs.snakemake.py:
+Job Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+output/mixing_data/feature_tables/grail_se.rds
+output/mixing_data/feature_tables/grail_depth.rds
+output/mixing_data/feature_tables/grail_frag_bins.rds
+output/mixing_data/feature_tables/grail_small_frags.rds
+output/mixing_data/feature_tables/grail_full_gene_depth.rds
+output/mixing_data/feature_tables/grail_mds.rds
+output/mixing_data/feature_tables/grail_TFBS_entropy.rds
+output/mixing_data/feature_tables/grail_ATAC_entropy.rds completed successfully, but some output files are missing. 16
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-04-22T173454.066819.snakemake.log

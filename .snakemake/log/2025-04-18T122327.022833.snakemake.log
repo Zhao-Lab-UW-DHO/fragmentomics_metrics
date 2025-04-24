@@ -1,0 +1,159 @@
+Building DAG of jobs...
+Job stats:
+job                           count    min threads    max threads
+--------------------------  -------  -------------  -------------
+all                               1              1              1
+build_feature_tables              6              1              1
+calculate_ATAC_entropy           12              1              1
+calculate_MDS                    12              1              1
+calculate_SE                     12              1              1
+calculate_TFBS_entropy           12              1              1
+calculate_frag_bins              12              1              1
+calculate_full_gene_depth        12              1              1
+calculate_normalized_depth       12              1              1
+calculate_small_frags            12              1              1
+downsample                       12              1              1
+get_SE_fragstats                 12              1              1
+get_depth_fragstats              12              1              1
+get_left_4mer                    12              1              1
+get_right_4mer                   12              1              1
+overlap_ATAC                     12              1              1
+overlap_TFBS                     12              1              1
+overlap_exons                    12              1              1
+total                           199              1              1
+
+
+[Fri Apr 18 12:23:27 2025]
+rule downsample:
+    input: data/grail/beds/MRL0001CH.bed.gz
+    output: output/downsample/all_seqs/5M/MRL0001CH.bed.gz
+    jobid: 4
+    reason: Missing output files: output/downsample/all_seqs/5M/MRL0001CH.bed.gz
+    wildcards: level=5M, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:23:27 2025]
+rule downsample:
+    input: data/grail/beds/MRL0001CH.bed.gz
+    output: output/downsample/all_seqs/10M/MRL0001CH.bed.gz
+    jobid: 6
+    reason: Missing output files: output/downsample/all_seqs/10M/MRL0001CH.bed.gz
+    wildcards: level=10M, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:23:27 2025]
+rule downsample:
+    input: data/grail/beds/MRL0001CH.bed.gz
+    output: output/downsample/all_seqs/25M/MRL0001CH.bed.gz
+    jobid: 8
+    reason: Missing output files: output/downsample/all_seqs/25M/MRL0001CH.bed.gz
+    wildcards: level=25M, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:23:27 2025]
+rule downsample:
+    input: data/grail/beds/MRL0001CH.bed.gz
+    output: output/downsample/all_seqs/50M/MRL0001CH.bed.gz
+    jobid: 10
+    reason: Missing output files: output/downsample/all_seqs/50M/MRL0001CH.bed.gz
+    wildcards: level=50M, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:23:27 2025]
+rule downsample:
+    input: data/grail/beds/MRL0001CH.bed.gz
+    output: output/downsample/all_seqs/100M/MRL0001CH.bed.gz
+    jobid: 12
+    reason: Missing output files: output/downsample/all_seqs/100M/MRL0001CH.bed.gz
+    wildcards: level=100M, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:23:27 2025]
+rule downsample:
+    input: data/grail/beds/MRL0002CH.bed.gz
+    output: output/downsample/all_seqs/1M/MRL0002CH.bed.gz
+    jobid: 14
+    reason: Missing output files: output/downsample/all_seqs/1M/MRL0002CH.bed.gz
+    wildcards: level=1M, sample=MRL0002CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:23:27 2025]
+rule downsample:
+    input: data/grail/beds/MRL0002CH.bed.gz
+    output: output/downsample/all_seqs/5M/MRL0002CH.bed.gz
+    jobid: 16
+    reason: Missing output files: output/downsample/all_seqs/5M/MRL0002CH.bed.gz
+    wildcards: level=5M, sample=MRL0002CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:23:27 2025]
+rule downsample:
+    input: data/grail/beds/MRL0001CH.bed.gz
+    output: output/downsample/all_seqs/1M/MRL0001CH.bed.gz
+    jobid: 2
+    reason: Missing output files: output/downsample/all_seqs/1M/MRL0001CH.bed.gz
+    wildcards: level=1M, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:23:27 2025]
+rule downsample:
+    input: data/grail/beds/MRL0002CH.bed.gz
+    output: output/downsample/all_seqs/10M/MRL0002CH.bed.gz
+    jobid: 18
+    reason: Missing output files: output/downsample/all_seqs/10M/MRL0002CH.bed.gz
+    wildcards: level=10M, sample=MRL0002CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:23:27 2025]
+rule downsample:
+    input: data/grail/beds/MRL0002CH.bed.gz
+    output: output/downsample/all_seqs/25M/MRL0002CH.bed.gz
+    jobid: 20
+    reason: Missing output files: output/downsample/all_seqs/25M/MRL0002CH.bed.gz
+    wildcards: level=25M, sample=MRL0002CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:23:27 2025]
+rule downsample:
+    input: data/grail/beds/MRL0002CH.bed.gz
+    output: output/downsample/all_seqs/50M/MRL0002CH.bed.gz
+    jobid: 22
+    reason: Missing output files: output/downsample/all_seqs/50M/MRL0002CH.bed.gz
+    wildcards: level=50M, sample=MRL0002CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:23:27 2025]
+rule downsample:
+    input: data/grail/beds/MRL0002CH.bed.gz
+    output: output/downsample/all_seqs/100M/MRL0002CH.bed.gz
+    jobid: 24
+    reason: Missing output files: output/downsample/all_seqs/100M/MRL0002CH.bed.gz
+    wildcards: level=100M, sample=MRL0002CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:23:27 2025]
+rule overlap_exons:
+    input: files/UCSC_hg19_canonical_cds_grail_panel.bed, output/downsample/all_seqs/5M/MRL0002CH.bed.gz
+    output: output/downsample/cds_overlap/5M/MRL0002CH.bed.gz
+    jobid: 15
+    reason: Missing output files: output/downsample/cds_overlap/5M/MRL0002CH.bed.gz; Input files updated by another job: output/downsample/all_seqs/5M/MRL0002CH.bed.gz
+    wildcards: level=5M, sample=MRL0002CH
+    resources: tmpdir=/tmp
+
+RuleException in rule overlap_exons in line 62 of /mnt/Data01/projects/fragmentomics/scripts/paper_2_code_upload/fragmentomics_metrics/grail_downsample_generate_samples.snakemake.py:
+AttributeError: 'InputFiles' object has no attribute 'bedtools', when formatting the following:
+
+        {input.bedtools} intersect -a {input.sample_bed} -b {input.exons} -wa -wb         | cut -f 1,2,3,8,9,10,11,12         | sort -k1,1 -k2,2n         | gzip > {output}
+        

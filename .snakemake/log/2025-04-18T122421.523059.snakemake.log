@@ -1,0 +1,947 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 16
+Rules claiming more threads will be scaled down.
+Job stats:
+job                           count    min threads    max threads
+--------------------------  -------  -------------  -------------
+all                               1              1              1
+build_feature_tables              6              1              1
+calculate_ATAC_entropy           12              1              1
+calculate_MDS                    12              1              1
+calculate_SE                     12              1              1
+calculate_TFBS_entropy           12              1              1
+calculate_frag_bins              12              1              1
+calculate_full_gene_depth        12              1              1
+calculate_normalized_depth       12              1              1
+calculate_small_frags            12              1              1
+downsample                       12              1              1
+get_SE_fragstats                 12              1              1
+get_depth_fragstats              12              1              1
+get_left_4mer                    12              1              1
+get_right_4mer                   12              1              1
+overlap_ATAC                     12              1              1
+overlap_TFBS                     12              1              1
+overlap_exons                    12              1              1
+total                           199              1              1
+
+Select jobs to execute...
+
+[Fri Apr 18 12:24:21 2025]
+rule downsample:
+    input: data/grail/beds/MRL0001CH.bed.gz
+    output: output/downsample/all_seqs/5M/MRL0001CH.bed.gz
+    jobid: 4
+    reason: Missing output files: output/downsample/all_seqs/5M/MRL0001CH.bed.gz
+    wildcards: level=5M, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:24:21 2025]
+rule downsample:
+    input: data/grail/beds/MRL0001CH.bed.gz
+    output: output/downsample/all_seqs/10M/MRL0001CH.bed.gz
+    jobid: 6
+    reason: Missing output files: output/downsample/all_seqs/10M/MRL0001CH.bed.gz
+    wildcards: level=10M, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:24:21 2025]
+rule downsample:
+    input: data/grail/beds/MRL0001CH.bed.gz
+    output: output/downsample/all_seqs/25M/MRL0001CH.bed.gz
+    jobid: 8
+    reason: Missing output files: output/downsample/all_seqs/25M/MRL0001CH.bed.gz
+    wildcards: level=25M, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:24:21 2025]
+rule downsample:
+    input: data/grail/beds/MRL0001CH.bed.gz
+    output: output/downsample/all_seqs/50M/MRL0001CH.bed.gz
+    jobid: 10
+    reason: Missing output files: output/downsample/all_seqs/50M/MRL0001CH.bed.gz
+    wildcards: level=50M, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:24:21 2025]
+rule downsample:
+    input: data/grail/beds/MRL0001CH.bed.gz
+    output: output/downsample/all_seqs/100M/MRL0001CH.bed.gz
+    jobid: 12
+    reason: Missing output files: output/downsample/all_seqs/100M/MRL0001CH.bed.gz
+    wildcards: level=100M, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:24:21 2025]
+rule downsample:
+    input: data/grail/beds/MRL0002CH.bed.gz
+    output: output/downsample/all_seqs/1M/MRL0002CH.bed.gz
+    jobid: 14
+    reason: Missing output files: output/downsample/all_seqs/1M/MRL0002CH.bed.gz
+    wildcards: level=1M, sample=MRL0002CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:24:21 2025]
+rule downsample:
+    input: data/grail/beds/MRL0002CH.bed.gz
+    output: output/downsample/all_seqs/5M/MRL0002CH.bed.gz
+    jobid: 16
+    reason: Missing output files: output/downsample/all_seqs/5M/MRL0002CH.bed.gz
+    wildcards: level=5M, sample=MRL0002CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:24:21 2025]
+rule downsample:
+    input: data/grail/beds/MRL0001CH.bed.gz
+    output: output/downsample/all_seqs/1M/MRL0001CH.bed.gz
+    jobid: 2
+    reason: Missing output files: output/downsample/all_seqs/1M/MRL0001CH.bed.gz
+    wildcards: level=1M, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:24:21 2025]
+rule downsample:
+    input: data/grail/beds/MRL0002CH.bed.gz
+    output: output/downsample/all_seqs/10M/MRL0002CH.bed.gz
+    jobid: 18
+    reason: Missing output files: output/downsample/all_seqs/10M/MRL0002CH.bed.gz
+    wildcards: level=10M, sample=MRL0002CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:24:21 2025]
+rule downsample:
+    input: data/grail/beds/MRL0002CH.bed.gz
+    output: output/downsample/all_seqs/25M/MRL0002CH.bed.gz
+    jobid: 20
+    reason: Missing output files: output/downsample/all_seqs/25M/MRL0002CH.bed.gz
+    wildcards: level=25M, sample=MRL0002CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:24:21 2025]
+rule downsample:
+    input: data/grail/beds/MRL0002CH.bed.gz
+    output: output/downsample/all_seqs/50M/MRL0002CH.bed.gz
+    jobid: 22
+    reason: Missing output files: output/downsample/all_seqs/50M/MRL0002CH.bed.gz
+    wildcards: level=50M, sample=MRL0002CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:24:21 2025]
+rule downsample:
+    input: data/grail/beds/MRL0002CH.bed.gz
+    output: output/downsample/all_seqs/100M/MRL0002CH.bed.gz
+    jobid: 24
+    reason: Missing output files: output/downsample/all_seqs/100M/MRL0002CH.bed.gz
+    wildcards: level=100M, sample=MRL0002CH
+    resources: tmpdir=/tmp
+
+[Fri Apr 18 12:24:21 2025]
+Finished job 4.
+1 of 199 steps (1%) done
+Select jobs to execute...
+
+[Fri Apr 18 12:24:21 2025]
+rule overlap_exons:
+    input: files/UCSC_hg19_canonical_cds_grail_panel.bed, output/downsample/all_seqs/5M/MRL0001CH.bed.gz
+    output: output/downsample/cds_overlap/5M/MRL0001CH.bed.gz
+    jobid: 3
+    reason: Missing output files: output/downsample/cds_overlap/5M/MRL0001CH.bed.gz; Input files updated by another job: output/downsample/all_seqs/5M/MRL0001CH.bed.gz
+    wildcards: level=5M, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+[Fri Apr 18 12:24:21 2025]
+Finished job 6.
+2 of 199 steps (1%) done
+Select jobs to execute...
+
+[Fri Apr 18 12:24:21 2025]
+rule overlap_exons:
+    input: files/UCSC_hg19_canonical_cds_grail_panel.bed, output/downsample/all_seqs/10M/MRL0001CH.bed.gz
+    output: output/downsample/cds_overlap/10M/MRL0001CH.bed.gz
+    jobid: 5
+    reason: Missing output files: output/downsample/cds_overlap/10M/MRL0001CH.bed.gz; Input files updated by another job: output/downsample/all_seqs/10M/MRL0001CH.bed.gz
+    wildcards: level=10M, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+[Fri Apr 18 12:24:21 2025]
+Finished job 8.
+3 of 199 steps (2%) done
+Select jobs to execute...
+
+[Fri Apr 18 12:24:21 2025]
+rule overlap_exons:
+    input: files/UCSC_hg19_canonical_cds_grail_panel.bed, output/downsample/all_seqs/25M/MRL0001CH.bed.gz
+    output: output/downsample/cds_overlap/25M/MRL0001CH.bed.gz
+    jobid: 7
+    reason: Missing output files: output/downsample/cds_overlap/25M/MRL0001CH.bed.gz; Input files updated by another job: output/downsample/all_seqs/25M/MRL0001CH.bed.gz
+    wildcards: level=25M, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+[Fri Apr 18 12:24:21 2025]
+Finished job 10.
+4 of 199 steps (2%) done
+Select jobs to execute...
+
+[Fri Apr 18 12:24:21 2025]
+rule overlap_exons:
+    input: files/UCSC_hg19_canonical_cds_grail_panel.bed, output/downsample/all_seqs/50M/MRL0001CH.bed.gz
+    output: output/downsample/cds_overlap/50M/MRL0001CH.bed.gz
+    jobid: 9
+    reason: Missing output files: output/downsample/cds_overlap/50M/MRL0001CH.bed.gz; Input files updated by another job: output/downsample/all_seqs/50M/MRL0001CH.bed.gz
+    wildcards: level=50M, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+[Fri Apr 18 12:24:21 2025]
+Finished job 12.
+5 of 199 steps (3%) done
+Select jobs to execute...
+
+[Fri Apr 18 12:24:21 2025]
+rule overlap_exons:
+    input: files/UCSC_hg19_canonical_cds_grail_panel.bed, output/downsample/all_seqs/100M/MRL0001CH.bed.gz
+    output: output/downsample/cds_overlap/100M/MRL0001CH.bed.gz
+    jobid: 11
+    reason: Missing output files: output/downsample/cds_overlap/100M/MRL0001CH.bed.gz; Input files updated by another job: output/downsample/all_seqs/100M/MRL0001CH.bed.gz
+    wildcards: level=100M, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+[Fri Apr 18 12:24:21 2025]
+Finished job 14.
+6 of 199 steps (3%) done
+[Fri Apr 18 12:24:21 2025]
+Finished job 16.
+7 of 199 steps (4%) done
+Select jobs to execute...
+
+[Fri Apr 18 12:24:21 2025]
+rule overlap_exons:
+    input: files/UCSC_hg19_canonical_cds_grail_panel.bed, output/downsample/all_seqs/5M/MRL0002CH.bed.gz
+    output: output/downsample/cds_overlap/5M/MRL0002CH.bed.gz
+    jobid: 15
+    reason: Missing output files: output/downsample/cds_overlap/5M/MRL0002CH.bed.gz; Input files updated by another job: output/downsample/all_seqs/5M/MRL0002CH.bed.gz
+    wildcards: level=5M, sample=MRL0002CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:24:21 2025]
+rule overlap_exons:
+    input: files/UCSC_hg19_canonical_cds_grail_panel.bed, output/downsample/all_seqs/1M/MRL0002CH.bed.gz
+    output: output/downsample/cds_overlap/1M/MRL0002CH.bed.gz
+    jobid: 13
+    reason: Missing output files: output/downsample/cds_overlap/1M/MRL0002CH.bed.gz; Input files updated by another job: output/downsample/all_seqs/1M/MRL0002CH.bed.gz
+    wildcards: level=1M, sample=MRL0002CH
+    resources: tmpdir=/tmp
+
+[Fri Apr 18 12:24:21 2025]
+Finished job 2.
+8 of 199 steps (4%) done
+[Fri Apr 18 12:24:21 2025]
+Finished job 18.
+9 of 199 steps (5%) done
+[Fri Apr 18 12:24:21 2025]
+Finished job 20.
+10 of 199 steps (5%) done
+[Fri Apr 18 12:24:21 2025]
+Finished job 22.
+11 of 199 steps (6%) done
+[Fri Apr 18 12:24:21 2025]
+Finished job 24.
+12 of 199 steps (6%) done
+[Fri Apr 18 12:24:21 2025]
+Finished job 3.
+13 of 199 steps (7%) done
+[Fri Apr 18 12:24:21 2025]
+Finished job 5.
+14 of 199 steps (7%) done
+[Fri Apr 18 12:24:21 2025]
+Finished job 7.
+15 of 199 steps (8%) done
+[Fri Apr 18 12:24:21 2025]
+Finished job 9.
+16 of 199 steps (8%) done
+[Fri Apr 18 12:24:21 2025]
+Finished job 11.
+17 of 199 steps (9%) done
+Select jobs to execute...
+
+[Fri Apr 18 12:24:22 2025]
+rule overlap_ATAC:
+    input: output/downsample/cds_overlap/50M/MRL0001CH.bed.gz, files/TCGA_ATAC_peak.all.probeMap.simple.hg19.bed
+    output: output/downsample/metrics/ATAC_entropy/50M/MRL0001CH_ATAC_frag_count.txt.gz
+    jobid: 178
+    reason: Missing output files: output/downsample/metrics/ATAC_entropy/50M/MRL0001CH_ATAC_frag_count.txt.gz; Input files updated by another job: output/downsample/cds_overlap/50M/MRL0001CH.bed.gz
+    wildcards: level=50M, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:24:22 2025]
+rule get_SE_fragstats:
+    input: output/downsample/cds_overlap/100M/MRL0001CH.bed.gz
+    output: output/downsample/fragstats/SE_files/100M/MRL0001CH.txt.gz
+    jobid: 30
+    reason: Missing output files: output/downsample/fragstats/SE_files/100M/MRL0001CH.txt.gz; Input files updated by another job: output/downsample/cds_overlap/100M/MRL0001CH.bed.gz
+    wildcards: level=100M, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:24:22 2025]
+rule overlap_exons:
+    input: files/UCSC_hg19_canonical_cds_grail_panel.bed, output/downsample/all_seqs/50M/MRL0002CH.bed.gz
+    output: output/downsample/cds_overlap/50M/MRL0002CH.bed.gz
+    jobid: 21
+    reason: Missing output files: output/downsample/cds_overlap/50M/MRL0002CH.bed.gz; Input files updated by another job: output/downsample/all_seqs/50M/MRL0002CH.bed.gz
+    wildcards: level=50M, sample=MRL0002CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:24:22 2025]
+rule get_right_4mer:
+    input: output/downsample/cds_overlap/100M/MRL0001CH.bed.gz, /mnt/Data01/genome/hg19.fa
+    output: output/downsample/metrics/mds/100M/MRL0001CH_right_4mers.txt.gz
+    jobid: 126
+    reason: Missing output files: output/downsample/metrics/mds/100M/MRL0001CH_right_4mers.txt.gz; Input files updated by another job: output/downsample/cds_overlap/100M/MRL0001CH.bed.gz
+    wildcards: level=100M, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:24:22 2025]
+rule overlap_exons:
+    input: files/UCSC_hg19_canonical_cds_grail_panel.bed, output/downsample/all_seqs/100M/MRL0002CH.bed.gz
+    output: output/downsample/cds_overlap/100M/MRL0002CH.bed.gz
+    jobid: 23
+    reason: Missing output files: output/downsample/cds_overlap/100M/MRL0002CH.bed.gz; Input files updated by another job: output/downsample/all_seqs/100M/MRL0002CH.bed.gz
+    wildcards: level=100M, sample=MRL0002CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:24:22 2025]
+rule overlap_TFBS:
+    input: output/downsample/cds_overlap/100M/MRL0001CH.bed.gz, files/Homo_sapiens_meta_clusters_hg19_midpoint_top5k_sorted.bed
+    output: output/downsample/metrics/TFBS_entropy/100M/MRL0001CH_TFBS_frag_count.txt.gz
+    jobid: 156
+    reason: Missing output files: output/downsample/metrics/TFBS_entropy/100M/MRL0001CH_TFBS_frag_count.txt.gz; Input files updated by another job: output/downsample/cds_overlap/100M/MRL0001CH.bed.gz
+    wildcards: level=100M, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:24:22 2025]
+rule get_left_4mer:
+    input: output/downsample/cds_overlap/5M/MRL0001CH.bed.gz, /mnt/Data01/genome/hg19.fa
+    output: output/downsample/metrics/mds/5M/MRL0001CH_left_4mers.txt.gz
+    jobid: 113
+    reason: Missing output files: output/downsample/metrics/mds/5M/MRL0001CH_left_4mers.txt.gz; Input files updated by another job: output/downsample/cds_overlap/5M/MRL0001CH.bed.gz
+    wildcards: level=5M, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:24:22 2025]
+rule get_SE_fragstats:
+    input: output/downsample/cds_overlap/50M/MRL0001CH.bed.gz
+    output: output/downsample/fragstats/SE_files/50M/MRL0001CH.txt.gz
+    jobid: 29
+    reason: Missing output files: output/downsample/fragstats/SE_files/50M/MRL0001CH.txt.gz; Input files updated by another job: output/downsample/cds_overlap/50M/MRL0001CH.bed.gz
+    wildcards: level=50M, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:24:22 2025]
+rule get_depth_fragstats:
+    input: output/downsample/cds_overlap/100M/MRL0001CH.bed.gz
+    output: output/downsample/fragstats/depth_files/100M/MRL0001CH.txt.gz
+    jobid: 42
+    reason: Missing output files: output/downsample/fragstats/depth_files/100M/MRL0001CH.txt.gz; Input files updated by another job: output/downsample/cds_overlap/100M/MRL0001CH.bed.gz
+    wildcards: level=100M, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:24:22 2025]
+rule get_left_4mer:
+    input: output/downsample/cds_overlap/25M/MRL0001CH.bed.gz, /mnt/Data01/genome/hg19.fa
+    output: output/downsample/metrics/mds/25M/MRL0001CH_left_4mers.txt.gz
+    jobid: 119
+    reason: Missing output files: output/downsample/metrics/mds/25M/MRL0001CH_left_4mers.txt.gz; Input files updated by another job: output/downsample/cds_overlap/25M/MRL0001CH.bed.gz
+    wildcards: level=25M, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:24:22 2025]
+rule overlap_TFBS:
+    input: output/downsample/cds_overlap/5M/MRL0001CH.bed.gz, files/Homo_sapiens_meta_clusters_hg19_midpoint_top5k_sorted.bed
+    output: output/downsample/metrics/TFBS_entropy/5M/MRL0001CH_TFBS_frag_count.txt.gz
+    jobid: 148
+    reason: Missing output files: output/downsample/metrics/TFBS_entropy/5M/MRL0001CH_TFBS_frag_count.txt.gz; Input files updated by another job: output/downsample/cds_overlap/5M/MRL0001CH.bed.gz
+    wildcards: level=5M, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:24:22 2025]
+rule get_left_4mer:
+    input: output/downsample/cds_overlap/100M/MRL0001CH.bed.gz, /mnt/Data01/genome/hg19.fa
+    output: output/downsample/metrics/mds/100M/MRL0001CH_left_4mers.txt.gz
+    jobid: 125
+    reason: Missing output files: output/downsample/metrics/mds/100M/MRL0001CH_left_4mers.txt.gz; Input files updated by another job: output/downsample/cds_overlap/100M/MRL0001CH.bed.gz
+    wildcards: level=100M, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:24:22 2025]
+rule overlap_ATAC:
+    input: output/downsample/cds_overlap/5M/MRL0001CH.bed.gz, files/TCGA_ATAC_peak.all.probeMap.simple.hg19.bed
+    output: output/downsample/metrics/ATAC_entropy/5M/MRL0001CH_ATAC_frag_count.txt.gz
+    jobid: 172
+    reason: Missing output files: output/downsample/metrics/ATAC_entropy/5M/MRL0001CH_ATAC_frag_count.txt.gz; Input files updated by another job: output/downsample/cds_overlap/5M/MRL0001CH.bed.gz
+    wildcards: level=5M, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:24:22 2025]
+rule get_SE_fragstats:
+    input: output/downsample/cds_overlap/25M/MRL0001CH.bed.gz
+    output: output/downsample/fragstats/SE_files/25M/MRL0001CH.txt.gz
+    jobid: 28
+    reason: Missing output files: output/downsample/fragstats/SE_files/25M/MRL0001CH.txt.gz; Input files updated by another job: output/downsample/cds_overlap/25M/MRL0001CH.bed.gz
+    wildcards: level=25M, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+[Fri Apr 18 12:24:22 2025]
+Finished job 15.
+18 of 199 steps (9%) done
+[Fri Apr 18 12:24:22 2025]
+Finished job 13.
+19 of 199 steps (10%) done
+[Fri Apr 18 12:24:22 2025]
+Finished job 30.
+20 of 199 steps (10%) done
+[Fri Apr 18 12:24:22 2025]
+Finished job 126.
+21 of 199 steps (11%) done
+[Fri Apr 18 12:24:22 2025]
+Finished job 113.
+22 of 199 steps (11%) done
+[Fri Apr 18 12:24:22 2025]
+Finished job 29.
+23 of 199 steps (12%) done
+[Fri Apr 18 12:24:22 2025]
+Finished job 42.
+24 of 199 steps (12%) done
+Select jobs to execute...
+
+[Fri Apr 18 12:24:22 2025]
+rule get_depth_fragstats:
+    input: output/downsample/cds_overlap/1M/MRL0002CH.bed.gz
+    output: output/downsample/fragstats/depth_files/1M/MRL0002CH.txt.gz
+    jobid: 43
+    reason: Missing output files: output/downsample/fragstats/depth_files/1M/MRL0002CH.txt.gz; Input files updated by another job: output/downsample/cds_overlap/1M/MRL0002CH.bed.gz
+    wildcards: level=1M, sample=MRL0002CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:24:22 2025]
+rule calculate_small_frags:
+    input: output/downsample/fragstats/SE_files/100M/MRL0001CH.txt.gz
+    output: output/downsample/metrics/small_frags/100M/MRL0001CH.smallfrag.tsv
+    jobid: 90
+    reason: Missing output files: output/downsample/metrics/small_frags/100M/MRL0001CH.smallfrag.tsv; Input files updated by another job: output/downsample/fragstats/SE_files/100M/MRL0001CH.txt.gz
+    wildcards: level=100M, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:24:22 2025]
+rule overlap_exons:
+    input: files/UCSC_hg19_canonical_cds_grail_panel.bed, output/downsample/all_seqs/25M/MRL0002CH.bed.gz
+    output: output/downsample/cds_overlap/25M/MRL0002CH.bed.gz
+    jobid: 19
+    reason: Missing output files: output/downsample/cds_overlap/25M/MRL0002CH.bed.gz; Input files updated by another job: output/downsample/all_seqs/25M/MRL0002CH.bed.gz
+    wildcards: level=25M, sample=MRL0002CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:24:22 2025]
+rule overlap_ATAC:
+    input: output/downsample/cds_overlap/5M/MRL0002CH.bed.gz, files/TCGA_ATAC_peak.all.probeMap.simple.hg19.bed
+    output: output/downsample/metrics/ATAC_entropy/5M/MRL0002CH_ATAC_frag_count.txt.gz
+    jobid: 184
+    reason: Missing output files: output/downsample/metrics/ATAC_entropy/5M/MRL0002CH_ATAC_frag_count.txt.gz; Input files updated by another job: output/downsample/cds_overlap/5M/MRL0002CH.bed.gz
+    wildcards: level=5M, sample=MRL0002CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:24:22 2025]
+rule overlap_TFBS:
+    input: output/downsample/cds_overlap/50M/MRL0001CH.bed.gz, files/Homo_sapiens_meta_clusters_hg19_midpoint_top5k_sorted.bed
+    output: output/downsample/metrics/TFBS_entropy/50M/MRL0001CH_TFBS_frag_count.txt.gz
+    jobid: 154
+    reason: Missing output files: output/downsample/metrics/TFBS_entropy/50M/MRL0001CH_TFBS_frag_count.txt.gz; Input files updated by another job: output/downsample/cds_overlap/50M/MRL0001CH.bed.gz
+    wildcards: level=50M, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:24:22 2025]
+rule overlap_ATAC:
+    input: output/downsample/cds_overlap/25M/MRL0001CH.bed.gz, files/TCGA_ATAC_peak.all.probeMap.simple.hg19.bed
+    output: output/downsample/metrics/ATAC_entropy/25M/MRL0001CH_ATAC_frag_count.txt.gz
+    jobid: 176
+    reason: Missing output files: output/downsample/metrics/ATAC_entropy/25M/MRL0001CH_ATAC_frag_count.txt.gz; Input files updated by another job: output/downsample/cds_overlap/25M/MRL0001CH.bed.gz
+    wildcards: level=25M, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:24:22 2025]
+rule get_depth_fragstats:
+    input: output/downsample/cds_overlap/50M/MRL0001CH.bed.gz
+    output: output/downsample/fragstats/depth_files/50M/MRL0001CH.txt.gz
+    jobid: 41
+    reason: Missing output files: output/downsample/fragstats/depth_files/50M/MRL0001CH.txt.gz; Input files updated by another job: output/downsample/cds_overlap/50M/MRL0001CH.bed.gz
+    wildcards: level=50M, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+[Fri Apr 18 12:24:22 2025]
+Finished job 119.
+25 of 199 steps (13%) done
+[Fri Apr 18 12:24:22 2025]
+Finished job 125.
+26 of 199 steps (13%) done
+[Fri Apr 18 12:24:22 2025]
+Finished job 21.
+27 of 199 steps (14%) done
+[Fri Apr 18 12:24:22 2025]
+Finished job 28.
+28 of 199 steps (14%) done
+[Fri Apr 18 12:24:22 2025]
+Finished job 23.
+29 of 199 steps (15%) done
+[Fri Apr 18 12:24:22 2025]
+Finished job 43.
+30 of 199 steps (15%) done
+Select jobs to execute...
+
+[Fri Apr 18 12:24:22 2025]
+rule calculate_full_gene_depth:
+    input: output/downsample/fragstats/depth_files/1M/MRL0002CH.txt.gz
+    output: output/downsample/metrics/full_gene_depth/1M/MRL0002CH.fullgenedepth.tsv
+    jobid: 103
+    reason: Missing output files: output/downsample/metrics/full_gene_depth/1M/MRL0002CH.fullgenedepth.tsv; Input files updated by another job: output/downsample/fragstats/depth_files/1M/MRL0002CH.txt.gz
+    wildcards: level=1M, sample=MRL0002CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:24:22 2025]
+rule calculate_MDS:
+    input: output/downsample/metrics/mds/100M/MRL0001CH_left_4mers.txt.gz, output/downsample/metrics/mds/100M/MRL0001CH_right_4mers.txt.gz, scripts/calculate_mds.R
+    output: output/downsample/metrics/mds/100M/MRL0001CH_mds.txt
+    jobid: 124
+    reason: Missing output files: output/downsample/metrics/mds/100M/MRL0001CH_mds.txt; Input files updated by another job: output/downsample/metrics/mds/100M/MRL0001CH_left_4mers.txt.gz, output/downsample/metrics/mds/100M/MRL0001CH_right_4mers.txt.gz
+    wildcards: level=100M, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:24:22 2025]
+rule get_SE_fragstats:
+    input: output/downsample/cds_overlap/10M/MRL0001CH.bed.gz
+    output: output/downsample/fragstats/SE_files/10M/MRL0001CH.txt.gz
+    jobid: 27
+    reason: Missing output files: output/downsample/fragstats/SE_files/10M/MRL0001CH.txt.gz; Input files updated by another job: output/downsample/cds_overlap/10M/MRL0001CH.bed.gz
+    wildcards: level=10M, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:24:22 2025]
+rule get_right_4mer:
+    input: output/downsample/cds_overlap/5M/MRL0002CH.bed.gz, /mnt/Data01/genome/hg19.fa
+    output: output/downsample/metrics/mds/5M/MRL0002CH_right_4mers.txt.gz
+    jobid: 132
+    reason: Missing output files: output/downsample/metrics/mds/5M/MRL0002CH_right_4mers.txt.gz; Input files updated by another job: output/downsample/cds_overlap/5M/MRL0002CH.bed.gz
+    wildcards: level=5M, sample=MRL0002CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:24:22 2025]
+rule get_left_4mer:
+    input: output/downsample/cds_overlap/5M/MRL0002CH.bed.gz, /mnt/Data01/genome/hg19.fa
+    output: output/downsample/metrics/mds/5M/MRL0002CH_left_4mers.txt.gz
+    jobid: 131
+    reason: Missing output files: output/downsample/metrics/mds/5M/MRL0002CH_left_4mers.txt.gz; Input files updated by another job: output/downsample/cds_overlap/5M/MRL0002CH.bed.gz
+    wildcards: level=5M, sample=MRL0002CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:24:22 2025]
+rule get_left_4mer:
+    input: output/downsample/cds_overlap/10M/MRL0001CH.bed.gz, /mnt/Data01/genome/hg19.fa
+    output: output/downsample/metrics/mds/10M/MRL0001CH_left_4mers.txt.gz
+    jobid: 116
+    reason: Missing output files: output/downsample/metrics/mds/10M/MRL0001CH_left_4mers.txt.gz; Input files updated by another job: output/downsample/cds_overlap/10M/MRL0001CH.bed.gz
+    wildcards: level=10M, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+[Fri Apr 18 12:24:22 2025]
+Finished job 41.
+31 of 199 steps (16%) done
+[Fri Apr 18 12:24:22 2025]
+Finished job 19.
+32 of 199 steps (16%) done
+[Fri Apr 18 12:24:22 2025]
+Finished job 27.
+33 of 199 steps (17%) done
+Select jobs to execute...
+
+[Fri Apr 18 12:24:22 2025]
+rule get_right_4mer:
+    input: output/downsample/cds_overlap/25M/MRL0002CH.bed.gz, /mnt/Data01/genome/hg19.fa
+    output: output/downsample/metrics/mds/25M/MRL0002CH_right_4mers.txt.gz
+    jobid: 138
+    reason: Missing output files: output/downsample/metrics/mds/25M/MRL0002CH_right_4mers.txt.gz; Input files updated by another job: output/downsample/cds_overlap/25M/MRL0002CH.bed.gz
+    wildcards: level=25M, sample=MRL0002CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:24:22 2025]
+rule overlap_TFBS:
+    input: output/downsample/cds_overlap/100M/MRL0002CH.bed.gz, files/Homo_sapiens_meta_clusters_hg19_midpoint_top5k_sorted.bed
+    output: output/downsample/metrics/TFBS_entropy/100M/MRL0002CH_TFBS_frag_count.txt.gz
+    jobid: 168
+    reason: Missing output files: output/downsample/metrics/TFBS_entropy/100M/MRL0002CH_TFBS_frag_count.txt.gz; Input files updated by another job: output/downsample/cds_overlap/100M/MRL0002CH.bed.gz
+    wildcards: level=100M, sample=MRL0002CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:24:22 2025]
+rule get_right_4mer:
+    input: output/downsample/cds_overlap/50M/MRL0002CH.bed.gz, /mnt/Data01/genome/hg19.fa
+    output: output/downsample/metrics/mds/50M/MRL0002CH_right_4mers.txt.gz
+    jobid: 141
+    reason: Missing output files: output/downsample/metrics/mds/50M/MRL0002CH_right_4mers.txt.gz; Input files updated by another job: output/downsample/cds_overlap/50M/MRL0002CH.bed.gz
+    wildcards: level=50M, sample=MRL0002CH
+    resources: tmpdir=/tmp
+
+[Fri Apr 18 12:24:22 2025]
+Finished job 132.
+34 of 199 steps (17%) done
+[Fri Apr 18 12:24:22 2025]
+Finished job 131.
+35 of 199 steps (18%) done
+[Fri Apr 18 12:24:22 2025]
+Finished job 116.
+36 of 199 steps (18%) done
+Select jobs to execute...
+
+[Fri Apr 18 12:24:22 2025]
+rule calculate_small_frags:
+    input: output/downsample/fragstats/SE_files/25M/MRL0001CH.txt.gz
+    output: output/downsample/metrics/small_frags/25M/MRL0001CH.smallfrag.tsv
+    jobid: 88
+    reason: Missing output files: output/downsample/metrics/small_frags/25M/MRL0001CH.smallfrag.tsv; Input files updated by another job: output/downsample/fragstats/SE_files/25M/MRL0001CH.txt.gz
+    wildcards: level=25M, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:24:22 2025]
+rule get_right_4mer:
+    input: output/downsample/cds_overlap/50M/MRL0001CH.bed.gz, /mnt/Data01/genome/hg19.fa
+    output: output/downsample/metrics/mds/50M/MRL0001CH_right_4mers.txt.gz
+    jobid: 123
+    reason: Missing output files: output/downsample/metrics/mds/50M/MRL0001CH_right_4mers.txt.gz; Input files updated by another job: output/downsample/cds_overlap/50M/MRL0001CH.bed.gz
+    wildcards: level=50M, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:24:22 2025]
+rule get_depth_fragstats:
+    input: output/downsample/cds_overlap/100M/MRL0002CH.bed.gz
+    output: output/downsample/fragstats/depth_files/100M/MRL0002CH.txt.gz
+    jobid: 48
+    reason: Missing output files: output/downsample/fragstats/depth_files/100M/MRL0002CH.txt.gz; Input files updated by another job: output/downsample/cds_overlap/100M/MRL0002CH.bed.gz
+    wildcards: level=100M, sample=MRL0002CH
+    resources: tmpdir=/tmp
+
+[Fri Apr 18 12:24:22 2025]
+Finished job 138.
+37 of 199 steps (19%) done
+[Fri Apr 18 12:24:22 2025]
+Finished job 141.
+38 of 199 steps (19%) done
+Select jobs to execute...
+
+[Fri Apr 18 12:24:22 2025]
+rule calculate_normalized_depth:
+    input: output/downsample/fragstats/depth_files/100M/MRL0001CH.txt.gz
+    output: output/downsample/metrics/depth/100M/MRL0001CH.depth.tsv
+    jobid: 66
+    reason: Missing output files: output/downsample/metrics/depth/100M/MRL0001CH.depth.tsv; Input files updated by another job: output/downsample/fragstats/depth_files/100M/MRL0001CH.txt.gz
+    wildcards: level=100M, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:24:22 2025]
+rule calculate_frag_bins:
+    input: output/downsample/fragstats/SE_files/100M/MRL0001CH.txt.gz
+    output: output/downsample/metrics/frag_bins/100M/MRL0001CH.fragbins.tsv
+    jobid: 78
+    reason: Missing output files: output/downsample/metrics/frag_bins/100M/MRL0001CH.fragbins.tsv; Input files updated by another job: output/downsample/fragstats/SE_files/100M/MRL0001CH.txt.gz
+    wildcards: level=100M, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+[Fri Apr 18 12:24:22 2025]
+Finished job 123.
+39 of 199 steps (20%) done
+[Fri Apr 18 12:24:22 2025]
+Finished job 48.
+40 of 199 steps (20%) done
+Select jobs to execute...
+
+[Fri Apr 18 12:24:22 2025]
+rule get_SE_fragstats:
+    input: output/downsample/cds_overlap/50M/MRL0002CH.bed.gz
+    output: output/downsample/fragstats/SE_files/50M/MRL0002CH.txt.gz
+    jobid: 35
+    reason: Missing output files: output/downsample/fragstats/SE_files/50M/MRL0002CH.txt.gz; Input files updated by another job: output/downsample/cds_overlap/50M/MRL0002CH.bed.gz
+    wildcards: level=50M, sample=MRL0002CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:24:22 2025]
+rule calculate_full_gene_depth:
+    input: output/downsample/fragstats/depth_files/100M/MRL0002CH.txt.gz
+    output: output/downsample/metrics/full_gene_depth/100M/MRL0002CH.fullgenedepth.tsv
+    jobid: 108
+    reason: Missing output files: output/downsample/metrics/full_gene_depth/100M/MRL0002CH.fullgenedepth.tsv; Input files updated by another job: output/downsample/fragstats/depth_files/100M/MRL0002CH.txt.gz
+    wildcards: level=100M, sample=MRL0002CH
+    resources: tmpdir=/tmp
+
+Select jobs to execute...
+[Fri Apr 18 12:24:22 2025]
+Finished job 35.
+41 of 199 steps (21%) done
+
+[Fri Apr 18 12:24:22 2025]
+rule get_depth_fragstats:
+    input: output/downsample/cds_overlap/25M/MRL0001CH.bed.gz
+    output: output/downsample/fragstats/depth_files/25M/MRL0001CH.txt.gz
+    jobid: 40
+    reason: Missing output files: output/downsample/fragstats/depth_files/25M/MRL0001CH.txt.gz; Input files updated by another job: output/downsample/cds_overlap/25M/MRL0001CH.bed.gz
+    wildcards: level=25M, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+[Fri Apr 18 12:24:22 2025]
+Finished job 40.
+42 of 199 steps (21%) done
+Select jobs to execute...
+
+[Fri Apr 18 12:24:22 2025]
+rule calculate_full_gene_depth:
+    input: output/downsample/fragstats/depth_files/25M/MRL0001CH.txt.gz
+    output: output/downsample/metrics/full_gene_depth/25M/MRL0001CH.fullgenedepth.tsv
+    jobid: 100
+    reason: Missing output files: output/downsample/metrics/full_gene_depth/25M/MRL0001CH.fullgenedepth.tsv; Input files updated by another job: output/downsample/fragstats/depth_files/25M/MRL0001CH.txt.gz
+    wildcards: level=25M, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+[Fri Apr 18 12:24:22 2025]
+Finished job 178.
+43 of 199 steps (22%) done
+Select jobs to execute...
+
+[Fri Apr 18 12:24:22 2025]
+rule overlap_TFBS:
+    input: output/downsample/cds_overlap/5M/MRL0002CH.bed.gz, files/Homo_sapiens_meta_clusters_hg19_midpoint_top5k_sorted.bed
+    output: output/downsample/metrics/TFBS_entropy/5M/MRL0002CH_TFBS_frag_count.txt.gz
+    jobid: 160
+    reason: Missing output files: output/downsample/metrics/TFBS_entropy/5M/MRL0002CH_TFBS_frag_count.txt.gz; Input files updated by another job: output/downsample/cds_overlap/5M/MRL0002CH.bed.gz
+    wildcards: level=5M, sample=MRL0002CH
+    resources: tmpdir=/tmp
+
+[Fri Apr 18 12:24:22 2025]
+Finished job 172.
+44 of 199 steps (22%) done
+Select jobs to execute...
+
+[Fri Apr 18 12:24:22 2025]
+rule get_SE_fragstats:
+    input: output/downsample/cds_overlap/5M/MRL0001CH.bed.gz
+    output: output/downsample/fragstats/SE_files/5M/MRL0001CH.txt.gz
+    jobid: 26
+    reason: Missing output files: output/downsample/fragstats/SE_files/5M/MRL0001CH.txt.gz; Input files updated by another job: output/downsample/cds_overlap/5M/MRL0001CH.bed.gz
+    wildcards: level=5M, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+[Fri Apr 18 12:24:22 2025]
+Finished job 184.
+45 of 199 steps (23%) done
+[Fri Apr 18 12:24:22 2025]
+Finished job 176.
+46 of 199 steps (23%) done
+Select jobs to execute...
+
+[Fri Apr 18 12:24:22 2025]
+rule calculate_SE:
+    input: output/downsample/fragstats/SE_files/10M/MRL0001CH.txt.gz
+    output: output/downsample/metrics/se/10M/MRL0001CH.SE.tsv
+    jobid: 51
+    reason: Missing output files: output/downsample/metrics/se/10M/MRL0001CH.SE.tsv; Input files updated by another job: output/downsample/fragstats/SE_files/10M/MRL0001CH.txt.gz
+    wildcards: level=10M, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 18 12:24:22 2025]
+rule calculate_full_gene_depth:
+    input: output/downsample/fragstats/depth_files/50M/MRL0001CH.txt.gz
+    output: output/downsample/metrics/full_gene_depth/50M/MRL0001CH.fullgenedepth.tsv
+    jobid: 101
+    reason: Missing output files: output/downsample/metrics/full_gene_depth/50M/MRL0001CH.fullgenedepth.tsv; Input files updated by another job: output/downsample/fragstats/depth_files/50M/MRL0001CH.txt.gz
+    wildcards: level=50M, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+[Fri Apr 18 12:24:22 2025]
+Finished job 26.
+47 of 199 steps (24%) done
+Select jobs to execute...
+
+[Fri Apr 18 12:24:22 2025]
+rule calculate_ATAC_entropy:
+    input: output/downsample/metrics/ATAC_entropy/5M/MRL0002CH_ATAC_frag_count.txt.gz
+    output: output/downsample/metrics/ATAC_entropy/5M/MRL0002CH_ATAC_entropy.txt
+    jobid: 183
+    reason: Missing output files: output/downsample/metrics/ATAC_entropy/5M/MRL0002CH_ATAC_entropy.txt; Input files updated by another job: output/downsample/metrics/ATAC_entropy/5M/MRL0002CH_ATAC_frag_count.txt.gz
+    wildcards: level=5M, sample=MRL0002CH
+    resources: tmpdir=/tmp
+
+Select jobs to execute...
+[Fri Apr 18 12:24:23 2025]
+Error in rule calculate_MDS:
+    jobid: 124
+    output: output/downsample/metrics/mds/100M/MRL0001CH_mds.txt
+    shell:
+        
+        Rscript scripts/calculate_mds.R output/downsample/metrics/mds/100M/MRL0001CH_left_4mers.txt.gz output/downsample/metrics/mds/100M/MRL0001CH_right_4mers.txt.gz output/downsample/metrics/mds/100M/MRL0001CH_mds.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Apr 18 12:24:23 2025]
+Error in rule calculate_small_frags:
+    jobid: 90
+    output: output/downsample/metrics/small_frags/100M/MRL0001CH.smallfrag.tsv
+    shell:
+        
+        Rscript scripts/calculate_small_frags.R output/downsample/fragstats/SE_files/100M/MRL0001CH.txt.gz output/downsample/metrics/small_frags/100M/MRL0001CH.smallfrag.tsv
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Apr 18 12:24:24 2025]
+Error in rule calculate_frag_bins:
+    jobid: 78
+    output: output/downsample/metrics/frag_bins/100M/MRL0001CH.fragbins.tsv
+    shell:
+        
+        Rscript scripts/calculate_frag_bins.R output/downsample/fragstats/SE_files/100M/MRL0001CH.txt.gz output/downsample/metrics/frag_bins/100M/MRL0001CH.fragbins.tsv
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Apr 18 12:24:24 2025]
+Error in rule calculate_small_frags:
+    jobid: 88
+    output: output/downsample/metrics/small_frags/25M/MRL0001CH.smallfrag.tsv
+    shell:
+        
+        Rscript scripts/calculate_small_frags.R output/downsample/fragstats/SE_files/25M/MRL0001CH.txt.gz output/downsample/metrics/small_frags/25M/MRL0001CH.smallfrag.tsv
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Apr 18 12:24:24 2025]
+Error in rule calculate_ATAC_entropy:
+    jobid: 183
+    output: output/downsample/metrics/ATAC_entropy/5M/MRL0002CH_ATAC_entropy.txt
+    shell:
+        
+        Rscript scripts/calculate_ATAC_entropy.R output/downsample/metrics/ATAC_entropy/5M/MRL0002CH_ATAC_frag_count.txt.gz output/downsample/metrics/ATAC_entropy/5M/MRL0002CH_ATAC_entropy.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Apr 18 12:24:24 2025]
+Error in rule calculate_SE:
+    jobid: 51
+    output: output/downsample/metrics/se/10M/MRL0001CH.SE.tsv
+    shell:
+        
+       Rscript scripts/calculate_SE.R output/downsample/fragstats/SE_files/10M/MRL0001CH.txt.gz output/downsample/metrics/se/10M/MRL0001CH.SE.tsv
+       
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Apr 18 12:24:24 2025]
+Error in rule calculate_normalized_depth:
+    jobid: 66
+    output: output/downsample/metrics/depth/100M/MRL0001CH.depth.tsv
+    shell:
+        
+       Rscript scripts/calculate_depth.R output/downsample/fragstats/depth_files/100M/MRL0001CH.txt.gz output/downsample/metrics/depth/100M/MRL0001CH.depth.tsv
+       
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Apr 18 12:24:25 2025]
+Finished job 156.
+48 of 199 steps (24%) done
+[Fri Apr 18 12:24:25 2025]
+Finished job 148.
+49 of 199 steps (25%) done
+[Fri Apr 18 12:24:25 2025]
+Finished job 154.
+50 of 199 steps (25%) done
+[Fri Apr 18 12:24:26 2025]
+Finished job 168.
+51 of 199 steps (26%) done
+[Fri Apr 18 12:24:26 2025]
+Finished job 160.
+52 of 199 steps (26%) done
+[Fri Apr 18 12:24:29 2025]
+Error in rule calculate_full_gene_depth:
+    jobid: 103
+    output: output/downsample/metrics/full_gene_depth/1M/MRL0002CH.fullgenedepth.tsv
+    shell:
+        
+        Rscript scripts/calculate_full_gene_depth.R output/downsample/fragstats/depth_files/1M/MRL0002CH.txt.gz output/downsample/metrics/full_gene_depth/1M/MRL0002CH.fullgenedepth.tsv
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Apr 18 12:24:29 2025]
+Error in rule calculate_full_gene_depth:
+    jobid: 100
+    output: output/downsample/metrics/full_gene_depth/25M/MRL0001CH.fullgenedepth.tsv
+    shell:
+        
+        Rscript scripts/calculate_full_gene_depth.R output/downsample/fragstats/depth_files/25M/MRL0001CH.txt.gz output/downsample/metrics/full_gene_depth/25M/MRL0001CH.fullgenedepth.tsv
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Apr 18 12:24:29 2025]
+Error in rule calculate_full_gene_depth:
+    jobid: 108
+    output: output/downsample/metrics/full_gene_depth/100M/MRL0002CH.fullgenedepth.tsv
+    shell:
+        
+        Rscript scripts/calculate_full_gene_depth.R output/downsample/fragstats/depth_files/100M/MRL0002CH.txt.gz output/downsample/metrics/full_gene_depth/100M/MRL0002CH.fullgenedepth.tsv
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Apr 18 12:24:29 2025]
+Error in rule calculate_full_gene_depth:
+    jobid: 101
+    output: output/downsample/metrics/full_gene_depth/50M/MRL0001CH.fullgenedepth.tsv
+    shell:
+        
+        Rscript scripts/calculate_full_gene_depth.R output/downsample/fragstats/depth_files/50M/MRL0001CH.txt.gz output/downsample/metrics/full_gene_depth/50M/MRL0001CH.fullgenedepth.tsv
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-04-18T122421.523059.snakemake.log

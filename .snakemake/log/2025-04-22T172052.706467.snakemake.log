@@ -1,0 +1,1192 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 64
+Rules claiming more threads will be scaled down.
+Job stats:
+job                           count    min threads    max threads
+--------------------------  -------  -------------  -------------
+all                               1              1              1
+build_feature_tables              1              1              1
+calculate_ATAC_entropy            5              1              1
+calculate_MDS                     5              1              1
+calculate_SE                      5              1              1
+calculate_TFBS_entropy            5              1              1
+calculate_frag_bins               5              1              1
+calculate_full_gene_depth         5              1              1
+calculate_normalized_depth        5              1              1
+calculate_small_frags             5              1              1
+cat_and_overlap_exons             5              1              1
+downsample_cancer                 5              1              1
+downsample_normal                 5              1              1
+get_SE_fragstats                  5              1              1
+get_depth_fragstats               5              1              1
+get_left_4mer                     5              1              1
+get_right_4mer                    5              1              1
+overlap_ATAC                      5              1              1
+overlap_TFBS                      5              1              1
+total                            87              1              1
+
+Select jobs to execute...
+
+[Tue Apr 22 17:20:53 2025]
+rule downsample_cancer:
+    input: data/grail/beds/MRL0002CH.bed.gz, files/UCSC_hg19_canonical_cds_grail_panel.bed
+    output: data/grail/mixed_samples/MRL0002CH_MRL0001CH_25_75_cancer_reads.bed.gz
+    jobid: 11
+    reason: Missing output files: data/grail/mixed_samples/MRL0002CH_MRL0001CH_25_75_cancer_reads.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_25_75
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:20:53 2025]
+rule downsample_normal:
+    input: data/grail/beds/MRL0001CH.bed.gz, files/UCSC_hg19_canonical_cds_grail_panel.bed
+    output: data/grail/mixed_samples/MRL0002CH_MRL0001CH_5_95_normal_reads.bed.gz
+    jobid: 6
+    reason: Missing output files: data/grail/mixed_samples/MRL0002CH_MRL0001CH_5_95_normal_reads.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_5_95
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:20:53 2025]
+rule downsample_normal:
+    input: data/grail/beds/MRL0001CH.bed.gz, files/UCSC_hg19_canonical_cds_grail_panel.bed
+    output: data/grail/mixed_samples/MRL0002CH_MRL0001CH_50_50_normal_reads.bed.gz
+    jobid: 15
+    reason: Missing output files: data/grail/mixed_samples/MRL0002CH_MRL0001CH_50_50_normal_reads.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_50_50
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:20:53 2025]
+rule downsample_cancer:
+    input: data/grail/beds/MRL0002CH.bed.gz, files/UCSC_hg19_canonical_cds_grail_panel.bed
+    output: data/grail/mixed_samples/MRL0002CH_MRL0001CH_50_50_cancer_reads.bed.gz
+    jobid: 14
+    reason: Missing output files: data/grail/mixed_samples/MRL0002CH_MRL0001CH_50_50_cancer_reads.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_50_50
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:20:53 2025]
+rule downsample_cancer:
+    input: data/grail/beds/MRL0002CH.bed.gz, files/UCSC_hg19_canonical_cds_grail_panel.bed
+    output: data/grail/mixed_samples/MRL0002CH_MRL0001CH_10_90_cancer_reads.bed.gz
+    jobid: 8
+    reason: Missing output files: data/grail/mixed_samples/MRL0002CH_MRL0001CH_10_90_cancer_reads.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_10_90
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:20:53 2025]
+rule downsample_normal:
+    input: data/grail/beds/MRL0001CH.bed.gz, files/UCSC_hg19_canonical_cds_grail_panel.bed
+    output: data/grail/mixed_samples/MRL0002CH_MRL0001CH_1_99_normal_reads.bed.gz
+    jobid: 3
+    reason: Missing output files: data/grail/mixed_samples/MRL0002CH_MRL0001CH_1_99_normal_reads.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_1_99
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:20:53 2025]
+rule downsample_cancer:
+    input: data/grail/beds/MRL0002CH.bed.gz, files/UCSC_hg19_canonical_cds_grail_panel.bed
+    output: data/grail/mixed_samples/MRL0002CH_MRL0001CH_5_95_cancer_reads.bed.gz
+    jobid: 5
+    reason: Missing output files: data/grail/mixed_samples/MRL0002CH_MRL0001CH_5_95_cancer_reads.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_5_95
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:20:53 2025]
+rule downsample_cancer:
+    input: data/grail/beds/MRL0002CH.bed.gz, files/UCSC_hg19_canonical_cds_grail_panel.bed
+    output: data/grail/mixed_samples/MRL0002CH_MRL0001CH_1_99_cancer_reads.bed.gz
+    jobid: 2
+    reason: Missing output files: data/grail/mixed_samples/MRL0002CH_MRL0001CH_1_99_cancer_reads.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_1_99
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:20:53 2025]
+rule downsample_normal:
+    input: data/grail/beds/MRL0001CH.bed.gz, files/UCSC_hg19_canonical_cds_grail_panel.bed
+    output: data/grail/mixed_samples/MRL0002CH_MRL0001CH_25_75_normal_reads.bed.gz
+    jobid: 12
+    reason: Missing output files: data/grail/mixed_samples/MRL0002CH_MRL0001CH_25_75_normal_reads.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_25_75
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:20:53 2025]
+rule downsample_normal:
+    input: data/grail/beds/MRL0001CH.bed.gz, files/UCSC_hg19_canonical_cds_grail_panel.bed
+    output: data/grail/mixed_samples/MRL0002CH_MRL0001CH_10_90_normal_reads.bed.gz
+    jobid: 9
+    reason: Missing output files: data/grail/mixed_samples/MRL0002CH_MRL0001CH_10_90_normal_reads.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_10_90
+    resources: tmpdir=/tmp
+
+[Tue Apr 22 17:21:53 2025]
+Finished job 2.
+1 of 87 steps (1%) done
+[Tue Apr 22 17:22:01 2025]
+Finished job 5.
+2 of 87 steps (2%) done
+[Tue Apr 22 17:22:11 2025]
+Finished job 8.
+3 of 87 steps (3%) done
+[Tue Apr 22 17:22:43 2025]
+Finished job 11.
+4 of 87 steps (5%) done
+[Tue Apr 22 17:23:22 2025]
+Finished job 15.
+5 of 87 steps (6%) done
+[Tue Apr 22 17:23:42 2025]
+Finished job 14.
+6 of 87 steps (7%) done
+Select jobs to execute...
+
+[Tue Apr 22 17:23:42 2025]
+rule cat_and_overlap_exons:
+    input: files/UCSC_hg19_canonical_cds_grail_panel.bed, data/grail/mixed_samples/MRL0002CH_MRL0001CH_50_50_cancer_reads.bed.gz, data/grail/mixed_samples/MRL0002CH_MRL0001CH_50_50_normal_reads.bed.gz
+    output: data/grail/mixed_samples/MRL0002CH_MRL0001CH_50_50.bed.gz
+    jobid: 13
+    reason: Missing output files: data/grail/mixed_samples/MRL0002CH_MRL0001CH_50_50.bed.gz; Input files updated by another job: data/grail/mixed_samples/MRL0002CH_MRL0001CH_50_50_normal_reads.bed.gz, data/grail/mixed_samples/MRL0002CH_MRL0001CH_50_50_cancer_reads.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_50_50
+    resources: tmpdir=/tmp
+
+[Tue Apr 22 17:24:08 2025]
+Finished job 12.
+7 of 87 steps (8%) done
+Select jobs to execute...
+
+[Tue Apr 22 17:24:08 2025]
+rule cat_and_overlap_exons:
+    input: files/UCSC_hg19_canonical_cds_grail_panel.bed, data/grail/mixed_samples/MRL0002CH_MRL0001CH_25_75_cancer_reads.bed.gz, data/grail/mixed_samples/MRL0002CH_MRL0001CH_25_75_normal_reads.bed.gz
+    output: data/grail/mixed_samples/MRL0002CH_MRL0001CH_25_75.bed.gz
+    jobid: 10
+    reason: Missing output files: data/grail/mixed_samples/MRL0002CH_MRL0001CH_25_75.bed.gz; Input files updated by another job: data/grail/mixed_samples/MRL0002CH_MRL0001CH_25_75_normal_reads.bed.gz, data/grail/mixed_samples/MRL0002CH_MRL0001CH_25_75_cancer_reads.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_25_75
+    resources: tmpdir=/tmp
+
+[Tue Apr 22 17:24:25 2025]
+Finished job 9.
+8 of 87 steps (9%) done
+Select jobs to execute...
+
+[Tue Apr 22 17:24:25 2025]
+rule cat_and_overlap_exons:
+    input: files/UCSC_hg19_canonical_cds_grail_panel.bed, data/grail/mixed_samples/MRL0002CH_MRL0001CH_10_90_cancer_reads.bed.gz, data/grail/mixed_samples/MRL0002CH_MRL0001CH_10_90_normal_reads.bed.gz
+    output: data/grail/mixed_samples/MRL0002CH_MRL0001CH_10_90.bed.gz
+    jobid: 7
+    reason: Missing output files: data/grail/mixed_samples/MRL0002CH_MRL0001CH_10_90.bed.gz; Input files updated by another job: data/grail/mixed_samples/MRL0002CH_MRL0001CH_10_90_cancer_reads.bed.gz, data/grail/mixed_samples/MRL0002CH_MRL0001CH_10_90_normal_reads.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_10_90
+    resources: tmpdir=/tmp
+
+[Tue Apr 22 17:24:31 2025]
+Finished job 6.
+9 of 87 steps (10%) done
+Select jobs to execute...
+
+[Tue Apr 22 17:24:31 2025]
+rule cat_and_overlap_exons:
+    input: files/UCSC_hg19_canonical_cds_grail_panel.bed, data/grail/mixed_samples/MRL0002CH_MRL0001CH_5_95_cancer_reads.bed.gz, data/grail/mixed_samples/MRL0002CH_MRL0001CH_5_95_normal_reads.bed.gz
+    output: data/grail/mixed_samples/MRL0002CH_MRL0001CH_5_95.bed.gz
+    jobid: 4
+    reason: Missing output files: data/grail/mixed_samples/MRL0002CH_MRL0001CH_5_95.bed.gz; Input files updated by another job: data/grail/mixed_samples/MRL0002CH_MRL0001CH_5_95_normal_reads.bed.gz, data/grail/mixed_samples/MRL0002CH_MRL0001CH_5_95_cancer_reads.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_5_95
+    resources: tmpdir=/tmp
+
+[Tue Apr 22 17:24:38 2025]
+Finished job 3.
+10 of 87 steps (11%) done
+Select jobs to execute...
+
+[Tue Apr 22 17:24:38 2025]
+rule cat_and_overlap_exons:
+    input: files/UCSC_hg19_canonical_cds_grail_panel.bed, data/grail/mixed_samples/MRL0002CH_MRL0001CH_1_99_cancer_reads.bed.gz, data/grail/mixed_samples/MRL0002CH_MRL0001CH_1_99_normal_reads.bed.gz
+    output: data/grail/mixed_samples/MRL0002CH_MRL0001CH_1_99.bed.gz
+    jobid: 1
+    reason: Missing output files: data/grail/mixed_samples/MRL0002CH_MRL0001CH_1_99.bed.gz; Input files updated by another job: data/grail/mixed_samples/MRL0002CH_MRL0001CH_1_99_cancer_reads.bed.gz, data/grail/mixed_samples/MRL0002CH_MRL0001CH_1_99_normal_reads.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_1_99
+    resources: tmpdir=/tmp
+
+[Tue Apr 22 17:25:58 2025]
+Finished job 13.
+11 of 87 steps (13%) done
+Removing temporary output data/grail/mixed_samples/MRL0002CH_MRL0001CH_50_50_cancer_reads.bed.gz.
+Removing temporary output data/grail/mixed_samples/MRL0002CH_MRL0001CH_50_50_normal_reads.bed.gz.
+Select jobs to execute...
+
+[Tue Apr 22 17:25:58 2025]
+rule get_left_4mer:
+    input: data/grail/mixed_samples/MRL0002CH_MRL0001CH_50_50.bed.gz, /mnt/Data01/genome/hg19.fa
+    output: output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_50_50_left_4mers.txt.gz
+    jobid: 65
+    reason: Missing output files: output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_50_50_left_4mers.txt.gz; Input files updated by another job: data/grail/mixed_samples/MRL0002CH_MRL0001CH_50_50.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_50_50
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:25:58 2025]
+rule get_SE_fragstats:
+    input: data/grail/mixed_samples/MRL0002CH_MRL0001CH_50_50.bed.gz
+    output: output/mixing_data/fragstats/SE_files/MRL0002CH_MRL0001CH_50_50.txt.gz
+    jobid: 26
+    reason: Missing output files: output/mixing_data/fragstats/SE_files/MRL0002CH_MRL0001CH_50_50.txt.gz; Input files updated by another job: data/grail/mixed_samples/MRL0002CH_MRL0001CH_50_50.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_50_50
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:25:58 2025]
+rule overlap_ATAC:
+    input: data/grail/mixed_samples/MRL0002CH_MRL0001CH_50_50.bed.gz, files/TCGA_ATAC_peak.all.probeMap.simple.hg19.bed
+    output: output/mixing_data/metrics/ATAC_entropy/MRL0002CH_MRL0001CH_50_50_ATAC_frag_count.txt.gz
+    jobid: 86
+    reason: Missing output files: output/mixing_data/metrics/ATAC_entropy/MRL0002CH_MRL0001CH_50_50_ATAC_frag_count.txt.gz; Input files updated by another job: data/grail/mixed_samples/MRL0002CH_MRL0001CH_50_50.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_50_50
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:25:58 2025]
+rule get_depth_fragstats:
+    input: data/grail/mixed_samples/MRL0002CH_MRL0001CH_50_50.bed.gz
+    output: output/mixing_data/fragstats/depth_files/MRL0002CH_MRL0001CH_50_50.txt.gz
+    jobid: 36
+    reason: Missing output files: output/mixing_data/fragstats/depth_files/MRL0002CH_MRL0001CH_50_50.txt.gz; Input files updated by another job: data/grail/mixed_samples/MRL0002CH_MRL0001CH_50_50.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_50_50
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:25:58 2025]
+rule get_right_4mer:
+    input: data/grail/mixed_samples/MRL0002CH_MRL0001CH_50_50.bed.gz, /mnt/Data01/genome/hg19.fa
+    output: output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_50_50_right_4mers.txt.gz
+    jobid: 66
+    reason: Missing output files: output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_50_50_right_4mers.txt.gz; Input files updated by another job: data/grail/mixed_samples/MRL0002CH_MRL0001CH_50_50.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_50_50
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:25:58 2025]
+rule overlap_TFBS:
+    input: data/grail/mixed_samples/MRL0002CH_MRL0001CH_50_50.bed.gz, files/Homo_sapiens_meta_clusters_hg19_midpoint_top5k_sorted.bed
+    output: output/mixing_data/metrics/TFBS_entropy/MRL0002CH_MRL0001CH_50_50_TFBS_frag_count.txt.gz
+    jobid: 76
+    reason: Missing output files: output/mixing_data/metrics/TFBS_entropy/MRL0002CH_MRL0001CH_50_50_TFBS_frag_count.txt.gz; Input files updated by another job: data/grail/mixed_samples/MRL0002CH_MRL0001CH_50_50.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_50_50
+    resources: tmpdir=/tmp
+
+[Tue Apr 22 17:26:08 2025]
+Finished job 10.
+12 of 87 steps (14%) done
+Removing temporary output data/grail/mixed_samples/MRL0002CH_MRL0001CH_25_75_cancer_reads.bed.gz.
+Removing temporary output data/grail/mixed_samples/MRL0002CH_MRL0001CH_25_75_normal_reads.bed.gz.
+Select jobs to execute...
+
+[Tue Apr 22 17:26:09 2025]
+rule get_SE_fragstats:
+    input: data/grail/mixed_samples/MRL0002CH_MRL0001CH_25_75.bed.gz
+    output: output/mixing_data/fragstats/SE_files/MRL0002CH_MRL0001CH_25_75.txt.gz
+    jobid: 24
+    reason: Missing output files: output/mixing_data/fragstats/SE_files/MRL0002CH_MRL0001CH_25_75.txt.gz; Input files updated by another job: data/grail/mixed_samples/MRL0002CH_MRL0001CH_25_75.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_25_75
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:26:09 2025]
+rule overlap_ATAC:
+    input: data/grail/mixed_samples/MRL0002CH_MRL0001CH_25_75.bed.gz, files/TCGA_ATAC_peak.all.probeMap.simple.hg19.bed
+    output: output/mixing_data/metrics/ATAC_entropy/MRL0002CH_MRL0001CH_25_75_ATAC_frag_count.txt.gz
+    jobid: 84
+    reason: Missing output files: output/mixing_data/metrics/ATAC_entropy/MRL0002CH_MRL0001CH_25_75_ATAC_frag_count.txt.gz; Input files updated by another job: data/grail/mixed_samples/MRL0002CH_MRL0001CH_25_75.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_25_75
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:26:09 2025]
+rule get_left_4mer:
+    input: data/grail/mixed_samples/MRL0002CH_MRL0001CH_25_75.bed.gz, /mnt/Data01/genome/hg19.fa
+    output: output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_25_75_left_4mers.txt.gz
+    jobid: 62
+    reason: Missing output files: output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_25_75_left_4mers.txt.gz; Input files updated by another job: data/grail/mixed_samples/MRL0002CH_MRL0001CH_25_75.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_25_75
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:26:09 2025]
+rule get_depth_fragstats:
+    input: data/grail/mixed_samples/MRL0002CH_MRL0001CH_25_75.bed.gz
+    output: output/mixing_data/fragstats/depth_files/MRL0002CH_MRL0001CH_25_75.txt.gz
+    jobid: 34
+    reason: Missing output files: output/mixing_data/fragstats/depth_files/MRL0002CH_MRL0001CH_25_75.txt.gz; Input files updated by another job: data/grail/mixed_samples/MRL0002CH_MRL0001CH_25_75.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_25_75
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:26:09 2025]
+rule overlap_TFBS:
+    input: data/grail/mixed_samples/MRL0002CH_MRL0001CH_25_75.bed.gz, files/Homo_sapiens_meta_clusters_hg19_midpoint_top5k_sorted.bed
+    output: output/mixing_data/metrics/TFBS_entropy/MRL0002CH_MRL0001CH_25_75_TFBS_frag_count.txt.gz
+    jobid: 74
+    reason: Missing output files: output/mixing_data/metrics/TFBS_entropy/MRL0002CH_MRL0001CH_25_75_TFBS_frag_count.txt.gz; Input files updated by another job: data/grail/mixed_samples/MRL0002CH_MRL0001CH_25_75.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_25_75
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:26:09 2025]
+rule get_right_4mer:
+    input: data/grail/mixed_samples/MRL0002CH_MRL0001CH_25_75.bed.gz, /mnt/Data01/genome/hg19.fa
+    output: output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_25_75_right_4mers.txt.gz
+    jobid: 63
+    reason: Missing output files: output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_25_75_right_4mers.txt.gz; Input files updated by another job: data/grail/mixed_samples/MRL0002CH_MRL0001CH_25_75.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_25_75
+    resources: tmpdir=/tmp
+
+[Tue Apr 22 17:26:09 2025]
+Finished job 7.
+13 of 87 steps (15%) done
+Removing temporary output data/grail/mixed_samples/MRL0002CH_MRL0001CH_10_90_cancer_reads.bed.gz.
+Removing temporary output data/grail/mixed_samples/MRL0002CH_MRL0001CH_10_90_normal_reads.bed.gz.
+Select jobs to execute...
+
+[Tue Apr 22 17:26:09 2025]
+rule overlap_ATAC:
+    input: data/grail/mixed_samples/MRL0002CH_MRL0001CH_10_90.bed.gz, files/TCGA_ATAC_peak.all.probeMap.simple.hg19.bed
+    output: output/mixing_data/metrics/ATAC_entropy/MRL0002CH_MRL0001CH_10_90_ATAC_frag_count.txt.gz
+    jobid: 82
+    reason: Missing output files: output/mixing_data/metrics/ATAC_entropy/MRL0002CH_MRL0001CH_10_90_ATAC_frag_count.txt.gz; Input files updated by another job: data/grail/mixed_samples/MRL0002CH_MRL0001CH_10_90.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_10_90
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:26:09 2025]
+rule get_SE_fragstats:
+    input: data/grail/mixed_samples/MRL0002CH_MRL0001CH_10_90.bed.gz
+    output: output/mixing_data/fragstats/SE_files/MRL0002CH_MRL0001CH_10_90.txt.gz
+    jobid: 22
+    reason: Missing output files: output/mixing_data/fragstats/SE_files/MRL0002CH_MRL0001CH_10_90.txt.gz; Input files updated by another job: data/grail/mixed_samples/MRL0002CH_MRL0001CH_10_90.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_10_90
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:26:09 2025]
+rule get_depth_fragstats:
+    input: data/grail/mixed_samples/MRL0002CH_MRL0001CH_10_90.bed.gz
+    output: output/mixing_data/fragstats/depth_files/MRL0002CH_MRL0001CH_10_90.txt.gz
+    jobid: 32
+    reason: Missing output files: output/mixing_data/fragstats/depth_files/MRL0002CH_MRL0001CH_10_90.txt.gz; Input files updated by another job: data/grail/mixed_samples/MRL0002CH_MRL0001CH_10_90.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_10_90
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:26:09 2025]
+rule get_right_4mer:
+    input: data/grail/mixed_samples/MRL0002CH_MRL0001CH_10_90.bed.gz, /mnt/Data01/genome/hg19.fa
+    output: output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_10_90_right_4mers.txt.gz
+    jobid: 60
+    reason: Missing output files: output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_10_90_right_4mers.txt.gz; Input files updated by another job: data/grail/mixed_samples/MRL0002CH_MRL0001CH_10_90.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_10_90
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:26:09 2025]
+rule overlap_TFBS:
+    input: data/grail/mixed_samples/MRL0002CH_MRL0001CH_10_90.bed.gz, files/Homo_sapiens_meta_clusters_hg19_midpoint_top5k_sorted.bed
+    output: output/mixing_data/metrics/TFBS_entropy/MRL0002CH_MRL0001CH_10_90_TFBS_frag_count.txt.gz
+    jobid: 72
+    reason: Missing output files: output/mixing_data/metrics/TFBS_entropy/MRL0002CH_MRL0001CH_10_90_TFBS_frag_count.txt.gz; Input files updated by another job: data/grail/mixed_samples/MRL0002CH_MRL0001CH_10_90.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_10_90
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:26:09 2025]
+rule get_left_4mer:
+    input: data/grail/mixed_samples/MRL0002CH_MRL0001CH_10_90.bed.gz, /mnt/Data01/genome/hg19.fa
+    output: output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_10_90_left_4mers.txt.gz
+    jobid: 59
+    reason: Missing output files: output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_10_90_left_4mers.txt.gz; Input files updated by another job: data/grail/mixed_samples/MRL0002CH_MRL0001CH_10_90.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_10_90
+    resources: tmpdir=/tmp
+
+[Tue Apr 22 17:26:10 2025]
+Finished job 4.
+14 of 87 steps (16%) done
+Removing temporary output data/grail/mixed_samples/MRL0002CH_MRL0001CH_5_95_cancer_reads.bed.gz.
+Removing temporary output data/grail/mixed_samples/MRL0002CH_MRL0001CH_5_95_normal_reads.bed.gz.
+Select jobs to execute...
+
+[Tue Apr 22 17:26:10 2025]
+rule overlap_ATAC:
+    input: data/grail/mixed_samples/MRL0002CH_MRL0001CH_5_95.bed.gz, files/TCGA_ATAC_peak.all.probeMap.simple.hg19.bed
+    output: output/mixing_data/metrics/ATAC_entropy/MRL0002CH_MRL0001CH_5_95_ATAC_frag_count.txt.gz
+    jobid: 80
+    reason: Missing output files: output/mixing_data/metrics/ATAC_entropy/MRL0002CH_MRL0001CH_5_95_ATAC_frag_count.txt.gz; Input files updated by another job: data/grail/mixed_samples/MRL0002CH_MRL0001CH_5_95.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_5_95
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:26:10 2025]
+rule get_left_4mer:
+    input: data/grail/mixed_samples/MRL0002CH_MRL0001CH_5_95.bed.gz, /mnt/Data01/genome/hg19.fa
+    output: output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_5_95_left_4mers.txt.gz
+    jobid: 56
+    reason: Missing output files: output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_5_95_left_4mers.txt.gz; Input files updated by another job: data/grail/mixed_samples/MRL0002CH_MRL0001CH_5_95.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_5_95
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:26:10 2025]
+rule get_depth_fragstats:
+    input: data/grail/mixed_samples/MRL0002CH_MRL0001CH_5_95.bed.gz
+    output: output/mixing_data/fragstats/depth_files/MRL0002CH_MRL0001CH_5_95.txt.gz
+    jobid: 30
+    reason: Missing output files: output/mixing_data/fragstats/depth_files/MRL0002CH_MRL0001CH_5_95.txt.gz; Input files updated by another job: data/grail/mixed_samples/MRL0002CH_MRL0001CH_5_95.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_5_95
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:26:10 2025]
+rule get_SE_fragstats:
+    input: data/grail/mixed_samples/MRL0002CH_MRL0001CH_5_95.bed.gz
+    output: output/mixing_data/fragstats/SE_files/MRL0002CH_MRL0001CH_5_95.txt.gz
+    jobid: 20
+    reason: Missing output files: output/mixing_data/fragstats/SE_files/MRL0002CH_MRL0001CH_5_95.txt.gz; Input files updated by another job: data/grail/mixed_samples/MRL0002CH_MRL0001CH_5_95.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_5_95
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:26:10 2025]
+rule overlap_TFBS:
+    input: data/grail/mixed_samples/MRL0002CH_MRL0001CH_5_95.bed.gz, files/Homo_sapiens_meta_clusters_hg19_midpoint_top5k_sorted.bed
+    output: output/mixing_data/metrics/TFBS_entropy/MRL0002CH_MRL0001CH_5_95_TFBS_frag_count.txt.gz
+    jobid: 70
+    reason: Missing output files: output/mixing_data/metrics/TFBS_entropy/MRL0002CH_MRL0001CH_5_95_TFBS_frag_count.txt.gz; Input files updated by another job: data/grail/mixed_samples/MRL0002CH_MRL0001CH_5_95.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_5_95
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:26:10 2025]
+rule get_right_4mer:
+    input: data/grail/mixed_samples/MRL0002CH_MRL0001CH_5_95.bed.gz, /mnt/Data01/genome/hg19.fa
+    output: output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_5_95_right_4mers.txt.gz
+    jobid: 57
+    reason: Missing output files: output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_5_95_right_4mers.txt.gz; Input files updated by another job: data/grail/mixed_samples/MRL0002CH_MRL0001CH_5_95.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_5_95
+    resources: tmpdir=/tmp
+
+[Tue Apr 22 17:26:13 2025]
+Finished job 1.
+15 of 87 steps (17%) done
+Removing temporary output data/grail/mixed_samples/MRL0002CH_MRL0001CH_1_99_cancer_reads.bed.gz.
+Removing temporary output data/grail/mixed_samples/MRL0002CH_MRL0001CH_1_99_normal_reads.bed.gz.
+Select jobs to execute...
+
+[Tue Apr 22 17:26:13 2025]
+rule get_right_4mer:
+    input: data/grail/mixed_samples/MRL0002CH_MRL0001CH_1_99.bed.gz, /mnt/Data01/genome/hg19.fa
+    output: output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_1_99_right_4mers.txt.gz
+    jobid: 54
+    reason: Missing output files: output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_1_99_right_4mers.txt.gz; Input files updated by another job: data/grail/mixed_samples/MRL0002CH_MRL0001CH_1_99.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_1_99
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:26:13 2025]
+rule get_depth_fragstats:
+    input: data/grail/mixed_samples/MRL0002CH_MRL0001CH_1_99.bed.gz
+    output: output/mixing_data/fragstats/depth_files/MRL0002CH_MRL0001CH_1_99.txt.gz
+    jobid: 28
+    reason: Missing output files: output/mixing_data/fragstats/depth_files/MRL0002CH_MRL0001CH_1_99.txt.gz; Input files updated by another job: data/grail/mixed_samples/MRL0002CH_MRL0001CH_1_99.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_1_99
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:26:13 2025]
+rule overlap_TFBS:
+    input: data/grail/mixed_samples/MRL0002CH_MRL0001CH_1_99.bed.gz, files/Homo_sapiens_meta_clusters_hg19_midpoint_top5k_sorted.bed
+    output: output/mixing_data/metrics/TFBS_entropy/MRL0002CH_MRL0001CH_1_99_TFBS_frag_count.txt.gz
+    jobid: 68
+    reason: Missing output files: output/mixing_data/metrics/TFBS_entropy/MRL0002CH_MRL0001CH_1_99_TFBS_frag_count.txt.gz; Input files updated by another job: data/grail/mixed_samples/MRL0002CH_MRL0001CH_1_99.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_1_99
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:26:13 2025]
+rule get_left_4mer:
+    input: data/grail/mixed_samples/MRL0002CH_MRL0001CH_1_99.bed.gz, /mnt/Data01/genome/hg19.fa
+    output: output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_1_99_left_4mers.txt.gz
+    jobid: 53
+    reason: Missing output files: output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_1_99_left_4mers.txt.gz; Input files updated by another job: data/grail/mixed_samples/MRL0002CH_MRL0001CH_1_99.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_1_99
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:26:13 2025]
+rule get_SE_fragstats:
+    input: data/grail/mixed_samples/MRL0002CH_MRL0001CH_1_99.bed.gz
+    output: output/mixing_data/fragstats/SE_files/MRL0002CH_MRL0001CH_1_99.txt.gz
+    jobid: 18
+    reason: Missing output files: output/mixing_data/fragstats/SE_files/MRL0002CH_MRL0001CH_1_99.txt.gz; Input files updated by another job: data/grail/mixed_samples/MRL0002CH_MRL0001CH_1_99.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_1_99
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:26:13 2025]
+rule overlap_ATAC:
+    input: data/grail/mixed_samples/MRL0002CH_MRL0001CH_1_99.bed.gz, files/TCGA_ATAC_peak.all.probeMap.simple.hg19.bed
+    output: output/mixing_data/metrics/ATAC_entropy/MRL0002CH_MRL0001CH_1_99_ATAC_frag_count.txt.gz
+    jobid: 78
+    reason: Missing output files: output/mixing_data/metrics/ATAC_entropy/MRL0002CH_MRL0001CH_1_99_ATAC_frag_count.txt.gz; Input files updated by another job: data/grail/mixed_samples/MRL0002CH_MRL0001CH_1_99.bed.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_1_99
+    resources: tmpdir=/tmp
+
+[Tue Apr 22 17:26:30 2025]
+Finished job 36.
+16 of 87 steps (18%) done
+Select jobs to execute...
+
+[Tue Apr 22 17:26:30 2025]
+rule calculate_full_gene_depth:
+    input: output/mixing_data/fragstats/depth_files/MRL0002CH_MRL0001CH_50_50.txt.gz
+    output: output/mixing_data/metrics/full_gene_depth/MRL0002CH_MRL0001CH_50_50.fullgenedepth.tsv
+    jobid: 51
+    reason: Missing output files: output/mixing_data/metrics/full_gene_depth/MRL0002CH_MRL0001CH_50_50.fullgenedepth.tsv; Input files updated by another job: output/mixing_data/fragstats/depth_files/MRL0002CH_MRL0001CH_50_50.txt.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_50_50
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:26:30 2025]
+rule calculate_normalized_depth:
+    input: output/mixing_data/fragstats/depth_files/MRL0002CH_MRL0001CH_50_50.txt.gz
+    output: output/mixing_data/metrics/depth/MRL0002CH_MRL0001CH_50_50.depth.tsv
+    jobid: 35
+    reason: Missing output files: output/mixing_data/metrics/depth/MRL0002CH_MRL0001CH_50_50.depth.tsv; Input files updated by another job: output/mixing_data/fragstats/depth_files/MRL0002CH_MRL0001CH_50_50.txt.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_50_50
+    resources: tmpdir=/tmp
+
+[Tue Apr 22 17:26:33 2025]
+Finished job 32.
+17 of 87 steps (20%) done
+Select jobs to execute...
+
+[Tue Apr 22 17:26:33 2025]
+rule calculate_normalized_depth:
+    input: output/mixing_data/fragstats/depth_files/MRL0002CH_MRL0001CH_10_90.txt.gz
+    output: output/mixing_data/metrics/depth/MRL0002CH_MRL0001CH_10_90.depth.tsv
+    jobid: 31
+    reason: Missing output files: output/mixing_data/metrics/depth/MRL0002CH_MRL0001CH_10_90.depth.tsv; Input files updated by another job: output/mixing_data/fragstats/depth_files/MRL0002CH_MRL0001CH_10_90.txt.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_10_90
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:26:33 2025]
+rule calculate_full_gene_depth:
+    input: output/mixing_data/fragstats/depth_files/MRL0002CH_MRL0001CH_10_90.txt.gz
+    output: output/mixing_data/metrics/full_gene_depth/MRL0002CH_MRL0001CH_10_90.fullgenedepth.tsv
+    jobid: 49
+    reason: Missing output files: output/mixing_data/metrics/full_gene_depth/MRL0002CH_MRL0001CH_10_90.fullgenedepth.tsv; Input files updated by another job: output/mixing_data/fragstats/depth_files/MRL0002CH_MRL0001CH_10_90.txt.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_10_90
+    resources: tmpdir=/tmp
+
+[Tue Apr 22 17:26:33 2025]
+Finished job 35.
+18 of 87 steps (21%) done
+[Tue Apr 22 17:26:33 2025]
+Finished job 30.
+19 of 87 steps (22%) done
+Select jobs to execute...
+
+[Tue Apr 22 17:26:34 2025]
+rule calculate_normalized_depth:
+    input: output/mixing_data/fragstats/depth_files/MRL0002CH_MRL0001CH_5_95.txt.gz
+    output: output/mixing_data/metrics/depth/MRL0002CH_MRL0001CH_5_95.depth.tsv
+    jobid: 29
+    reason: Missing output files: output/mixing_data/metrics/depth/MRL0002CH_MRL0001CH_5_95.depth.tsv; Input files updated by another job: output/mixing_data/fragstats/depth_files/MRL0002CH_MRL0001CH_5_95.txt.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_5_95
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:26:34 2025]
+rule calculate_full_gene_depth:
+    input: output/mixing_data/fragstats/depth_files/MRL0002CH_MRL0001CH_5_95.txt.gz
+    output: output/mixing_data/metrics/full_gene_depth/MRL0002CH_MRL0001CH_5_95.fullgenedepth.tsv
+    jobid: 48
+    reason: Missing output files: output/mixing_data/metrics/full_gene_depth/MRL0002CH_MRL0001CH_5_95.fullgenedepth.tsv; Input files updated by another job: output/mixing_data/fragstats/depth_files/MRL0002CH_MRL0001CH_5_95.txt.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_5_95
+    resources: tmpdir=/tmp
+
+[Tue Apr 22 17:26:35 2025]
+Finished job 28.
+20 of 87 steps (23%) done
+Select jobs to execute...
+
+[Tue Apr 22 17:26:35 2025]
+rule calculate_full_gene_depth:
+    input: output/mixing_data/fragstats/depth_files/MRL0002CH_MRL0001CH_1_99.txt.gz
+    output: output/mixing_data/metrics/full_gene_depth/MRL0002CH_MRL0001CH_1_99.fullgenedepth.tsv
+    jobid: 47
+    reason: Missing output files: output/mixing_data/metrics/full_gene_depth/MRL0002CH_MRL0001CH_1_99.fullgenedepth.tsv; Input files updated by another job: output/mixing_data/fragstats/depth_files/MRL0002CH_MRL0001CH_1_99.txt.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_1_99
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:26:35 2025]
+rule calculate_normalized_depth:
+    input: output/mixing_data/fragstats/depth_files/MRL0002CH_MRL0001CH_1_99.txt.gz
+    output: output/mixing_data/metrics/depth/MRL0002CH_MRL0001CH_1_99.depth.tsv
+    jobid: 27
+    reason: Missing output files: output/mixing_data/metrics/depth/MRL0002CH_MRL0001CH_1_99.depth.tsv; Input files updated by another job: output/mixing_data/fragstats/depth_files/MRL0002CH_MRL0001CH_1_99.txt.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_1_99
+    resources: tmpdir=/tmp
+
+[Tue Apr 22 17:26:36 2025]
+Finished job 34.
+21 of 87 steps (24%) done
+Select jobs to execute...
+
+[Tue Apr 22 17:26:36 2025]
+rule calculate_normalized_depth:
+    input: output/mixing_data/fragstats/depth_files/MRL0002CH_MRL0001CH_25_75.txt.gz
+    output: output/mixing_data/metrics/depth/MRL0002CH_MRL0001CH_25_75.depth.tsv
+    jobid: 33
+    reason: Missing output files: output/mixing_data/metrics/depth/MRL0002CH_MRL0001CH_25_75.depth.tsv; Input files updated by another job: output/mixing_data/fragstats/depth_files/MRL0002CH_MRL0001CH_25_75.txt.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_25_75
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:26:36 2025]
+rule calculate_full_gene_depth:
+    input: output/mixing_data/fragstats/depth_files/MRL0002CH_MRL0001CH_25_75.txt.gz
+    output: output/mixing_data/metrics/full_gene_depth/MRL0002CH_MRL0001CH_25_75.fullgenedepth.tsv
+    jobid: 50
+    reason: Missing output files: output/mixing_data/metrics/full_gene_depth/MRL0002CH_MRL0001CH_25_75.fullgenedepth.tsv; Input files updated by another job: output/mixing_data/fragstats/depth_files/MRL0002CH_MRL0001CH_25_75.txt.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_25_75
+    resources: tmpdir=/tmp
+
+[Tue Apr 22 17:26:36 2025]
+Finished job 31.
+22 of 87 steps (25%) done
+[Tue Apr 22 17:26:37 2025]
+Finished job 29.
+23 of 87 steps (26%) done
+[Tue Apr 22 17:26:37 2025]
+Finished job 51.
+24 of 87 steps (28%) done
+[Tue Apr 22 17:26:39 2025]
+Finished job 27.
+25 of 87 steps (29%) done
+[Tue Apr 22 17:26:39 2025]
+Finished job 33.
+26 of 87 steps (30%) done
+[Tue Apr 22 17:26:40 2025]
+Finished job 49.
+27 of 87 steps (31%) done
+[Tue Apr 22 17:26:41 2025]
+Finished job 48.
+28 of 87 steps (32%) done
+[Tue Apr 22 17:26:43 2025]
+Finished job 47.
+29 of 87 steps (33%) done
+[Tue Apr 22 17:26:43 2025]
+Finished job 50.
+30 of 87 steps (34%) done
+[Tue Apr 22 17:26:43 2025]
+Finished job 82.
+31 of 87 steps (36%) done
+Select jobs to execute...
+
+[Tue Apr 22 17:26:43 2025]
+rule calculate_ATAC_entropy:
+    input: output/mixing_data/metrics/ATAC_entropy/MRL0002CH_MRL0001CH_10_90_ATAC_frag_count.txt.gz
+    output: output/mixing_data/metrics/ATAC_entropy/MRL0002CH_MRL0001CH_10_90_ATAC_entropy.txt
+    jobid: 81
+    reason: Missing output files: output/mixing_data/metrics/ATAC_entropy/MRL0002CH_MRL0001CH_10_90_ATAC_entropy.txt; Input files updated by another job: output/mixing_data/metrics/ATAC_entropy/MRL0002CH_MRL0001CH_10_90_ATAC_frag_count.txt.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_10_90
+    resources: tmpdir=/tmp
+
+[Tue Apr 22 17:26:44 2025]
+Finished job 80.
+32 of 87 steps (37%) done
+Select jobs to execute...
+
+[Tue Apr 22 17:26:44 2025]
+rule calculate_ATAC_entropy:
+    input: output/mixing_data/metrics/ATAC_entropy/MRL0002CH_MRL0001CH_5_95_ATAC_frag_count.txt.gz
+    output: output/mixing_data/metrics/ATAC_entropy/MRL0002CH_MRL0001CH_5_95_ATAC_entropy.txt
+    jobid: 79
+    reason: Missing output files: output/mixing_data/metrics/ATAC_entropy/MRL0002CH_MRL0001CH_5_95_ATAC_entropy.txt; Input files updated by another job: output/mixing_data/metrics/ATAC_entropy/MRL0002CH_MRL0001CH_5_95_ATAC_frag_count.txt.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_5_95
+    resources: tmpdir=/tmp
+
+[Tue Apr 22 17:26:45 2025]
+Finished job 81.
+33 of 87 steps (38%) done
+[Tue Apr 22 17:26:45 2025]
+Finished job 79.
+34 of 87 steps (39%) done
+[Tue Apr 22 17:26:45 2025]
+Finished job 78.
+35 of 87 steps (40%) done
+Select jobs to execute...
+
+[Tue Apr 22 17:26:45 2025]
+rule calculate_ATAC_entropy:
+    input: output/mixing_data/metrics/ATAC_entropy/MRL0002CH_MRL0001CH_1_99_ATAC_frag_count.txt.gz
+    output: output/mixing_data/metrics/ATAC_entropy/MRL0002CH_MRL0001CH_1_99_ATAC_entropy.txt
+    jobid: 77
+    reason: Missing output files: output/mixing_data/metrics/ATAC_entropy/MRL0002CH_MRL0001CH_1_99_ATAC_entropy.txt; Input files updated by another job: output/mixing_data/metrics/ATAC_entropy/MRL0002CH_MRL0001CH_1_99_ATAC_frag_count.txt.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_1_99
+    resources: tmpdir=/tmp
+
+[Tue Apr 22 17:26:47 2025]
+Finished job 77.
+36 of 87 steps (41%) done
+[Tue Apr 22 17:26:49 2025]
+Finished job 86.
+37 of 87 steps (43%) done
+Select jobs to execute...
+
+[Tue Apr 22 17:26:49 2025]
+rule calculate_ATAC_entropy:
+    input: output/mixing_data/metrics/ATAC_entropy/MRL0002CH_MRL0001CH_50_50_ATAC_frag_count.txt.gz
+    output: output/mixing_data/metrics/ATAC_entropy/MRL0002CH_MRL0001CH_50_50_ATAC_entropy.txt
+    jobid: 85
+    reason: Missing output files: output/mixing_data/metrics/ATAC_entropy/MRL0002CH_MRL0001CH_50_50_ATAC_entropy.txt; Input files updated by another job: output/mixing_data/metrics/ATAC_entropy/MRL0002CH_MRL0001CH_50_50_ATAC_frag_count.txt.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_50_50
+    resources: tmpdir=/tmp
+
+[Tue Apr 22 17:26:50 2025]
+Finished job 85.
+38 of 87 steps (44%) done
+[Tue Apr 22 17:26:51 2025]
+Finished job 84.
+39 of 87 steps (45%) done
+Select jobs to execute...
+
+[Tue Apr 22 17:26:51 2025]
+rule calculate_ATAC_entropy:
+    input: output/mixing_data/metrics/ATAC_entropy/MRL0002CH_MRL0001CH_25_75_ATAC_frag_count.txt.gz
+    output: output/mixing_data/metrics/ATAC_entropy/MRL0002CH_MRL0001CH_25_75_ATAC_entropy.txt
+    jobid: 83
+    reason: Missing output files: output/mixing_data/metrics/ATAC_entropy/MRL0002CH_MRL0001CH_25_75_ATAC_entropy.txt; Input files updated by another job: output/mixing_data/metrics/ATAC_entropy/MRL0002CH_MRL0001CH_25_75_ATAC_frag_count.txt.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_25_75
+    resources: tmpdir=/tmp
+
+[Tue Apr 22 17:26:52 2025]
+Finished job 83.
+40 of 87 steps (46%) done
+[Tue Apr 22 17:27:01 2025]
+Finished job 20.
+41 of 87 steps (47%) done
+Select jobs to execute...
+
+[Tue Apr 22 17:27:02 2025]
+rule calculate_SE:
+    input: output/mixing_data/fragstats/SE_files/MRL0002CH_MRL0001CH_5_95.txt.gz
+    output: output/mixing_data/metrics/se/MRL0002CH_MRL0001CH_5_95.SE.tsv
+    jobid: 19
+    reason: Missing output files: output/mixing_data/metrics/se/MRL0002CH_MRL0001CH_5_95.SE.tsv; Input files updated by another job: output/mixing_data/fragstats/SE_files/MRL0002CH_MRL0001CH_5_95.txt.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_5_95
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:27:02 2025]
+rule calculate_frag_bins:
+    input: output/mixing_data/fragstats/SE_files/MRL0002CH_MRL0001CH_5_95.txt.gz
+    output: output/mixing_data/metrics/frag_bins/MRL0002CH_MRL0001CH_5_95.fragbins.tsv
+    jobid: 38
+    reason: Missing output files: output/mixing_data/metrics/frag_bins/MRL0002CH_MRL0001CH_5_95.fragbins.tsv; Input files updated by another job: output/mixing_data/fragstats/SE_files/MRL0002CH_MRL0001CH_5_95.txt.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_5_95
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:27:02 2025]
+rule calculate_small_frags:
+    input: output/mixing_data/fragstats/SE_files/MRL0002CH_MRL0001CH_5_95.txt.gz
+    output: output/mixing_data/metrics/small_frags/MRL0002CH_MRL0001CH_5_95.smallfrag.tsv
+    jobid: 43
+    reason: Missing output files: output/mixing_data/metrics/small_frags/MRL0002CH_MRL0001CH_5_95.smallfrag.tsv; Input files updated by another job: output/mixing_data/fragstats/SE_files/MRL0002CH_MRL0001CH_5_95.txt.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_5_95
+    resources: tmpdir=/tmp
+
+[Tue Apr 22 17:27:02 2025]
+Finished job 22.
+42 of 87 steps (48%) done
+Select jobs to execute...
+
+[Tue Apr 22 17:27:02 2025]
+rule calculate_small_frags:
+    input: output/mixing_data/fragstats/SE_files/MRL0002CH_MRL0001CH_10_90.txt.gz
+    output: output/mixing_data/metrics/small_frags/MRL0002CH_MRL0001CH_10_90.smallfrag.tsv
+    jobid: 44
+    reason: Missing output files: output/mixing_data/metrics/small_frags/MRL0002CH_MRL0001CH_10_90.smallfrag.tsv; Input files updated by another job: output/mixing_data/fragstats/SE_files/MRL0002CH_MRL0001CH_10_90.txt.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_10_90
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:27:02 2025]
+rule calculate_frag_bins:
+    input: output/mixing_data/fragstats/SE_files/MRL0002CH_MRL0001CH_10_90.txt.gz
+    output: output/mixing_data/metrics/frag_bins/MRL0002CH_MRL0001CH_10_90.fragbins.tsv
+    jobid: 39
+    reason: Missing output files: output/mixing_data/metrics/frag_bins/MRL0002CH_MRL0001CH_10_90.fragbins.tsv; Input files updated by another job: output/mixing_data/fragstats/SE_files/MRL0002CH_MRL0001CH_10_90.txt.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_10_90
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:27:02 2025]
+rule calculate_SE:
+    input: output/mixing_data/fragstats/SE_files/MRL0002CH_MRL0001CH_10_90.txt.gz
+    output: output/mixing_data/metrics/se/MRL0002CH_MRL0001CH_10_90.SE.tsv
+    jobid: 21
+    reason: Missing output files: output/mixing_data/metrics/se/MRL0002CH_MRL0001CH_10_90.SE.tsv; Input files updated by another job: output/mixing_data/fragstats/SE_files/MRL0002CH_MRL0001CH_10_90.txt.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_10_90
+    resources: tmpdir=/tmp
+
+[Tue Apr 22 17:27:02 2025]
+Finished job 18.
+43 of 87 steps (49%) done
+Select jobs to execute...
+
+[Tue Apr 22 17:27:02 2025]
+rule calculate_frag_bins:
+    input: output/mixing_data/fragstats/SE_files/MRL0002CH_MRL0001CH_1_99.txt.gz
+    output: output/mixing_data/metrics/frag_bins/MRL0002CH_MRL0001CH_1_99.fragbins.tsv
+    jobid: 37
+    reason: Missing output files: output/mixing_data/metrics/frag_bins/MRL0002CH_MRL0001CH_1_99.fragbins.tsv; Input files updated by another job: output/mixing_data/fragstats/SE_files/MRL0002CH_MRL0001CH_1_99.txt.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_1_99
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:27:02 2025]
+rule calculate_SE:
+    input: output/mixing_data/fragstats/SE_files/MRL0002CH_MRL0001CH_1_99.txt.gz
+    output: output/mixing_data/metrics/se/MRL0002CH_MRL0001CH_1_99.SE.tsv
+    jobid: 17
+    reason: Missing output files: output/mixing_data/metrics/se/MRL0002CH_MRL0001CH_1_99.SE.tsv; Input files updated by another job: output/mixing_data/fragstats/SE_files/MRL0002CH_MRL0001CH_1_99.txt.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_1_99
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:27:02 2025]
+rule calculate_small_frags:
+    input: output/mixing_data/fragstats/SE_files/MRL0002CH_MRL0001CH_1_99.txt.gz
+    output: output/mixing_data/metrics/small_frags/MRL0002CH_MRL0001CH_1_99.smallfrag.tsv
+    jobid: 42
+    reason: Missing output files: output/mixing_data/metrics/small_frags/MRL0002CH_MRL0001CH_1_99.smallfrag.tsv; Input files updated by another job: output/mixing_data/fragstats/SE_files/MRL0002CH_MRL0001CH_1_99.txt.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_1_99
+    resources: tmpdir=/tmp
+
+[Tue Apr 22 17:27:03 2025]
+Finished job 70.
+44 of 87 steps (51%) done
+Select jobs to execute...
+
+[Tue Apr 22 17:27:03 2025]
+rule calculate_TFBS_entropy:
+    input: output/mixing_data/metrics/TFBS_entropy/MRL0002CH_MRL0001CH_5_95_TFBS_frag_count.txt.gz
+    output: output/mixing_data/metrics/TFBS_entropy/MRL0002CH_MRL0001CH_5_95_TFBS_entropy.txt
+    jobid: 69
+    reason: Missing output files: output/mixing_data/metrics/TFBS_entropy/MRL0002CH_MRL0001CH_5_95_TFBS_entropy.txt; Input files updated by another job: output/mixing_data/metrics/TFBS_entropy/MRL0002CH_MRL0001CH_5_95_TFBS_frag_count.txt.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_5_95
+    resources: tmpdir=/tmp
+
+[Tue Apr 22 17:27:04 2025]
+Finished job 72.
+45 of 87 steps (52%) done
+Select jobs to execute...
+
+[Tue Apr 22 17:27:04 2025]
+rule calculate_TFBS_entropy:
+    input: output/mixing_data/metrics/TFBS_entropy/MRL0002CH_MRL0001CH_10_90_TFBS_frag_count.txt.gz
+    output: output/mixing_data/metrics/TFBS_entropy/MRL0002CH_MRL0001CH_10_90_TFBS_entropy.txt
+    jobid: 71
+    reason: Missing output files: output/mixing_data/metrics/TFBS_entropy/MRL0002CH_MRL0001CH_10_90_TFBS_entropy.txt; Input files updated by another job: output/mixing_data/metrics/TFBS_entropy/MRL0002CH_MRL0001CH_10_90_TFBS_frag_count.txt.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_10_90
+    resources: tmpdir=/tmp
+
+[Tue Apr 22 17:27:04 2025]
+Finished job 69.
+46 of 87 steps (53%) done
+[Tue Apr 22 17:27:04 2025]
+Finished job 43.
+47 of 87 steps (54%) done
+[Tue Apr 22 17:27:05 2025]
+Finished job 44.
+48 of 87 steps (55%) done
+[Tue Apr 22 17:27:05 2025]
+Finished job 42.
+49 of 87 steps (56%) done
+[Tue Apr 22 17:27:06 2025]
+Finished job 19.
+50 of 87 steps (57%) done
+[Tue Apr 22 17:27:06 2025]
+Finished job 71.
+51 of 87 steps (59%) done
+[Tue Apr 22 17:27:06 2025]
+Finished job 68.
+52 of 87 steps (60%) done
+Select jobs to execute...
+
+[Tue Apr 22 17:27:06 2025]
+rule calculate_TFBS_entropy:
+    input: output/mixing_data/metrics/TFBS_entropy/MRL0002CH_MRL0001CH_1_99_TFBS_frag_count.txt.gz
+    output: output/mixing_data/metrics/TFBS_entropy/MRL0002CH_MRL0001CH_1_99_TFBS_entropy.txt
+    jobid: 67
+    reason: Missing output files: output/mixing_data/metrics/TFBS_entropy/MRL0002CH_MRL0001CH_1_99_TFBS_entropy.txt; Input files updated by another job: output/mixing_data/metrics/TFBS_entropy/MRL0002CH_MRL0001CH_1_99_TFBS_frag_count.txt.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_1_99
+    resources: tmpdir=/tmp
+
+[Tue Apr 22 17:27:06 2025]
+Finished job 21.
+53 of 87 steps (61%) done
+[Tue Apr 22 17:27:06 2025]
+Finished job 17.
+54 of 87 steps (62%) done
+[Tue Apr 22 17:27:07 2025]
+Finished job 67.
+55 of 87 steps (63%) done
+[Tue Apr 22 17:27:07 2025]
+Finished job 38.
+56 of 87 steps (64%) done
+[Tue Apr 22 17:27:08 2025]
+Finished job 39.
+57 of 87 steps (66%) done
+[Tue Apr 22 17:27:08 2025]
+Finished job 37.
+58 of 87 steps (67%) done
+[Tue Apr 22 17:27:08 2025]
+Finished job 24.
+59 of 87 steps (68%) done
+Select jobs to execute...
+
+[Tue Apr 22 17:27:08 2025]
+rule calculate_small_frags:
+    input: output/mixing_data/fragstats/SE_files/MRL0002CH_MRL0001CH_25_75.txt.gz
+    output: output/mixing_data/metrics/small_frags/MRL0002CH_MRL0001CH_25_75.smallfrag.tsv
+    jobid: 45
+    reason: Missing output files: output/mixing_data/metrics/small_frags/MRL0002CH_MRL0001CH_25_75.smallfrag.tsv; Input files updated by another job: output/mixing_data/fragstats/SE_files/MRL0002CH_MRL0001CH_25_75.txt.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_25_75
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:27:08 2025]
+rule calculate_SE:
+    input: output/mixing_data/fragstats/SE_files/MRL0002CH_MRL0001CH_25_75.txt.gz
+    output: output/mixing_data/metrics/se/MRL0002CH_MRL0001CH_25_75.SE.tsv
+    jobid: 23
+    reason: Missing output files: output/mixing_data/metrics/se/MRL0002CH_MRL0001CH_25_75.SE.tsv; Input files updated by another job: output/mixing_data/fragstats/SE_files/MRL0002CH_MRL0001CH_25_75.txt.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_25_75
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:27:08 2025]
+rule calculate_frag_bins:
+    input: output/mixing_data/fragstats/SE_files/MRL0002CH_MRL0001CH_25_75.txt.gz
+    output: output/mixing_data/metrics/frag_bins/MRL0002CH_MRL0001CH_25_75.fragbins.tsv
+    jobid: 40
+    reason: Missing output files: output/mixing_data/metrics/frag_bins/MRL0002CH_MRL0001CH_25_75.fragbins.tsv; Input files updated by another job: output/mixing_data/fragstats/SE_files/MRL0002CH_MRL0001CH_25_75.txt.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_25_75
+    resources: tmpdir=/tmp
+
+[Tue Apr 22 17:27:10 2025]
+Finished job 74.
+60 of 87 steps (69%) done
+Select jobs to execute...
+
+[Tue Apr 22 17:27:10 2025]
+rule calculate_TFBS_entropy:
+    input: output/mixing_data/metrics/TFBS_entropy/MRL0002CH_MRL0001CH_25_75_TFBS_frag_count.txt.gz
+    output: output/mixing_data/metrics/TFBS_entropy/MRL0002CH_MRL0001CH_25_75_TFBS_entropy.txt
+    jobid: 73
+    reason: Missing output files: output/mixing_data/metrics/TFBS_entropy/MRL0002CH_MRL0001CH_25_75_TFBS_entropy.txt; Input files updated by another job: output/mixing_data/metrics/TFBS_entropy/MRL0002CH_MRL0001CH_25_75_TFBS_frag_count.txt.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_25_75
+    resources: tmpdir=/tmp
+
+[Tue Apr 22 17:27:10 2025]
+Finished job 76.
+61 of 87 steps (70%) done
+Select jobs to execute...
+
+[Tue Apr 22 17:27:10 2025]
+rule calculate_TFBS_entropy:
+    input: output/mixing_data/metrics/TFBS_entropy/MRL0002CH_MRL0001CH_50_50_TFBS_frag_count.txt.gz
+    output: output/mixing_data/metrics/TFBS_entropy/MRL0002CH_MRL0001CH_50_50_TFBS_entropy.txt
+    jobid: 75
+    reason: Missing output files: output/mixing_data/metrics/TFBS_entropy/MRL0002CH_MRL0001CH_50_50_TFBS_entropy.txt; Input files updated by another job: output/mixing_data/metrics/TFBS_entropy/MRL0002CH_MRL0001CH_50_50_TFBS_frag_count.txt.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_50_50
+    resources: tmpdir=/tmp
+
+[Tue Apr 22 17:27:11 2025]
+Finished job 45.
+62 of 87 steps (71%) done
+[Tue Apr 22 17:27:12 2025]
+Finished job 73.
+63 of 87 steps (72%) done
+[Tue Apr 22 17:27:12 2025]
+Finished job 75.
+64 of 87 steps (74%) done
+[Tue Apr 22 17:27:13 2025]
+Finished job 23.
+65 of 87 steps (75%) done
+[Tue Apr 22 17:27:13 2025]
+Finished job 26.
+66 of 87 steps (76%) done
+Select jobs to execute...
+
+[Tue Apr 22 17:27:13 2025]
+rule calculate_small_frags:
+    input: output/mixing_data/fragstats/SE_files/MRL0002CH_MRL0001CH_50_50.txt.gz
+    output: output/mixing_data/metrics/small_frags/MRL0002CH_MRL0001CH_50_50.smallfrag.tsv
+    jobid: 46
+    reason: Missing output files: output/mixing_data/metrics/small_frags/MRL0002CH_MRL0001CH_50_50.smallfrag.tsv; Input files updated by another job: output/mixing_data/fragstats/SE_files/MRL0002CH_MRL0001CH_50_50.txt.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_50_50
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:27:13 2025]
+rule calculate_frag_bins:
+    input: output/mixing_data/fragstats/SE_files/MRL0002CH_MRL0001CH_50_50.txt.gz
+    output: output/mixing_data/metrics/frag_bins/MRL0002CH_MRL0001CH_50_50.fragbins.tsv
+    jobid: 41
+    reason: Missing output files: output/mixing_data/metrics/frag_bins/MRL0002CH_MRL0001CH_50_50.fragbins.tsv; Input files updated by another job: output/mixing_data/fragstats/SE_files/MRL0002CH_MRL0001CH_50_50.txt.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_50_50
+    resources: tmpdir=/tmp
+
+
+[Tue Apr 22 17:27:13 2025]
+rule calculate_SE:
+    input: output/mixing_data/fragstats/SE_files/MRL0002CH_MRL0001CH_50_50.txt.gz
+    output: output/mixing_data/metrics/se/MRL0002CH_MRL0001CH_50_50.SE.tsv
+    jobid: 25
+    reason: Missing output files: output/mixing_data/metrics/se/MRL0002CH_MRL0001CH_50_50.SE.tsv; Input files updated by another job: output/mixing_data/fragstats/SE_files/MRL0002CH_MRL0001CH_50_50.txt.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_50_50
+    resources: tmpdir=/tmp
+
+[Tue Apr 22 17:27:14 2025]
+Finished job 40.
+67 of 87 steps (77%) done
+[Tue Apr 22 17:27:16 2025]
+Finished job 46.
+68 of 87 steps (78%) done
+[Tue Apr 22 17:27:17 2025]
+Finished job 25.
+69 of 87 steps (79%) done
+[Tue Apr 22 17:27:18 2025]
+Finished job 41.
+70 of 87 steps (80%) done
+[Tue Apr 22 17:28:51 2025]
+Finished job 53.
+71 of 87 steps (82%) done
+[Tue Apr 22 17:28:58 2025]
+Finished job 56.
+72 of 87 steps (83%) done
+[Tue Apr 22 17:28:59 2025]
+Finished job 59.
+73 of 87 steps (84%) done
+[Tue Apr 22 17:29:03 2025]
+Finished job 54.
+74 of 87 steps (85%) done
+Select jobs to execute...
+
+[Tue Apr 22 17:29:03 2025]
+rule calculate_MDS:
+    input: output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_1_99_left_4mers.txt.gz, output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_1_99_right_4mers.txt.gz, scripts/calculate_mds.R
+    output: output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_1_99_mds.txt
+    jobid: 52
+    reason: Missing output files: output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_1_99_mds.txt; Input files updated by another job: output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_1_99_right_4mers.txt.gz, output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_1_99_left_4mers.txt.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_1_99
+    resources: tmpdir=/tmp
+
+[Tue Apr 22 17:29:06 2025]
+Finished job 57.
+75 of 87 steps (86%) done
+Select jobs to execute...
+
+[Tue Apr 22 17:29:06 2025]
+rule calculate_MDS:
+    input: output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_5_95_left_4mers.txt.gz, output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_5_95_right_4mers.txt.gz, scripts/calculate_mds.R
+    output: output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_5_95_mds.txt
+    jobid: 55
+    reason: Missing output files: output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_5_95_mds.txt; Input files updated by another job: output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_5_95_right_4mers.txt.gz, output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_5_95_left_4mers.txt.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_5_95
+    resources: tmpdir=/tmp
+
+[Tue Apr 22 17:29:12 2025]
+Finished job 60.
+76 of 87 steps (87%) done
+Select jobs to execute...
+
+[Tue Apr 22 17:29:12 2025]
+rule calculate_MDS:
+    input: output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_10_90_left_4mers.txt.gz, output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_10_90_right_4mers.txt.gz, scripts/calculate_mds.R
+    output: output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_10_90_mds.txt
+    jobid: 58
+    reason: Missing output files: output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_10_90_mds.txt; Input files updated by another job: output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_10_90_left_4mers.txt.gz, output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_10_90_right_4mers.txt.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_10_90
+    resources: tmpdir=/tmp
+
+[Tue Apr 22 17:29:14 2025]
+Finished job 52.
+77 of 87 steps (89%) done
+[Tue Apr 22 17:29:17 2025]
+Finished job 55.
+78 of 87 steps (90%) done
+[Tue Apr 22 17:29:22 2025]
+Finished job 62.
+79 of 87 steps (91%) done
+[Tue Apr 22 17:29:23 2025]
+Finished job 58.
+80 of 87 steps (92%) done
+[Tue Apr 22 17:29:39 2025]
+Finished job 63.
+81 of 87 steps (93%) done
+Select jobs to execute...
+
+[Tue Apr 22 17:29:39 2025]
+rule calculate_MDS:
+    input: output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_25_75_left_4mers.txt.gz, output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_25_75_right_4mers.txt.gz, scripts/calculate_mds.R
+    output: output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_25_75_mds.txt
+    jobid: 61
+    reason: Missing output files: output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_25_75_mds.txt; Input files updated by another job: output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_25_75_right_4mers.txt.gz, output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_25_75_left_4mers.txt.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_25_75
+    resources: tmpdir=/tmp
+
+[Tue Apr 22 17:29:45 2025]
+Finished job 65.
+82 of 87 steps (94%) done
+[Tue Apr 22 17:29:50 2025]
+Finished job 61.
+83 of 87 steps (95%) done
+[Tue Apr 22 17:30:09 2025]
+Finished job 66.
+84 of 87 steps (97%) done
+Select jobs to execute...
+
+[Tue Apr 22 17:30:09 2025]
+rule calculate_MDS:
+    input: output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_50_50_left_4mers.txt.gz, output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_50_50_right_4mers.txt.gz, scripts/calculate_mds.R
+    output: output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_50_50_mds.txt
+    jobid: 64
+    reason: Missing output files: output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_50_50_mds.txt; Input files updated by another job: output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_50_50_left_4mers.txt.gz, output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_50_50_right_4mers.txt.gz
+    wildcards: sample=MRL0002CH_MRL0001CH_50_50
+    resources: tmpdir=/tmp
+
+[Tue Apr 22 17:30:20 2025]
+Finished job 64.
+85 of 87 steps (98%) done
+Select jobs to execute...
+
+[Tue Apr 22 17:30:20 2025]
+rule build_feature_tables:
+    input: output/mixing_data/metrics/se/MRL0002CH_MRL0001CH_1_99.SE.tsv, output/mixing_data/metrics/se/MRL0002CH_MRL0001CH_5_95.SE.tsv, output/mixing_data/metrics/se/MRL0002CH_MRL0001CH_10_90.SE.tsv, output/mixing_data/metrics/se/MRL0002CH_MRL0001CH_25_75.SE.tsv, output/mixing_data/metrics/se/MRL0002CH_MRL0001CH_50_50.SE.tsv, output/mixing_data/metrics/depth/MRL0002CH_MRL0001CH_1_99.depth.tsv, output/mixing_data/metrics/depth/MRL0002CH_MRL0001CH_5_95.depth.tsv, output/mixing_data/metrics/depth/MRL0002CH_MRL0001CH_10_90.depth.tsv, output/mixing_data/metrics/depth/MRL0002CH_MRL0001CH_25_75.depth.tsv, output/mixing_data/metrics/depth/MRL0002CH_MRL0001CH_50_50.depth.tsv, output/mixing_data/metrics/frag_bins/MRL0002CH_MRL0001CH_1_99.fragbins.tsv, output/mixing_data/metrics/frag_bins/MRL0002CH_MRL0001CH_5_95.fragbins.tsv, output/mixing_data/metrics/frag_bins/MRL0002CH_MRL0001CH_10_90.fragbins.tsv, output/mixing_data/metrics/frag_bins/MRL0002CH_MRL0001CH_25_75.fragbins.tsv, output/mixing_data/metrics/frag_bins/MRL0002CH_MRL0001CH_50_50.fragbins.tsv, output/mixing_data/metrics/small_frags/MRL0002CH_MRL0001CH_1_99.smallfrag.tsv, output/mixing_data/metrics/small_frags/MRL0002CH_MRL0001CH_5_95.smallfrag.tsv, output/mixing_data/metrics/small_frags/MRL0002CH_MRL0001CH_10_90.smallfrag.tsv, output/mixing_data/metrics/small_frags/MRL0002CH_MRL0001CH_25_75.smallfrag.tsv, output/mixing_data/metrics/small_frags/MRL0002CH_MRL0001CH_50_50.smallfrag.tsv, output/mixing_data/metrics/full_gene_depth/MRL0002CH_MRL0001CH_1_99.fullgenedepth.tsv, output/mixing_data/metrics/full_gene_depth/MRL0002CH_MRL0001CH_5_95.fullgenedepth.tsv, output/mixing_data/metrics/full_gene_depth/MRL0002CH_MRL0001CH_10_90.fullgenedepth.tsv, output/mixing_data/metrics/full_gene_depth/MRL0002CH_MRL0001CH_25_75.fullgenedepth.tsv, output/mixing_data/metrics/full_gene_depth/MRL0002CH_MRL0001CH_50_50.fullgenedepth.tsv, output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_1_99_mds.txt, output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_5_95_mds.txt, output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_10_90_mds.txt, output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_25_75_mds.txt, output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_50_50_mds.txt, output/mixing_data/metrics/TFBS_entropy/MRL0002CH_MRL0001CH_1_99_TFBS_entropy.txt, output/mixing_data/metrics/TFBS_entropy/MRL0002CH_MRL0001CH_5_95_TFBS_entropy.txt, output/mixing_data/metrics/TFBS_entropy/MRL0002CH_MRL0001CH_10_90_TFBS_entropy.txt, output/mixing_data/metrics/TFBS_entropy/MRL0002CH_MRL0001CH_25_75_TFBS_entropy.txt, output/mixing_data/metrics/TFBS_entropy/MRL0002CH_MRL0001CH_50_50_TFBS_entropy.txt, output/mixing_data/metrics/ATAC_entropy/MRL0002CH_MRL0001CH_1_99_ATAC_entropy.txt, output/mixing_data/metrics/ATAC_entropy/MRL0002CH_MRL0001CH_5_95_ATAC_entropy.txt, output/mixing_data/metrics/ATAC_entropy/MRL0002CH_MRL0001CH_10_90_ATAC_entropy.txt, output/mixing_data/metrics/ATAC_entropy/MRL0002CH_MRL0001CH_25_75_ATAC_entropy.txt, output/mixing_data/metrics/ATAC_entropy/MRL0002CH_MRL0001CH_50_50_ATAC_entropy.txt
+    output: output/mixing_data/feature_tables/grail_se.rds, output/mixing_data/feature_tables/grail_depth.rds, output/mixing_data/feature_tables/grail_frag_bins.rds, output/mixing_data/feature_tables/grail_small_frags.rds, output/mixing_data/feature_tables/grail_full_gene_depth.rds, output/mixing_data/feature_tables/grail_mds.rds, output/mixing_data/feature_tables/grail_TFBS_entropy.rds, output/mixing_data/feature_tables/grail_ATAC_entropy.rds
+    jobid: 16
+    reason: Missing output files: output/mixing_data/feature_tables/grail_frag_bins.rds, output/mixing_data/feature_tables/grail_small_frags.rds, output/mixing_data/feature_tables/grail_se.rds, output/mixing_data/feature_tables/grail_depth.rds, output/mixing_data/feature_tables/grail_mds.rds, output/mixing_data/feature_tables/grail_ATAC_entropy.rds, output/mixing_data/feature_tables/grail_TFBS_entropy.rds, output/mixing_data/feature_tables/grail_full_gene_depth.rds; Input files updated by another job: output/mixing_data/metrics/small_frags/MRL0002CH_MRL0001CH_50_50.smallfrag.tsv, output/mixing_data/metrics/TFBS_entropy/MRL0002CH_MRL0001CH_1_99_TFBS_entropy.txt, output/mixing_data/metrics/frag_bins/MRL0002CH_MRL0001CH_10_90.fragbins.tsv, output/mixing_data/metrics/se/MRL0002CH_MRL0001CH_25_75.SE.tsv, output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_10_90_mds.txt, output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_5_95_mds.txt, output/mixing_data/metrics/ATAC_entropy/MRL0002CH_MRL0001CH_50_50_ATAC_entropy.txt, output/mixing_data/metrics/small_frags/MRL0002CH_MRL0001CH_5_95.smallfrag.tsv, output/mixing_data/metrics/ATAC_entropy/MRL0002CH_MRL0001CH_1_99_ATAC_entropy.txt, output/mixing_data/metrics/depth/MRL0002CH_MRL0001CH_50_50.depth.tsv, output/mixing_data/metrics/TFBS_entropy/MRL0002CH_MRL0001CH_5_95_TFBS_entropy.txt, output/mixing_data/metrics/small_frags/MRL0002CH_MRL0001CH_25_75.smallfrag.tsv, output/mixing_data/metrics/TFBS_entropy/MRL0002CH_MRL0001CH_25_75_TFBS_entropy.txt, output/mixing_data/metrics/full_gene_depth/MRL0002CH_MRL0001CH_25_75.fullgenedepth.tsv, output/mixing_data/metrics/full_gene_depth/MRL0002CH_MRL0001CH_1_99.fullgenedepth.tsv, output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_50_50_mds.txt, output/mixing_data/metrics/frag_bins/MRL0002CH_MRL0001CH_1_99.fragbins.tsv, output/mixing_data/metrics/ATAC_entropy/MRL0002CH_MRL0001CH_10_90_ATAC_entropy.txt, output/mixing_data/metrics/full_gene_depth/MRL0002CH_MRL0001CH_5_95.fullgenedepth.tsv, output/mixing_data/metrics/depth/MRL0002CH_MRL0001CH_5_95.depth.tsv, output/mixing_data/metrics/full_gene_depth/MRL0002CH_MRL0001CH_10_90.fullgenedepth.tsv, output/mixing_data/metrics/ATAC_entropy/MRL0002CH_MRL0001CH_25_75_ATAC_entropy.txt, output/mixing_data/metrics/TFBS_entropy/MRL0002CH_MRL0001CH_10_90_TFBS_entropy.txt, output/mixing_data/metrics/se/MRL0002CH_MRL0001CH_1_99.SE.tsv, output/mixing_data/metrics/small_frags/MRL0002CH_MRL0001CH_1_99.smallfrag.tsv, output/mixing_data/metrics/se/MRL0002CH_MRL0001CH_5_95.SE.tsv, output/mixing_data/metrics/frag_bins/MRL0002CH_MRL0001CH_50_50.fragbins.tsv, output/mixing_data/metrics/frag_bins/MRL0002CH_MRL0001CH_25_75.fragbins.tsv, output/mixing_data/metrics/se/MRL0002CH_MRL0001CH_10_90.SE.tsv, output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_1_99_mds.txt, output/mixing_data/metrics/small_frags/MRL0002CH_MRL0001CH_10_90.smallfrag.tsv, output/mixing_data/metrics/depth/MRL0002CH_MRL0001CH_25_75.depth.tsv, output/mixing_data/metrics/TFBS_entropy/MRL0002CH_MRL0001CH_50_50_TFBS_entropy.txt, output/mixing_data/metrics/se/MRL0002CH_MRL0001CH_50_50.SE.tsv, output/mixing_data/metrics/full_gene_depth/MRL0002CH_MRL0001CH_50_50.fullgenedepth.tsv, output/mixing_data/metrics/ATAC_entropy/MRL0002CH_MRL0001CH_5_95_ATAC_entropy.txt, output/mixing_data/metrics/frag_bins/MRL0002CH_MRL0001CH_5_95.fragbins.tsv, output/mixing_data/metrics/depth/MRL0002CH_MRL0001CH_1_99.depth.tsv, output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_25_75_mds.txt, output/mixing_data/metrics/depth/MRL0002CH_MRL0001CH_10_90.depth.tsv
+    resources: tmpdir=/tmp
+
+Waiting at most 5 seconds for missing files.
+Terminating processes on user request, this might take some time.
+Complete log: .snakemake/log/2025-04-22T172052.706467.snakemake.log

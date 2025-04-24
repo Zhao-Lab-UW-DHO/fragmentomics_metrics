@@ -1,0 +1,3 @@
+NameErrorin line 64 of /mnt/Data01/projects/fragmentomics/scripts/paper_2_code_upload/fragmentomics_metrics/grail_downsample_generate_samples.snakemake.py:
+name 'BEDTOOLS' is not defined
+  File "/mnt/Data01/projects/fragmentomics/scripts/paper_2_code_upload/fragmentomics_metrics/grail_downsample_generate_samples.snakemake.py", line 64, in <module>

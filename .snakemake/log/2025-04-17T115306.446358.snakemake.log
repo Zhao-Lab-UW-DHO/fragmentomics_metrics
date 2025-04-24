@@ -1,0 +1,3 @@
+WildcardErrorin line 37 of /mnt/Data01/projects/fragmentomics/scripts/paper_2_code_upload/fragmentomics_metrics/get_fragmentomics_metrics_from_bed_comm_panels.snakemake.py:
+No values given for wildcard 'comm_panel'.
+  File "/mnt/Data01/projects/fragmentomics/scripts/paper_2_code_upload/fragmentomics_metrics/get_fragmentomics_metrics_from_bed_comm_panels.snakemake.py", line 37, in <module>

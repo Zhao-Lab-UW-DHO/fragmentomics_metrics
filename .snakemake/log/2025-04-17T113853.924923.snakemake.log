@@ -1,0 +1,619 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 64
+Rules claiming more threads will be scaled down.
+Job stats:
+job                           count    min threads    max threads
+--------------------------  -------  -------------  -------------
+all                               1              1              1
+build_feature_tables              1              1              1
+calculate_ATAC_entropy            3              1              1
+calculate_MDS                     3              1              1
+calculate_SE                      3              1              1
+calculate_TFBS_entropy            3              1              1
+calculate_frag_bins               3              1              1
+calculate_full_gene_depth         3              1              1
+calculate_normalized_depth        3              1              1
+calculate_small_frags             3              1              1
+get_SE_fragstats                  3              1              1
+get_depth_fragstats               3              1              1
+get_left_4mer                     3              1              1
+get_right_4mer                    3              1              1
+overlap_ATAC                      3              1              1
+overlap_TFBS                      3              1              1
+total                            44              1              1
+
+Select jobs to execute...
+
+[Thu Apr 17 11:38:54 2025]
+rule get_depth_fragstats:
+    input: data/sample3.bed.gz
+    output: output/fragstats/depth_files/sample3.txt
+    jobid: 9
+    reason: Missing output files: output/fragstats/depth_files/sample3.txt
+    wildcards: sample=sample3
+    priority: 20
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 11:38:54 2025]
+rule get_right_4mer:
+    input: data/sample3.bed.gz, /mnt/Data01/genome/hg38.fa
+    output: output/metrics/mds/sample3_right_4mers.txt.gz
+    jobid: 30
+    reason: Missing output files: output/metrics/mds/sample3_right_4mers.txt.gz
+    wildcards: sample=sample3
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 11:38:54 2025]
+rule get_SE_fragstats:
+    input: data/sample1.bed.gz
+    output: output/fragstats/SE_files/sample1.txt.gz
+    jobid: 1
+    reason: Missing output files: output/fragstats/SE_files/sample1.txt.gz
+    wildcards: sample=sample1
+    priority: 20
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 11:38:54 2025]
+rule overlap_TFBS:
+    input: data/sample2.bed.gz, files/Homo_sapiens_meta_clusters_hg38_midpoint_top5k_sorted.bed
+    output: output/metrics/TFBS_entropy/sample2_TFBS_frag_count.txt.gz
+    jobid: 32
+    reason: Missing output files: output/metrics/TFBS_entropy/sample2_TFBS_frag_count.txt.gz
+    wildcards: sample=sample2
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 11:38:54 2025]
+rule get_left_4mer:
+    input: data/sample1.bed.gz, /mnt/Data01/genome/hg38.fa
+    output: output/metrics/mds/sample1_left_4mers.txt.gz
+    jobid: 23
+    reason: Missing output files: output/metrics/mds/sample1_left_4mers.txt.gz
+    wildcards: sample=sample1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 11:38:54 2025]
+rule get_depth_fragstats:
+    input: data/sample2.bed.gz
+    output: output/fragstats/depth_files/sample2.txt
+    jobid: 8
+    reason: Missing output files: output/fragstats/depth_files/sample2.txt
+    wildcards: sample=sample2
+    priority: 20
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 11:38:54 2025]
+rule overlap_ATAC:
+    input: data/sample2.bed.gz, files/TCGA_ATAC_peak.all.probeMap.simple.hg38.bed
+    output: output/metrics/ATAC_entropy/sample2_ATAC_frag_count.txt.gz
+    jobid: 38
+    reason: Missing output files: output/metrics/ATAC_entropy/sample2_ATAC_frag_count.txt.gz
+    wildcards: sample=sample2
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 11:38:54 2025]
+rule get_right_4mer:
+    input: data/sample2.bed.gz, /mnt/Data01/genome/hg38.fa
+    output: output/metrics/mds/sample2_right_4mers.txt.gz
+    jobid: 27
+    reason: Missing output files: output/metrics/mds/sample2_right_4mers.txt.gz
+    wildcards: sample=sample2
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 11:38:54 2025]
+rule get_left_4mer:
+    input: data/sample3.bed.gz, /mnt/Data01/genome/hg38.fa
+    output: output/metrics/mds/sample3_left_4mers.txt.gz
+    jobid: 29
+    reason: Missing output files: output/metrics/mds/sample3_left_4mers.txt.gz
+    wildcards: sample=sample3
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 11:38:54 2025]
+rule get_SE_fragstats:
+    input: data/sample2.bed.gz
+    output: output/fragstats/SE_files/sample2.txt.gz
+    jobid: 2
+    reason: Missing output files: output/fragstats/SE_files/sample2.txt.gz
+    wildcards: sample=sample2
+    priority: 20
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 11:38:54 2025]
+rule overlap_TFBS:
+    input: data/sample1.bed.gz, files/Homo_sapiens_meta_clusters_hg38_midpoint_top5k_sorted.bed
+    output: output/metrics/TFBS_entropy/sample1_TFBS_frag_count.txt.gz
+    jobid: 31
+    reason: Missing output files: output/metrics/TFBS_entropy/sample1_TFBS_frag_count.txt.gz
+    wildcards: sample=sample1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 11:38:54 2025]
+rule get_SE_fragstats:
+    input: data/sample3.bed.gz
+    output: output/fragstats/SE_files/sample3.txt.gz
+    jobid: 3
+    reason: Missing output files: output/fragstats/SE_files/sample3.txt.gz
+    wildcards: sample=sample3
+    priority: 20
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 11:38:54 2025]
+rule overlap_TFBS:
+    input: data/sample3.bed.gz, files/Homo_sapiens_meta_clusters_hg38_midpoint_top5k_sorted.bed
+    output: output/metrics/TFBS_entropy/sample3_TFBS_frag_count.txt.gz
+    jobid: 33
+    reason: Missing output files: output/metrics/TFBS_entropy/sample3_TFBS_frag_count.txt.gz
+    wildcards: sample=sample3
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 11:38:54 2025]
+rule get_depth_fragstats:
+    input: data/sample1.bed.gz
+    output: output/fragstats/depth_files/sample1.txt
+    jobid: 7
+    reason: Missing output files: output/fragstats/depth_files/sample1.txt
+    wildcards: sample=sample1
+    priority: 20
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 11:38:54 2025]
+rule get_right_4mer:
+    input: data/sample1.bed.gz, /mnt/Data01/genome/hg38.fa
+    output: output/metrics/mds/sample1_right_4mers.txt.gz
+    jobid: 24
+    reason: Missing output files: output/metrics/mds/sample1_right_4mers.txt.gz
+    wildcards: sample=sample1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 11:38:54 2025]
+rule overlap_ATAC:
+    input: data/sample1.bed.gz, files/TCGA_ATAC_peak.all.probeMap.simple.hg38.bed
+    output: output/metrics/ATAC_entropy/sample1_ATAC_frag_count.txt.gz
+    jobid: 37
+    reason: Missing output files: output/metrics/ATAC_entropy/sample1_ATAC_frag_count.txt.gz
+    wildcards: sample=sample1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 11:38:54 2025]
+rule get_left_4mer:
+    input: data/sample2.bed.gz, /mnt/Data01/genome/hg38.fa
+    output: output/metrics/mds/sample2_left_4mers.txt.gz
+    jobid: 26
+    reason: Missing output files: output/metrics/mds/sample2_left_4mers.txt.gz
+    wildcards: sample=sample2
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 11:38:54 2025]
+rule overlap_ATAC:
+    input: data/sample3.bed.gz, files/TCGA_ATAC_peak.all.probeMap.simple.hg38.bed
+    output: output/metrics/ATAC_entropy/sample3_ATAC_frag_count.txt.gz
+    jobid: 39
+    reason: Missing output files: output/metrics/ATAC_entropy/sample3_ATAC_frag_count.txt.gz
+    wildcards: sample=sample3
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 11:38:58 2025]
+Finished job 9.
+1 of 44 steps (2%) done
+Select jobs to execute...
+
+[Thu Apr 17 11:38:58 2025]
+rule calculate_normalized_depth:
+    input: output/fragstats/depth_files/sample3.txt
+    output: output/metrics/depth/sample3.depth.tsv
+    jobid: 12
+    reason: Missing output files: output/metrics/depth/sample3.depth.tsv; Input files updated by another job: output/fragstats/depth_files/sample3.txt
+    wildcards: sample=sample3
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 11:38:58 2025]
+rule calculate_full_gene_depth:
+    input: output/fragstats/depth_files/sample3.txt
+    output: output/metrics/full_gene_depth/sample3.fullgenedepth.tsv
+    jobid: 21
+    reason: Missing output files: output/metrics/full_gene_depth/sample3.fullgenedepth.tsv; Input files updated by another job: output/fragstats/depth_files/sample3.txt
+    wildcards: sample=sample3
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 11:39:01 2025]
+Finished job 39.
+2 of 44 steps (5%) done
+Select jobs to execute...
+
+[Thu Apr 17 11:39:01 2025]
+rule calculate_ATAC_entropy:
+    input: output/metrics/ATAC_entropy/sample3_ATAC_frag_count.txt.gz
+    output: output/metrics/ATAC_entropy/sample3_ATAC_entropy.txt
+    jobid: 42
+    reason: Missing output files: output/metrics/ATAC_entropy/sample3_ATAC_entropy.txt; Input files updated by another job: output/metrics/ATAC_entropy/sample3_ATAC_frag_count.txt.gz
+    wildcards: sample=sample3
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 11:39:01 2025]
+Finished job 7.
+3 of 44 steps (7%) done
+Select jobs to execute...
+
+[Thu Apr 17 11:39:01 2025]
+rule calculate_normalized_depth:
+    input: output/fragstats/depth_files/sample1.txt
+    output: output/metrics/depth/sample1.depth.tsv
+    jobid: 10
+    reason: Missing output files: output/metrics/depth/sample1.depth.tsv; Input files updated by another job: output/fragstats/depth_files/sample1.txt
+    wildcards: sample=sample1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 11:39:01 2025]
+rule calculate_full_gene_depth:
+    input: output/fragstats/depth_files/sample1.txt
+    output: output/metrics/full_gene_depth/sample1.fullgenedepth.tsv
+    jobid: 19
+    reason: Missing output files: output/metrics/full_gene_depth/sample1.fullgenedepth.tsv; Input files updated by another job: output/fragstats/depth_files/sample1.txt
+    wildcards: sample=sample1
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 11:39:02 2025]
+Finished job 12.
+4 of 44 steps (9%) done
+[Thu Apr 17 11:39:02 2025]
+Finished job 8.
+5 of 44 steps (11%) done
+Select jobs to execute...
+
+[Thu Apr 17 11:39:02 2025]
+rule calculate_normalized_depth:
+    input: output/fragstats/depth_files/sample2.txt
+    output: output/metrics/depth/sample2.depth.tsv
+    jobid: 11
+    reason: Missing output files: output/metrics/depth/sample2.depth.tsv; Input files updated by another job: output/fragstats/depth_files/sample2.txt
+    wildcards: sample=sample2
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 11:39:02 2025]
+rule calculate_full_gene_depth:
+    input: output/fragstats/depth_files/sample2.txt
+    output: output/metrics/full_gene_depth/sample2.fullgenedepth.tsv
+    jobid: 20
+    reason: Missing output files: output/metrics/full_gene_depth/sample2.fullgenedepth.tsv; Input files updated by another job: output/fragstats/depth_files/sample2.txt
+    wildcards: sample=sample2
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 11:39:02 2025]
+Finished job 42.
+6 of 44 steps (14%) done
+[Thu Apr 17 11:39:03 2025]
+Finished job 3.
+7 of 44 steps (16%) done
+Select jobs to execute...
+
+[Thu Apr 17 11:39:03 2025]
+rule calculate_SE:
+    input: output/fragstats/SE_files/sample3.txt.gz
+    output: output/metrics/se/sample3.SE.tsv
+    jobid: 6
+    reason: Missing output files: output/metrics/se/sample3.SE.tsv; Input files updated by another job: output/fragstats/SE_files/sample3.txt.gz
+    wildcards: sample=sample3
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 11:39:03 2025]
+rule calculate_frag_bins:
+    input: output/fragstats/SE_files/sample3.txt.gz
+    output: output/metrics/frag_bins/sample3.fragbins.tsv
+    jobid: 15
+    reason: Missing output files: output/metrics/frag_bins/sample3.fragbins.tsv; Input files updated by another job: output/fragstats/SE_files/sample3.txt.gz
+    wildcards: sample=sample3
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 11:39:03 2025]
+rule calculate_small_frags:
+    input: output/fragstats/SE_files/sample3.txt.gz
+    output: output/metrics/small_frags/sample3.smallfrag.tsv
+    jobid: 18
+    reason: Missing output files: output/metrics/small_frags/sample3.smallfrag.tsv; Input files updated by another job: output/fragstats/SE_files/sample3.txt.gz
+    wildcards: sample=sample3
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 11:39:04 2025]
+Finished job 37.
+8 of 44 steps (18%) done
+Select jobs to execute...
+
+[Thu Apr 17 11:39:04 2025]
+rule calculate_ATAC_entropy:
+    input: output/metrics/ATAC_entropy/sample1_ATAC_frag_count.txt.gz
+    output: output/metrics/ATAC_entropy/sample1_ATAC_entropy.txt
+    jobid: 40
+    reason: Missing output files: output/metrics/ATAC_entropy/sample1_ATAC_entropy.txt; Input files updated by another job: output/metrics/ATAC_entropy/sample1_ATAC_frag_count.txt.gz
+    wildcards: sample=sample1
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 11:39:04 2025]
+Finished job 10.
+9 of 44 steps (20%) done
+[Thu Apr 17 11:39:05 2025]
+Finished job 21.
+10 of 44 steps (23%) done
+[Thu Apr 17 11:39:06 2025]
+Finished job 11.
+11 of 44 steps (25%) done
+[Thu Apr 17 11:39:06 2025]
+Finished job 40.
+12 of 44 steps (27%) done
+[Thu Apr 17 11:39:06 2025]
+Finished job 38.
+13 of 44 steps (30%) done
+Select jobs to execute...
+
+[Thu Apr 17 11:39:06 2025]
+rule calculate_ATAC_entropy:
+    input: output/metrics/ATAC_entropy/sample2_ATAC_frag_count.txt.gz
+    output: output/metrics/ATAC_entropy/sample2_ATAC_entropy.txt
+    jobid: 41
+    reason: Missing output files: output/metrics/ATAC_entropy/sample2_ATAC_entropy.txt; Input files updated by another job: output/metrics/ATAC_entropy/sample2_ATAC_frag_count.txt.gz
+    wildcards: sample=sample2
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 11:39:07 2025]
+Finished job 41.
+14 of 44 steps (32%) done
+[Thu Apr 17 11:39:07 2025]
+Finished job 18.
+15 of 44 steps (34%) done
+[Thu Apr 17 11:39:08 2025]
+Finished job 19.
+16 of 44 steps (36%) done
+[Thu Apr 17 11:39:08 2025]
+Finished job 1.
+17 of 44 steps (39%) done
+Select jobs to execute...
+
+[Thu Apr 17 11:39:08 2025]
+rule calculate_small_frags:
+    input: output/fragstats/SE_files/sample1.txt.gz
+    output: output/metrics/small_frags/sample1.smallfrag.tsv
+    jobid: 16
+    reason: Missing output files: output/metrics/small_frags/sample1.smallfrag.tsv; Input files updated by another job: output/fragstats/SE_files/sample1.txt.gz
+    wildcards: sample=sample1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 11:39:08 2025]
+rule calculate_SE:
+    input: output/fragstats/SE_files/sample1.txt.gz
+    output: output/metrics/se/sample1.SE.tsv
+    jobid: 4
+    reason: Missing output files: output/metrics/se/sample1.SE.tsv; Input files updated by another job: output/fragstats/SE_files/sample1.txt.gz
+    wildcards: sample=sample1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 11:39:08 2025]
+rule calculate_frag_bins:
+    input: output/fragstats/SE_files/sample1.txt.gz
+    output: output/metrics/frag_bins/sample1.fragbins.tsv
+    jobid: 13
+    reason: Missing output files: output/metrics/frag_bins/sample1.fragbins.tsv; Input files updated by another job: output/fragstats/SE_files/sample1.txt.gz
+    wildcards: sample=sample1
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 11:39:09 2025]
+Finished job 20.
+18 of 44 steps (41%) done
+[Thu Apr 17 11:39:10 2025]
+Finished job 15.
+19 of 44 steps (43%) done
+[Thu Apr 17 11:39:10 2025]
+Finished job 6.
+20 of 44 steps (45%) done
+[Thu Apr 17 11:39:10 2025]
+Finished job 33.
+21 of 44 steps (48%) done
+Select jobs to execute...
+
+[Thu Apr 17 11:39:10 2025]
+rule calculate_TFBS_entropy:
+    input: output/metrics/TFBS_entropy/sample3_TFBS_frag_count.txt.gz
+    output: output/metrics/TFBS_entropy/sample3_TFBS_entropy.txt
+    jobid: 36
+    reason: Missing output files: output/metrics/TFBS_entropy/sample3_TFBS_entropy.txt; Input files updated by another job: output/metrics/TFBS_entropy/sample3_TFBS_frag_count.txt.gz
+    wildcards: sample=sample3
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 11:39:11 2025]
+Finished job 2.
+22 of 44 steps (50%) done
+Select jobs to execute...
+
+[Thu Apr 17 11:39:11 2025]
+rule calculate_frag_bins:
+    input: output/fragstats/SE_files/sample2.txt.gz
+    output: output/metrics/frag_bins/sample2.fragbins.tsv
+    jobid: 14
+    reason: Missing output files: output/metrics/frag_bins/sample2.fragbins.tsv; Input files updated by another job: output/fragstats/SE_files/sample2.txt.gz
+    wildcards: sample=sample2
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 11:39:11 2025]
+rule calculate_small_frags:
+    input: output/fragstats/SE_files/sample2.txt.gz
+    output: output/metrics/small_frags/sample2.smallfrag.tsv
+    jobid: 17
+    reason: Missing output files: output/metrics/small_frags/sample2.smallfrag.tsv; Input files updated by another job: output/fragstats/SE_files/sample2.txt.gz
+    wildcards: sample=sample2
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 11:39:11 2025]
+rule calculate_SE:
+    input: output/fragstats/SE_files/sample2.txt.gz
+    output: output/metrics/se/sample2.SE.tsv
+    jobid: 5
+    reason: Missing output files: output/metrics/se/sample2.SE.tsv; Input files updated by another job: output/fragstats/SE_files/sample2.txt.gz
+    wildcards: sample=sample2
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 11:39:12 2025]
+Finished job 16.
+23 of 44 steps (52%) done
+[Thu Apr 17 11:39:12 2025]
+Finished job 36.
+24 of 44 steps (55%) done
+[Thu Apr 17 11:39:13 2025]
+Finished job 31.
+25 of 44 steps (57%) done
+Select jobs to execute...
+
+[Thu Apr 17 11:39:13 2025]
+rule calculate_TFBS_entropy:
+    input: output/metrics/TFBS_entropy/sample1_TFBS_frag_count.txt.gz
+    output: output/metrics/TFBS_entropy/sample1_TFBS_entropy.txt
+    jobid: 34
+    reason: Missing output files: output/metrics/TFBS_entropy/sample1_TFBS_entropy.txt; Input files updated by another job: output/metrics/TFBS_entropy/sample1_TFBS_frag_count.txt.gz
+    wildcards: sample=sample1
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 11:39:13 2025]
+Finished job 4.
+26 of 44 steps (59%) done
+[Thu Apr 17 11:39:13 2025]
+Finished job 13.
+27 of 44 steps (61%) done
+[Thu Apr 17 11:39:15 2025]
+Finished job 34.
+28 of 44 steps (64%) done
+[Thu Apr 17 11:39:16 2025]
+Finished job 17.
+29 of 44 steps (66%) done
+[Thu Apr 17 11:39:18 2025]
+Finished job 32.
+30 of 44 steps (68%) done
+Select jobs to execute...
+
+[Thu Apr 17 11:39:18 2025]
+rule calculate_TFBS_entropy:
+    input: output/metrics/TFBS_entropy/sample2_TFBS_frag_count.txt.gz
+    output: output/metrics/TFBS_entropy/sample2_TFBS_entropy.txt
+    jobid: 35
+    reason: Missing output files: output/metrics/TFBS_entropy/sample2_TFBS_entropy.txt; Input files updated by another job: output/metrics/TFBS_entropy/sample2_TFBS_frag_count.txt.gz
+    wildcards: sample=sample2
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 11:39:18 2025]
+Finished job 14.
+31 of 44 steps (70%) done
+[Thu Apr 17 11:39:19 2025]
+Finished job 5.
+32 of 44 steps (73%) done
+[Thu Apr 17 11:39:20 2025]
+Finished job 35.
+33 of 44 steps (75%) done
+[Thu Apr 17 11:39:24 2025]
+Finished job 29.
+34 of 44 steps (77%) done
+[Thu Apr 17 11:39:26 2025]
+Finished job 30.
+35 of 44 steps (80%) done
+Select jobs to execute...
+
+[Thu Apr 17 11:39:26 2025]
+rule calculate_MDS:
+    input: output/metrics/mds/sample3_left_4mers.txt.gz, output/metrics/mds/sample3_right_4mers.txt.gz, scripts/calculate_mds.R
+    output: output/metrics/mds/sample3_mds.txt
+    jobid: 28
+    reason: Missing output files: output/metrics/mds/sample3_mds.txt; Input files updated by another job: output/metrics/mds/sample3_right_4mers.txt.gz, output/metrics/mds/sample3_left_4mers.txt.gz
+    wildcards: sample=sample3
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 11:39:41 2025]
+Finished job 28.
+36 of 44 steps (82%) done
+[Thu Apr 17 11:39:46 2025]
+Finished job 23.
+37 of 44 steps (84%) done
+[Thu Apr 17 11:39:48 2025]
+Finished job 24.
+38 of 44 steps (86%) done
+Select jobs to execute...
+
+[Thu Apr 17 11:39:48 2025]
+rule calculate_MDS:
+    input: output/metrics/mds/sample1_left_4mers.txt.gz, output/metrics/mds/sample1_right_4mers.txt.gz, scripts/calculate_mds.R
+    output: output/metrics/mds/sample1_mds.txt
+    jobid: 22
+    reason: Missing output files: output/metrics/mds/sample1_mds.txt; Input files updated by another job: output/metrics/mds/sample1_right_4mers.txt.gz, output/metrics/mds/sample1_left_4mers.txt.gz
+    wildcards: sample=sample1
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 11:39:51 2025]
+Finished job 26.
+39 of 44 steps (89%) done
+[Thu Apr 17 11:39:55 2025]
+Finished job 27.
+40 of 44 steps (91%) done
+Select jobs to execute...
+
+[Thu Apr 17 11:39:55 2025]
+rule calculate_MDS:
+    input: output/metrics/mds/sample2_left_4mers.txt.gz, output/metrics/mds/sample2_right_4mers.txt.gz, scripts/calculate_mds.R
+    output: output/metrics/mds/sample2_mds.txt
+    jobid: 25
+    reason: Missing output files: output/metrics/mds/sample2_mds.txt; Input files updated by another job: output/metrics/mds/sample2_right_4mers.txt.gz, output/metrics/mds/sample2_left_4mers.txt.gz
+    wildcards: sample=sample2
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 11:40:03 2025]
+Finished job 22.
+41 of 44 steps (93%) done
+[Thu Apr 17 11:40:12 2025]
+Finished job 25.
+42 of 44 steps (95%) done
+Select jobs to execute...
+
+[Thu Apr 17 11:40:12 2025]
+rule build_feature_tables:
+    input: output/metrics/se/sample1.SE.tsv, output/metrics/se/sample2.SE.tsv, output/metrics/se/sample3.SE.tsv, output/metrics/depth/sample1.depth.tsv, output/metrics/depth/sample2.depth.tsv, output/metrics/depth/sample3.depth.tsv, output/metrics/frag_bins/sample1.fragbins.tsv, output/metrics/frag_bins/sample2.fragbins.tsv, output/metrics/frag_bins/sample3.fragbins.tsv, output/metrics/small_frags/sample1.smallfrag.tsv, output/metrics/small_frags/sample2.smallfrag.tsv, output/metrics/small_frags/sample3.smallfrag.tsv, output/metrics/full_gene_depth/sample1.fullgenedepth.tsv, output/metrics/full_gene_depth/sample2.fullgenedepth.tsv, output/metrics/full_gene_depth/sample3.fullgenedepth.tsv, output/metrics/mds/sample1_mds.txt, output/metrics/mds/sample2_mds.txt, output/metrics/mds/sample3_mds.txt, output/metrics/TFBS_entropy/sample1_TFBS_entropy.txt, output/metrics/TFBS_entropy/sample2_TFBS_entropy.txt, output/metrics/TFBS_entropy/sample3_TFBS_entropy.txt, output/metrics/ATAC_entropy/sample1_ATAC_entropy.txt, output/metrics/ATAC_entropy/sample2_ATAC_entropy.txt, output/metrics/ATAC_entropy/sample3_ATAC_entropy.txt
+    output: output/feature_tables/se.rds, output/feature_tables/depth.rds, output/feature_tables/frag_bins.rds, output/feature_tables/small_frags.rds, output/feature_tables/full_gene_depth.rds, output/feature_tables/mds.rds, output/feature_tables/TFBS_entropy.rds, output/feature_tables/ATAC_entropy.rds
+    jobid: 43
+    reason: Missing output files: output/feature_tables/TFBS_entropy.rds, output/feature_tables/se.rds, output/feature_tables/full_gene_depth.rds, output/feature_tables/small_frags.rds, output/feature_tables/frag_bins.rds, output/feature_tables/depth.rds, output/feature_tables/ATAC_entropy.rds, output/feature_tables/mds.rds; Input files updated by another job: output/metrics/mds/sample1_mds.txt, output/metrics/ATAC_entropy/sample2_ATAC_entropy.txt, output/metrics/TFBS_entropy/sample3_TFBS_entropy.txt, output/metrics/mds/sample3_mds.txt, output/metrics/full_gene_depth/sample1.fullgenedepth.tsv, output/metrics/ATAC_entropy/sample3_ATAC_entropy.txt, output/metrics/depth/sample3.depth.tsv, output/metrics/se/sample1.SE.tsv, output/metrics/depth/sample2.depth.tsv, output/metrics/frag_bins/sample3.fragbins.tsv, output/metrics/small_frags/sample3.smallfrag.tsv, output/metrics/TFBS_entropy/sample2_TFBS_entropy.txt, output/metrics/se/sample2.SE.tsv, output/metrics/full_gene_depth/sample3.fullgenedepth.tsv, output/metrics/mds/sample2_mds.txt, output/metrics/frag_bins/sample1.fragbins.tsv, output/metrics/frag_bins/sample2.fragbins.tsv, output/metrics/small_frags/sample2.smallfrag.tsv, output/metrics/TFBS_entropy/sample1_TFBS_entropy.txt, output/metrics/ATAC_entropy/sample1_ATAC_entropy.txt, output/metrics/se/sample3.SE.tsv, output/metrics/depth/sample1.depth.tsv, output/metrics/full_gene_depth/sample2.fullgenedepth.tsv, output/metrics/small_frags/sample1.smallfrag.tsv
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 11:42:22 2025]
+Finished job 43.
+43 of 44 steps (98%) done
+Select jobs to execute...
+
+[Thu Apr 17 11:42:22 2025]
+localrule all:
+    input: output/fragstats/SE_files/sample1.txt.gz, output/fragstats/SE_files/sample2.txt.gz, output/fragstats/SE_files/sample3.txt.gz, output/metrics/se/sample1.SE.tsv, output/metrics/se/sample2.SE.tsv, output/metrics/se/sample3.SE.tsv, output/fragstats/depth_files/sample1.txt, output/fragstats/depth_files/sample2.txt, output/fragstats/depth_files/sample3.txt, output/metrics/depth/sample1.depth.tsv, output/metrics/depth/sample2.depth.tsv, output/metrics/depth/sample3.depth.tsv, output/metrics/frag_bins/sample1.fragbins.tsv, output/metrics/frag_bins/sample2.fragbins.tsv, output/metrics/frag_bins/sample3.fragbins.tsv, output/metrics/small_frags/sample1.smallfrag.tsv, output/metrics/small_frags/sample2.smallfrag.tsv, output/metrics/small_frags/sample3.smallfrag.tsv, output/metrics/full_gene_depth/sample1.fullgenedepth.tsv, output/metrics/full_gene_depth/sample2.fullgenedepth.tsv, output/metrics/full_gene_depth/sample3.fullgenedepth.tsv, output/metrics/mds/sample1_mds.txt, output/metrics/mds/sample2_mds.txt, output/metrics/mds/sample3_mds.txt, output/metrics/TFBS_entropy/sample1_TFBS_frag_count.txt.gz, output/metrics/TFBS_entropy/sample2_TFBS_frag_count.txt.gz, output/metrics/TFBS_entropy/sample3_TFBS_frag_count.txt.gz, output/metrics/TFBS_entropy/sample1_TFBS_entropy.txt, output/metrics/TFBS_entropy/sample2_TFBS_entropy.txt, output/metrics/TFBS_entropy/sample3_TFBS_entropy.txt, output/metrics/ATAC_entropy/sample1_ATAC_frag_count.txt.gz, output/metrics/ATAC_entropy/sample2_ATAC_frag_count.txt.gz, output/metrics/ATAC_entropy/sample3_ATAC_frag_count.txt.gz, output/metrics/ATAC_entropy/sample1_ATAC_entropy.txt, output/metrics/ATAC_entropy/sample2_ATAC_entropy.txt, output/metrics/ATAC_entropy/sample3_ATAC_entropy.txt, output/feature_tables/se.rds, output/feature_tables/depth.rds, output/feature_tables/frag_bins.rds, output/feature_tables/small_frags.rds, output/feature_tables/full_gene_depth.rds, output/feature_tables/mds.rds, output/feature_tables/TFBS_entropy.rds, output/feature_tables/ATAC_entropy.rds
+    jobid: 0
+    reason: Input files updated by another job: output/metrics/mds/sample1_mds.txt, output/metrics/mds/sample3_mds.txt, output/fragstats/SE_files/sample3.txt.gz, output/metrics/ATAC_entropy/sample3_ATAC_entropy.txt, output/feature_tables/small_frags.rds, output/fragstats/SE_files/sample2.txt.gz, output/metrics/small_frags/sample3.smallfrag.tsv, output/metrics/se/sample2.SE.tsv, output/metrics/full_gene_depth/sample3.fullgenedepth.tsv, output/metrics/mds/sample2_mds.txt, output/metrics/TFBS_entropy/sample3_TFBS_frag_count.txt.gz, output/metrics/TFBS_entropy/sample1_TFBS_entropy.txt, output/feature_tables/frag_bins.rds, output/metrics/se/sample3.SE.tsv, output/metrics/TFBS_entropy/sample1_TFBS_frag_count.txt.gz, output/metrics/ATAC_entropy/sample1_ATAC_frag_count.txt.gz, output/fragstats/depth_files/sample2.txt, output/metrics/full_gene_depth/sample2.fullgenedepth.tsv, output/feature_tables/ATAC_entropy.rds, output/metrics/ATAC_entropy/sample2_ATAC_entropy.txt, output/feature_tables/se.rds, output/feature_tables/TFBS_entropy.rds, output/metrics/TFBS_entropy/sample3_TFBS_entropy.txt, output/fragstats/depth_files/sample3.txt, output/metrics/full_gene_depth/sample1.fullgenedepth.tsv, output/metrics/se/sample1.SE.tsv, output/metrics/depth/sample3.depth.tsv, output/metrics/depth/sample2.depth.tsv, output/metrics/frag_bins/sample3.fragbins.tsv, output/metrics/TFBS_entropy/sample2_TFBS_frag_count.txt.gz, output/feature_tables/depth.rds, output/metrics/TFBS_entropy/sample2_TFBS_entropy.txt, output/feature_tables/mds.rds, output/metrics/ATAC_entropy/sample2_ATAC_frag_count.txt.gz, output/metrics/frag_bins/sample1.fragbins.tsv, output/metrics/frag_bins/sample2.fragbins.tsv, output/fragstats/SE_files/sample1.txt.gz, output/metrics/small_frags/sample2.smallfrag.tsv, output/feature_tables/full_gene_depth.rds, output/metrics/ATAC_entropy/sample1_ATAC_entropy.txt, output/fragstats/depth_files/sample1.txt, output/metrics/depth/sample1.depth.tsv, output/metrics/small_frags/sample1.smallfrag.tsv, output/metrics/ATAC_entropy/sample3_ATAC_frag_count.txt.gz
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 11:42:22 2025]
+Finished job 0.
+44 of 44 steps (100%) done
+Complete log: .snakemake/log/2025-04-17T113853.924923.snakemake.log

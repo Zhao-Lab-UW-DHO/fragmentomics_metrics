@@ -1,0 +1,192 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 16
+Rules claiming more threads will be scaled down.
+Job stats:
+job                           count    min threads    max threads
+--------------------------  -------  -------------  -------------
+all                               1              1              1
+build_combined_ft                 4              1              1
+build_feature_tables              4              1              1
+calculate_ATAC_entropy            8              1              1
+calculate_MDS                     8              1              1
+calculate_SE                      8              1              1
+calculate_TFBS_entropy            8              1              1
+calculate_frag_bins               8              1              1
+calculate_full_gene_depth         8              1              1
+calculate_normalized_depth        8              1              1
+calculate_small_frags             8              1              1
+extract_first_exon                4              1              1
+filter_comm_panel_genes           8              1              1
+get_SE_fragstats                  8              1              1
+get_depth_fragstats               8              1              1
+get_left_4mer                     8              1              1
+get_right_4mer                    8              1              1
+move_comm_panels                  1              1              1
+overlap_ATAC                      8              1              1
+overlap_TFBS                      8              1              1
+total                           134              1              1
+
+Select jobs to execute...
+
+[Wed Apr 23 11:22:31 2025]
+rule filter_comm_panel_genes:
+    input: data/MRL0001CH.bed.gz
+    output: data/tempus/MRL0001CH.bed.gz
+    jobid: 2
+    reason: Missing output files: data/tempus/MRL0001CH.bed.gz; Set of input files has changed since last execution; Code has changed since last execution
+    wildcards: comm_panel=tempus, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+
+[Wed Apr 23 11:22:31 2025]
+rule filter_comm_panel_genes:
+    input: data/MRL0001CH.bed.gz
+    output: data/guardant/MRL0001CH.bed.gz
+    jobid: 3
+    reason: Missing output files: data/guardant/MRL0001CH.bed.gz; Set of input files has changed since last execution; Code has changed since last execution
+    wildcards: comm_panel=guardant, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+
+[Wed Apr 23 11:22:31 2025]
+rule filter_comm_panel_genes:
+    input: data/MRL0001CH.bed.gz
+    output: data/foundationOne/MRL0001CH.bed.gz
+    jobid: 4
+    reason: Missing output files: data/foundationOne/MRL0001CH.bed.gz; Updated input files: data/MRL0001CH.bed.gz
+    wildcards: comm_panel=foundationOne, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+
+[Wed Apr 23 11:22:31 2025]
+rule filter_comm_panel_genes:
+    input: data/MRL0002CH.bed.gz
+    output: data/guardant/MRL0002CH.bed.gz
+    jobid: 7
+    reason: Missing output files: data/guardant/MRL0002CH.bed.gz; Updated input files: data/MRL0002CH.bed.gz
+    wildcards: comm_panel=guardant, sample=MRL0002CH
+    resources: tmpdir=/tmp
+
+
+[Wed Apr 23 11:22:31 2025]
+rule filter_comm_panel_genes:
+    input: data/MRL0002CH.bed.gz
+    output: data/foundationOne/MRL0002CH.bed.gz
+    jobid: 8
+    reason: Missing output files: data/foundationOne/MRL0002CH.bed.gz; Updated input files: data/MRL0002CH.bed.gz
+    wildcards: comm_panel=foundationOne, sample=MRL0002CH
+    resources: tmpdir=/tmp
+
+
+[Wed Apr 23 11:22:31 2025]
+rule filter_comm_panel_genes:
+    input: data/MRL0001CH.bed.gz
+    output: data/default/MRL0001CH.bed.gz
+    jobid: 1
+    reason: Missing output files: data/default/MRL0001CH.bed.gz; Updated input files: data/MRL0001CH.bed.gz
+    wildcards: comm_panel=default, sample=MRL0001CH
+    resources: tmpdir=/tmp
+
+
+[Wed Apr 23 11:22:31 2025]
+rule filter_comm_panel_genes:
+    input: data/MRL0002CH.bed.gz
+    output: data/default/MRL0002CH.bed.gz
+    jobid: 5
+    reason: Missing output files: data/default/MRL0002CH.bed.gz; Updated input files: data/MRL0002CH.bed.gz
+    wildcards: comm_panel=default, sample=MRL0002CH
+    resources: tmpdir=/tmp
+
+
+[Wed Apr 23 11:22:31 2025]
+rule filter_comm_panel_genes:
+    input: data/MRL0002CH.bed.gz
+    output: data/tempus/MRL0002CH.bed.gz
+    jobid: 6
+    reason: Missing output files: data/tempus/MRL0002CH.bed.gz; Updated input files: data/MRL0002CH.bed.gz
+    wildcards: comm_panel=tempus, sample=MRL0002CH
+    resources: tmpdir=/tmp
+
+Terminating processes on user request, this might take some time.
+[Wed Apr 23 11:22:41 2025]
+Error in rule filter_comm_panel_genes:
+    jobid: 7
+    output: data/guardant/MRL0002CH.bed.gz
+    shell:
+        
+        Rscript scripts/filter_comm_panels.R data/MRL0002CH.bed.gz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Wed Apr 23 11:22:41 2025]
+Error in rule filter_comm_panel_genes:
+    jobid: 6
+    output: data/tempus/MRL0002CH.bed.gz
+    shell:
+        
+        Rscript scripts/filter_comm_panels.R data/MRL0002CH.bed.gz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Wed Apr 23 11:22:41 2025]
+Error in rule filter_comm_panel_genes:
+    jobid: 5
+    output: data/default/MRL0002CH.bed.gz
+    shell:
+        
+        Rscript scripts/filter_comm_panels.R data/MRL0002CH.bed.gz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Wed Apr 23 11:22:41 2025]
+Error in rule filter_comm_panel_genes:
+    jobid: 4
+    output: data/foundationOne/MRL0001CH.bed.gz
+    shell:
+        
+        Rscript scripts/filter_comm_panels.R data/MRL0001CH.bed.gz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Wed Apr 23 11:22:41 2025]
+Error in rule filter_comm_panel_genes:
+    jobid: 8
+    output: data/foundationOne/MRL0002CH.bed.gz
+    shell:
+        
+        Rscript scripts/filter_comm_panels.R data/MRL0002CH.bed.gz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Wed Apr 23 11:22:41 2025]
+Error in rule filter_comm_panel_genes:
+    jobid: 3
+    output: data/guardant/MRL0001CH.bed.gz
+    shell:
+        
+        Rscript scripts/filter_comm_panels.R data/MRL0001CH.bed.gz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Wed Apr 23 11:22:41 2025]
+Error in rule filter_comm_panel_genes:
+    jobid: 2
+    output: data/tempus/MRL0001CH.bed.gz
+    shell:
+        
+        Rscript scripts/filter_comm_panels.R data/MRL0001CH.bed.gz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Wed Apr 23 11:22:41 2025]
+Error in rule filter_comm_panel_genes:
+    jobid: 1
+    output: data/default/MRL0001CH.bed.gz
+    shell:
+        
+        Rscript scripts/filter_comm_panels.R data/MRL0001CH.bed.gz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Complete log: .snakemake/log/2025-04-23T112231.404366.snakemake.log

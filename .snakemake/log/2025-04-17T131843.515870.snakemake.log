@@ -1,0 +1,2441 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 64
+Rules claiming more threads will be scaled down.
+Job stats:
+job                           count    min threads    max threads
+--------------------------  -------  -------------  -------------
+all                               1              1              1
+build_feature_tables              4              1              1
+calculate_ATAC_entropy           12              1              1
+calculate_MDS                    12              1              1
+calculate_SE                     12              1              1
+calculate_TFBS_entropy           12              1              1
+calculate_frag_bins              12              1              1
+calculate_full_gene_depth        12              1              1
+calculate_normalized_depth       12              1              1
+calculate_small_frags            12              1              1
+extract_first_exon                4              1              1
+get_SE_fragstats                 12              1              1
+get_depth_fragstats              12              1              1
+get_left_4mer                    12              1              1
+get_right_4mer                   12              1              1
+overlap_ATAC                     12              1              1
+overlap_TFBS                     12              1              1
+total                           177              1              1
+
+Select jobs to execute...
+
+[Thu Apr 17 13:18:43 2025]
+rule get_right_4mer:
+    input: data/foundationOne/sample1.bed.gz, /mnt/Data01/genome/hg38.fa
+    output: output/metrics/mds/foundationOne/sample1_right_4mers.txt.gz
+    jobid: 120
+    reason: Missing output files: output/metrics/mds/foundationOne/sample1_right_4mers.txt.gz
+    wildcards: comm_panel=foundationOne, sample=sample1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:43 2025]
+rule get_depth_fragstats:
+    input: data/foundationOne/sample3.bed.gz
+    output: output/fragstats/depth_files/foundationOne/sample3.txt
+    jobid: 60
+    reason: Missing output files: output/fragstats/depth_files/foundationOne/sample3.txt
+    wildcards: comm_panel=foundationOne, sample=sample3
+    priority: 20
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:43 2025]
+rule overlap_ATAC:
+    input: data/foundationOne/sample3.bed.gz, files/TCGA_ATAC_peak.all.probeMap.simple.hg38.bed
+    output: output/metrics/ATAC_entropy/foundationOne/sample3_ATAC_frag_count.txt.gz
+    jobid: 180
+    reason: Missing output files: output/metrics/ATAC_entropy/foundationOne/sample3_ATAC_frag_count.txt.gz
+    wildcards: comm_panel=foundationOne, sample=sample3
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:43 2025]
+rule get_SE_fragstats:
+    input: data/tempus/sample2.bed.gz
+    output: output/fragstats/SE_files/tempus/sample2.txt.gz
+    jobid: 30
+    reason: Missing output files: output/fragstats/SE_files/tempus/sample2.txt.gz
+    wildcards: comm_panel=tempus, sample=sample2
+    priority: 20
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:43 2025]
+rule overlap_TFBS:
+    input: data/tempus/sample2.bed.gz, files/Homo_sapiens_meta_clusters_hg38_midpoint_top5k_sorted.bed
+    output: output/metrics/TFBS_entropy/tempus/sample2_TFBS_frag_count.txt.gz
+    jobid: 150
+    reason: Missing output files: output/metrics/TFBS_entropy/tempus/sample2_TFBS_frag_count.txt.gz
+    wildcards: comm_panel=tempus, sample=sample2
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:43 2025]
+rule get_left_4mer:
+    input: data/foundationOne/sample3.bed.gz, /mnt/Data01/genome/hg38.fa
+    output: output/metrics/mds/foundationOne/sample3_left_4mers.txt.gz
+    jobid: 143
+    reason: Missing output files: output/metrics/mds/foundationOne/sample3_left_4mers.txt.gz
+    wildcards: comm_panel=foundationOne, sample=sample3
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:43 2025]
+rule get_left_4mer:
+    input: data/guardant/sample2.bed.gz, /mnt/Data01/genome/hg38.fa
+    output: output/metrics/mds/guardant/sample2_left_4mers.txt.gz
+    jobid: 128
+    reason: Missing output files: output/metrics/mds/guardant/sample2_left_4mers.txt.gz
+    wildcards: comm_panel=guardant, sample=sample2
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:43 2025]
+rule get_depth_fragstats:
+    input: data/default/sample2.bed.gz
+    output: output/fragstats/depth_files/default/sample2.txt
+    jobid: 53
+    reason: Missing output files: output/fragstats/depth_files/default/sample2.txt
+    wildcards: comm_panel=default, sample=sample2
+    priority: 20
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:43 2025]
+rule get_left_4mer:
+    input: data/tempus/sample1.bed.gz, /mnt/Data01/genome/hg38.fa
+    output: output/metrics/mds/tempus/sample1_left_4mers.txt.gz
+    jobid: 113
+    reason: Missing output files: output/metrics/mds/tempus/sample1_left_4mers.txt.gz
+    wildcards: comm_panel=tempus, sample=sample1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:43 2025]
+rule get_SE_fragstats:
+    input: data/guardant/sample2.bed.gz
+    output: output/fragstats/SE_files/guardant/sample2.txt.gz
+    jobid: 31
+    reason: Missing output files: output/fragstats/SE_files/guardant/sample2.txt.gz
+    wildcards: comm_panel=guardant, sample=sample2
+    priority: 20
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:43 2025]
+rule overlap_TFBS:
+    input: data/guardant/sample2.bed.gz, files/Homo_sapiens_meta_clusters_hg38_midpoint_top5k_sorted.bed
+    output: output/metrics/TFBS_entropy/guardant/sample2_TFBS_frag_count.txt.gz
+    jobid: 151
+    reason: Missing output files: output/metrics/TFBS_entropy/guardant/sample2_TFBS_frag_count.txt.gz
+    wildcards: comm_panel=guardant, sample=sample2
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:43 2025]
+rule get_right_4mer:
+    input: data/foundationOne/sample3.bed.gz, /mnt/Data01/genome/hg38.fa
+    output: output/metrics/mds/foundationOne/sample3_right_4mers.txt.gz
+    jobid: 144
+    reason: Missing output files: output/metrics/mds/foundationOne/sample3_right_4mers.txt.gz
+    wildcards: comm_panel=foundationOne, sample=sample3
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:43 2025]
+rule get_right_4mer:
+    input: data/guardant/sample2.bed.gz, /mnt/Data01/genome/hg38.fa
+    output: output/metrics/mds/guardant/sample2_right_4mers.txt.gz
+    jobid: 129
+    reason: Missing output files: output/metrics/mds/guardant/sample2_right_4mers.txt.gz
+    wildcards: comm_panel=guardant, sample=sample2
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:43 2025]
+rule get_depth_fragstats:
+    input: data/tempus/sample2.bed.gz
+    output: output/fragstats/depth_files/tempus/sample2.txt
+    jobid: 54
+    reason: Missing output files: output/fragstats/depth_files/tempus/sample2.txt
+    wildcards: comm_panel=tempus, sample=sample2
+    priority: 20
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:43 2025]
+rule overlap_ATAC:
+    input: data/tempus/sample2.bed.gz, files/TCGA_ATAC_peak.all.probeMap.simple.hg38.bed
+    output: output/metrics/ATAC_entropy/tempus/sample2_ATAC_frag_count.txt.gz
+    jobid: 174
+    reason: Missing output files: output/metrics/ATAC_entropy/tempus/sample2_ATAC_frag_count.txt.gz
+    wildcards: comm_panel=tempus, sample=sample2
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:43 2025]
+rule get_right_4mer:
+    input: data/tempus/sample1.bed.gz, /mnt/Data01/genome/hg38.fa
+    output: output/metrics/mds/tempus/sample1_right_4mers.txt.gz
+    jobid: 114
+    reason: Missing output files: output/metrics/mds/tempus/sample1_right_4mers.txt.gz
+    wildcards: comm_panel=tempus, sample=sample1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:43 2025]
+rule get_left_4mer:
+    input: data/tempus/sample3.bed.gz, /mnt/Data01/genome/hg38.fa
+    output: output/metrics/mds/tempus/sample3_left_4mers.txt.gz
+    jobid: 137
+    reason: Missing output files: output/metrics/mds/tempus/sample3_left_4mers.txt.gz
+    wildcards: comm_panel=tempus, sample=sample3
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:43 2025]
+rule get_left_4mer:
+    input: data/default/sample2.bed.gz, /mnt/Data01/genome/hg38.fa
+    output: output/metrics/mds/default/sample2_left_4mers.txt.gz
+    jobid: 122
+    reason: Missing output files: output/metrics/mds/default/sample2_left_4mers.txt.gz
+    wildcards: comm_panel=default, sample=sample2
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:43 2025]
+rule get_SE_fragstats:
+    input: data/foundationOne/sample2.bed.gz
+    output: output/fragstats/SE_files/foundationOne/sample2.txt.gz
+    jobid: 32
+    reason: Missing output files: output/fragstats/SE_files/foundationOne/sample2.txt.gz
+    wildcards: comm_panel=foundationOne, sample=sample2
+    priority: 20
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:43 2025]
+rule overlap_TFBS:
+    input: data/foundationOne/sample2.bed.gz, files/Homo_sapiens_meta_clusters_hg38_midpoint_top5k_sorted.bed
+    output: output/metrics/TFBS_entropy/foundationOne/sample2_TFBS_frag_count.txt.gz
+    jobid: 152
+    reason: Missing output files: output/metrics/TFBS_entropy/foundationOne/sample2_TFBS_frag_count.txt.gz
+    wildcards: comm_panel=foundationOne, sample=sample2
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:43 2025]
+rule get_SE_fragstats:
+    input: data/default/sample1.bed.gz
+    output: output/fragstats/SE_files/default/sample1.txt.gz
+    jobid: 25
+    reason: Missing output files: output/fragstats/SE_files/default/sample1.txt.gz
+    wildcards: comm_panel=default, sample=sample1
+    priority: 20
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:43 2025]
+rule overlap_TFBS:
+    input: data/default/sample1.bed.gz, files/Homo_sapiens_meta_clusters_hg38_midpoint_top5k_sorted.bed
+    output: output/metrics/TFBS_entropy/default/sample1_TFBS_frag_count.txt.gz
+    jobid: 145
+    reason: Missing output files: output/metrics/TFBS_entropy/default/sample1_TFBS_frag_count.txt.gz
+    wildcards: comm_panel=default, sample=sample1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:43 2025]
+rule get_depth_fragstats:
+    input: data/guardant/sample2.bed.gz
+    output: output/fragstats/depth_files/guardant/sample2.txt
+    jobid: 55
+    reason: Missing output files: output/fragstats/depth_files/guardant/sample2.txt
+    wildcards: comm_panel=guardant, sample=sample2
+    priority: 20
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:43 2025]
+rule overlap_ATAC:
+    input: data/guardant/sample2.bed.gz, files/TCGA_ATAC_peak.all.probeMap.simple.hg38.bed
+    output: output/metrics/ATAC_entropy/guardant/sample2_ATAC_frag_count.txt.gz
+    jobid: 175
+    reason: Missing output files: output/metrics/ATAC_entropy/guardant/sample2_ATAC_frag_count.txt.gz
+    wildcards: comm_panel=guardant, sample=sample2
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:43 2025]
+rule get_right_4mer:
+    input: data/tempus/sample3.bed.gz, /mnt/Data01/genome/hg38.fa
+    output: output/metrics/mds/tempus/sample3_right_4mers.txt.gz
+    jobid: 138
+    reason: Missing output files: output/metrics/mds/tempus/sample3_right_4mers.txt.gz
+    wildcards: comm_panel=tempus, sample=sample3
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:43 2025]
+rule get_right_4mer:
+    input: data/default/sample2.bed.gz, /mnt/Data01/genome/hg38.fa
+    output: output/metrics/mds/default/sample2_right_4mers.txt.gz
+    jobid: 123
+    reason: Missing output files: output/metrics/mds/default/sample2_right_4mers.txt.gz
+    wildcards: comm_panel=default, sample=sample2
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:43 2025]
+rule get_SE_fragstats:
+    input: data/default/sample3.bed.gz
+    output: output/fragstats/SE_files/default/sample3.txt.gz
+    jobid: 33
+    reason: Missing output files: output/fragstats/SE_files/default/sample3.txt.gz
+    wildcards: comm_panel=default, sample=sample3
+    priority: 20
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:43 2025]
+rule overlap_TFBS:
+    input: data/default/sample3.bed.gz, files/Homo_sapiens_meta_clusters_hg38_midpoint_top5k_sorted.bed
+    output: output/metrics/TFBS_entropy/default/sample3_TFBS_frag_count.txt.gz
+    jobid: 153
+    reason: Missing output files: output/metrics/TFBS_entropy/default/sample3_TFBS_frag_count.txt.gz
+    wildcards: comm_panel=default, sample=sample3
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:43 2025]
+rule get_SE_fragstats:
+    input: data/tempus/sample1.bed.gz
+    output: output/fragstats/SE_files/tempus/sample1.txt.gz
+    jobid: 26
+    reason: Missing output files: output/fragstats/SE_files/tempus/sample1.txt.gz
+    wildcards: comm_panel=tempus, sample=sample1
+    priority: 20
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:43 2025]
+rule get_left_4mer:
+    input: data/foundationOne/sample2.bed.gz, /mnt/Data01/genome/hg38.fa
+    output: output/metrics/mds/foundationOne/sample2_left_4mers.txt.gz
+    jobid: 131
+    reason: Missing output files: output/metrics/mds/foundationOne/sample2_left_4mers.txt.gz
+    wildcards: comm_panel=foundationOne, sample=sample2
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:43 2025]
+rule get_depth_fragstats:
+    input: data/foundationOne/sample2.bed.gz
+    output: output/fragstats/depth_files/foundationOne/sample2.txt
+    jobid: 56
+    reason: Missing output files: output/fragstats/depth_files/foundationOne/sample2.txt
+    wildcards: comm_panel=foundationOne, sample=sample2
+    priority: 20
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:43 2025]
+rule overlap_TFBS:
+    input: data/tempus/sample1.bed.gz, files/Homo_sapiens_meta_clusters_hg38_midpoint_top5k_sorted.bed
+    output: output/metrics/TFBS_entropy/tempus/sample1_TFBS_frag_count.txt.gz
+    jobid: 146
+    reason: Missing output files: output/metrics/TFBS_entropy/tempus/sample1_TFBS_frag_count.txt.gz
+    wildcards: comm_panel=tempus, sample=sample1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:43 2025]
+rule get_depth_fragstats:
+    input: data/default/sample1.bed.gz
+    output: output/fragstats/depth_files/default/sample1.txt
+    jobid: 49
+    reason: Missing output files: output/fragstats/depth_files/default/sample1.txt
+    wildcards: comm_panel=default, sample=sample1
+    priority: 20
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:43 2025]
+rule get_SE_fragstats:
+    input: data/tempus/sample3.bed.gz
+    output: output/fragstats/SE_files/tempus/sample3.txt.gz
+    jobid: 34
+    reason: Missing output files: output/fragstats/SE_files/tempus/sample3.txt.gz
+    wildcards: comm_panel=tempus, sample=sample3
+    priority: 20
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:43 2025]
+rule overlap_TFBS:
+    input: data/tempus/sample3.bed.gz, files/Homo_sapiens_meta_clusters_hg38_midpoint_top5k_sorted.bed
+    output: output/metrics/TFBS_entropy/tempus/sample3_TFBS_frag_count.txt.gz
+    jobid: 154
+    reason: Missing output files: output/metrics/TFBS_entropy/tempus/sample3_TFBS_frag_count.txt.gz
+    wildcards: comm_panel=tempus, sample=sample3
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:43 2025]
+rule overlap_ATAC:
+    input: data/default/sample1.bed.gz, files/TCGA_ATAC_peak.all.probeMap.simple.hg38.bed
+    output: output/metrics/ATAC_entropy/default/sample1_ATAC_frag_count.txt.gz
+    jobid: 169
+    reason: Missing output files: output/metrics/ATAC_entropy/default/sample1_ATAC_frag_count.txt.gz
+    wildcards: comm_panel=default, sample=sample1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:43 2025]
+rule get_SE_fragstats:
+    input: data/guardant/sample1.bed.gz
+    output: output/fragstats/SE_files/guardant/sample1.txt.gz
+    jobid: 27
+    reason: Missing output files: output/fragstats/SE_files/guardant/sample1.txt.gz
+    wildcards: comm_panel=guardant, sample=sample1
+    priority: 20
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:43 2025]
+rule get_right_4mer:
+    input: data/foundationOne/sample2.bed.gz, /mnt/Data01/genome/hg38.fa
+    output: output/metrics/mds/foundationOne/sample2_right_4mers.txt.gz
+    jobid: 132
+    reason: Missing output files: output/metrics/mds/foundationOne/sample2_right_4mers.txt.gz
+    wildcards: comm_panel=foundationOne, sample=sample2
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:43 2025]
+rule get_depth_fragstats:
+    input: data/default/sample3.bed.gz
+    output: output/fragstats/depth_files/default/sample3.txt
+    jobid: 57
+    reason: Missing output files: output/fragstats/depth_files/default/sample3.txt
+    wildcards: comm_panel=default, sample=sample3
+    priority: 20
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:43 2025]
+rule get_left_4mer:
+    input: data/guardant/sample3.bed.gz, /mnt/Data01/genome/hg38.fa
+    output: output/metrics/mds/guardant/sample3_left_4mers.txt.gz
+    jobid: 140
+    reason: Missing output files: output/metrics/mds/guardant/sample3_left_4mers.txt.gz
+    wildcards: comm_panel=guardant, sample=sample3
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:43 2025]
+rule get_left_4mer:
+    input: data/tempus/sample2.bed.gz, /mnt/Data01/genome/hg38.fa
+    output: output/metrics/mds/tempus/sample2_left_4mers.txt.gz
+    jobid: 125
+    reason: Missing output files: output/metrics/mds/tempus/sample2_left_4mers.txt.gz
+    wildcards: comm_panel=tempus, sample=sample2
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:44 2025]
+rule get_depth_fragstats:
+    input: data/tempus/sample1.bed.gz
+    output: output/fragstats/depth_files/tempus/sample1.txt
+    jobid: 50
+    reason: Missing output files: output/fragstats/depth_files/tempus/sample1.txt
+    wildcards: comm_panel=tempus, sample=sample1
+    priority: 20
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:44 2025]
+rule get_SE_fragstats:
+    input: data/guardant/sample3.bed.gz
+    output: output/fragstats/SE_files/guardant/sample3.txt.gz
+    jobid: 35
+    reason: Missing output files: output/fragstats/SE_files/guardant/sample3.txt.gz
+    wildcards: comm_panel=guardant, sample=sample3
+    priority: 20
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:44 2025]
+rule overlap_TFBS:
+    input: data/guardant/sample3.bed.gz, files/Homo_sapiens_meta_clusters_hg38_midpoint_top5k_sorted.bed
+    output: output/metrics/TFBS_entropy/guardant/sample3_TFBS_frag_count.txt.gz
+    jobid: 155
+    reason: Missing output files: output/metrics/TFBS_entropy/guardant/sample3_TFBS_frag_count.txt.gz
+    wildcards: comm_panel=guardant, sample=sample3
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:44 2025]
+rule overlap_ATAC:
+    input: data/tempus/sample1.bed.gz, files/TCGA_ATAC_peak.all.probeMap.simple.hg38.bed
+    output: output/metrics/ATAC_entropy/tempus/sample1_ATAC_frag_count.txt.gz
+    jobid: 170
+    reason: Missing output files: output/metrics/ATAC_entropy/tempus/sample1_ATAC_frag_count.txt.gz
+    wildcards: comm_panel=tempus, sample=sample1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:44 2025]
+rule get_left_4mer:
+    input: data/default/sample1.bed.gz, /mnt/Data01/genome/hg38.fa
+    output: output/metrics/mds/default/sample1_left_4mers.txt.gz
+    jobid: 110
+    reason: Missing output files: output/metrics/mds/default/sample1_left_4mers.txt.gz
+    wildcards: comm_panel=default, sample=sample1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:44 2025]
+rule get_SE_fragstats:
+    input: data/foundationOne/sample1.bed.gz
+    output: output/fragstats/SE_files/foundationOne/sample1.txt.gz
+    jobid: 28
+    reason: Missing output files: output/fragstats/SE_files/foundationOne/sample1.txt.gz
+    wildcards: comm_panel=foundationOne, sample=sample1
+    priority: 20
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:44 2025]
+rule overlap_TFBS:
+    input: data/foundationOne/sample1.bed.gz, files/Homo_sapiens_meta_clusters_hg38_midpoint_top5k_sorted.bed
+    output: output/metrics/TFBS_entropy/foundationOne/sample1_TFBS_frag_count.txt.gz
+    jobid: 148
+    reason: Missing output files: output/metrics/TFBS_entropy/foundationOne/sample1_TFBS_frag_count.txt.gz
+    wildcards: comm_panel=foundationOne, sample=sample1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:44 2025]
+rule get_depth_fragstats:
+    input: data/tempus/sample3.bed.gz
+    output: output/fragstats/depth_files/tempus/sample3.txt
+    jobid: 58
+    reason: Missing output files: output/fragstats/depth_files/tempus/sample3.txt
+    wildcards: comm_panel=tempus, sample=sample3
+    priority: 20
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:44 2025]
+rule overlap_ATAC:
+    input: data/tempus/sample3.bed.gz, files/TCGA_ATAC_peak.all.probeMap.simple.hg38.bed
+    output: output/metrics/ATAC_entropy/tempus/sample3_ATAC_frag_count.txt.gz
+    jobid: 178
+    reason: Missing output files: output/metrics/ATAC_entropy/tempus/sample3_ATAC_frag_count.txt.gz
+    wildcards: comm_panel=tempus, sample=sample3
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:44 2025]
+rule get_right_4mer:
+    input: data/guardant/sample3.bed.gz, /mnt/Data01/genome/hg38.fa
+    output: output/metrics/mds/guardant/sample3_right_4mers.txt.gz
+    jobid: 141
+    reason: Missing output files: output/metrics/mds/guardant/sample3_right_4mers.txt.gz
+    wildcards: comm_panel=guardant, sample=sample3
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:44 2025]
+rule get_right_4mer:
+    input: data/tempus/sample2.bed.gz, /mnt/Data01/genome/hg38.fa
+    output: output/metrics/mds/tempus/sample2_right_4mers.txt.gz
+    jobid: 126
+    reason: Missing output files: output/metrics/mds/tempus/sample2_right_4mers.txt.gz
+    wildcards: comm_panel=tempus, sample=sample2
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:44 2025]
+rule get_depth_fragstats:
+    input: data/guardant/sample1.bed.gz
+    output: output/fragstats/depth_files/guardant/sample1.txt
+    jobid: 51
+    reason: Missing output files: output/fragstats/depth_files/guardant/sample1.txt
+    wildcards: comm_panel=guardant, sample=sample1
+    priority: 20
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:44 2025]
+rule get_SE_fragstats:
+    input: data/foundationOne/sample3.bed.gz
+    output: output/fragstats/SE_files/foundationOne/sample3.txt.gz
+    jobid: 36
+    reason: Missing output files: output/fragstats/SE_files/foundationOne/sample3.txt.gz
+    wildcards: comm_panel=foundationOne, sample=sample3
+    priority: 20
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:44 2025]
+rule overlap_TFBS:
+    input: data/foundationOne/sample3.bed.gz, files/Homo_sapiens_meta_clusters_hg38_midpoint_top5k_sorted.bed
+    output: output/metrics/TFBS_entropy/foundationOne/sample3_TFBS_frag_count.txt.gz
+    jobid: 156
+    reason: Missing output files: output/metrics/TFBS_entropy/foundationOne/sample3_TFBS_frag_count.txt.gz
+    wildcards: comm_panel=foundationOne, sample=sample3
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:44 2025]
+rule overlap_ATAC:
+    input: data/guardant/sample1.bed.gz, files/TCGA_ATAC_peak.all.probeMap.simple.hg38.bed
+    output: output/metrics/ATAC_entropy/guardant/sample1_ATAC_frag_count.txt.gz
+    jobid: 171
+    reason: Missing output files: output/metrics/ATAC_entropy/guardant/sample1_ATAC_frag_count.txt.gz
+    wildcards: comm_panel=guardant, sample=sample1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:44 2025]
+rule get_right_4mer:
+    input: data/default/sample1.bed.gz, /mnt/Data01/genome/hg38.fa
+    output: output/metrics/mds/default/sample1_right_4mers.txt.gz
+    jobid: 111
+    reason: Missing output files: output/metrics/mds/default/sample1_right_4mers.txt.gz
+    wildcards: comm_panel=default, sample=sample1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:44 2025]
+rule overlap_ATAC:
+    input: data/foundationOne/sample1.bed.gz, files/TCGA_ATAC_peak.all.probeMap.simple.hg38.bed
+    output: output/metrics/ATAC_entropy/foundationOne/sample1_ATAC_frag_count.txt.gz
+    jobid: 172
+    reason: Missing output files: output/metrics/ATAC_entropy/foundationOne/sample1_ATAC_frag_count.txt.gz
+    wildcards: comm_panel=foundationOne, sample=sample1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:44 2025]
+rule get_SE_fragstats:
+    input: data/default/sample2.bed.gz
+    output: output/fragstats/SE_files/default/sample2.txt.gz
+    jobid: 29
+    reason: Missing output files: output/fragstats/SE_files/default/sample2.txt.gz
+    wildcards: comm_panel=default, sample=sample2
+    priority: 20
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:44 2025]
+rule overlap_TFBS:
+    input: data/default/sample2.bed.gz, files/Homo_sapiens_meta_clusters_hg38_midpoint_top5k_sorted.bed
+    output: output/metrics/TFBS_entropy/default/sample2_TFBS_frag_count.txt.gz
+    jobid: 149
+    reason: Missing output files: output/metrics/TFBS_entropy/default/sample2_TFBS_frag_count.txt.gz
+    wildcards: comm_panel=default, sample=sample2
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:44 2025]
+rule get_depth_fragstats:
+    input: data/guardant/sample3.bed.gz
+    output: output/fragstats/depth_files/guardant/sample3.txt
+    jobid: 59
+    reason: Missing output files: output/fragstats/depth_files/guardant/sample3.txt
+    wildcards: comm_panel=guardant, sample=sample3
+    priority: 20
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:44 2025]
+rule overlap_ATAC:
+    input: data/guardant/sample3.bed.gz, files/TCGA_ATAC_peak.all.probeMap.simple.hg38.bed
+    output: output/metrics/ATAC_entropy/guardant/sample3_ATAC_frag_count.txt.gz
+    jobid: 179
+    reason: Missing output files: output/metrics/ATAC_entropy/guardant/sample3_ATAC_frag_count.txt.gz
+    wildcards: comm_panel=guardant, sample=sample3
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:44 2025]
+rule get_left_4mer:
+    input: data/foundationOne/sample1.bed.gz, /mnt/Data01/genome/hg38.fa
+    output: output/metrics/mds/foundationOne/sample1_left_4mers.txt.gz
+    jobid: 119
+    reason: Missing output files: output/metrics/mds/foundationOne/sample1_left_4mers.txt.gz
+    wildcards: comm_panel=foundationOne, sample=sample1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:44 2025]
+rule get_depth_fragstats:
+    input: data/foundationOne/sample1.bed.gz
+    output: output/fragstats/depth_files/foundationOne/sample1.txt
+    jobid: 52
+    reason: Missing output files: output/fragstats/depth_files/foundationOne/sample1.txt
+    wildcards: comm_panel=foundationOne, sample=sample1
+    priority: 20
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:44 2025]
+Finished job 59.
+1 of 177 steps (1%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:44 2025]
+rule get_left_4mer:
+    input: data/guardant/sample1.bed.gz, /mnt/Data01/genome/hg38.fa
+    output: output/metrics/mds/guardant/sample1_left_4mers.txt.gz
+    jobid: 116
+    reason: Missing output files: output/metrics/mds/guardant/sample1_left_4mers.txt.gz
+    wildcards: comm_panel=guardant, sample=sample1
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:44 2025]
+Finished job 51.
+2 of 177 steps (1%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:44 2025]
+rule calculate_full_gene_depth:
+    input: output/fragstats/depth_files/guardant/sample1.txt
+    output: output/metrics/full_gene_depth/guardant/sample1.fullgenedepth.tsv
+    jobid: 99
+    reason: Missing output files: output/metrics/full_gene_depth/guardant/sample1.fullgenedepth.tsv; Input files updated by another job: output/fragstats/depth_files/guardant/sample1.txt
+    wildcards: comm_panel=guardant, sample=sample1
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:44 2025]
+Finished job 55.
+3 of 177 steps (2%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:44 2025]
+rule calculate_normalized_depth:
+    input: output/fragstats/depth_files/guardant/sample2.txt
+    output: output/metrics/depth/guardant/sample2.depth.tsv
+    jobid: 67
+    reason: Missing output files: output/metrics/depth/guardant/sample2.depth.tsv; Input files updated by another job: output/fragstats/depth_files/guardant/sample2.txt
+    wildcards: comm_panel=guardant, sample=sample2
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:44 2025]
+Finished job 58.
+4 of 177 steps (2%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:44 2025]
+rule calculate_full_gene_depth:
+    input: output/fragstats/depth_files/tempus/sample3.txt
+    output: output/metrics/full_gene_depth/tempus/sample3.fullgenedepth.tsv
+    jobid: 106
+    reason: Missing output files: output/metrics/full_gene_depth/tempus/sample3.fullgenedepth.tsv; Input files updated by another job: output/fragstats/depth_files/tempus/sample3.txt
+    wildcards: comm_panel=tempus, sample=sample3
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:44 2025]
+Finished job 35.
+5 of 177 steps (3%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:44 2025]
+rule get_right_4mer:
+    input: data/guardant/sample1.bed.gz, /mnt/Data01/genome/hg38.fa
+    output: output/metrics/mds/guardant/sample1_right_4mers.txt.gz
+    jobid: 117
+    reason: Missing output files: output/metrics/mds/guardant/sample1_right_4mers.txt.gz
+    wildcards: comm_panel=guardant, sample=sample1
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:44 2025]
+Finished job 50.
+6 of 177 steps (3%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:44 2025]
+rule calculate_full_gene_depth:
+    input: output/fragstats/depth_files/guardant/sample2.txt
+    output: output/metrics/full_gene_depth/guardant/sample2.fullgenedepth.tsv
+    jobid: 103
+    reason: Missing output files: output/metrics/full_gene_depth/guardant/sample2.fullgenedepth.tsv; Input files updated by another job: output/fragstats/depth_files/guardant/sample2.txt
+    wildcards: comm_panel=guardant, sample=sample2
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:44 2025]
+Finished job 54.
+7 of 177 steps (4%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:44 2025]
+rule calculate_normalized_depth:
+    input: output/fragstats/depth_files/tempus/sample1.txt
+    output: output/metrics/depth/tempus/sample1.depth.tsv
+    jobid: 62
+    reason: Missing output files: output/metrics/depth/tempus/sample1.depth.tsv; Input files updated by another job: output/fragstats/depth_files/tempus/sample1.txt
+    wildcards: comm_panel=tempus, sample=sample1
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:45 2025]
+Finished job 27.
+8 of 177 steps (5%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:45 2025]
+rule calculate_frag_bins:
+    input: output/fragstats/SE_files/guardant/sample1.txt.gz
+    output: output/metrics/frag_bins/guardant/sample1.fragbins.tsv
+    jobid: 75
+    reason: Missing output files: output/metrics/frag_bins/guardant/sample1.fragbins.tsv; Input files updated by another job: output/fragstats/SE_files/guardant/sample1.txt.gz
+    wildcards: comm_panel=guardant, sample=sample1
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:45 2025]
+Finished job 60.
+9 of 177 steps (5%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:45 2025]
+rule calculate_frag_bins:
+    input: output/fragstats/SE_files/guardant/sample3.txt.gz
+    output: output/metrics/frag_bins/guardant/sample3.fragbins.tsv
+    jobid: 83
+    reason: Missing output files: output/metrics/frag_bins/guardant/sample3.fragbins.tsv; Input files updated by another job: output/fragstats/SE_files/guardant/sample3.txt.gz
+    wildcards: comm_panel=guardant, sample=sample3
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:45 2025]
+Finished job 31.
+10 of 177 steps (6%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:45 2025]
+rule overlap_ATAC:
+    input: data/default/sample2.bed.gz, files/TCGA_ATAC_peak.all.probeMap.simple.hg38.bed
+    output: output/metrics/ATAC_entropy/default/sample2_ATAC_frag_count.txt.gz
+    jobid: 173
+    reason: Missing output files: output/metrics/ATAC_entropy/default/sample2_ATAC_frag_count.txt.gz
+    wildcards: comm_panel=default, sample=sample2
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:45 2025]
+Finished job 179.
+11 of 177 steps (6%) done
+[Thu Apr 17 13:18:45 2025]
+Finished job 34.
+12 of 177 steps (7%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:45 2025]
+rule calculate_SE:
+    input: output/fragstats/SE_files/tempus/sample3.txt.gz
+    output: output/metrics/se/tempus/sample3.SE.tsv
+    jobid: 46
+    reason: Missing output files: output/metrics/se/tempus/sample3.SE.tsv; Input files updated by another job: output/fragstats/SE_files/tempus/sample3.txt.gz
+    wildcards: comm_panel=tempus, sample=sample3
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:45 2025]
+rule calculate_full_gene_depth:
+    input: output/fragstats/depth_files/foundationOne/sample3.txt
+    output: output/metrics/full_gene_depth/foundationOne/sample3.fullgenedepth.tsv
+    jobid: 108
+    reason: Missing output files: output/metrics/full_gene_depth/foundationOne/sample3.fullgenedepth.tsv; Input files updated by another job: output/fragstats/depth_files/foundationOne/sample3.txt
+    wildcards: comm_panel=foundationOne, sample=sample3
+    resources: tmpdir=/tmp
+
+Select jobs to execute...
+[Thu Apr 17 13:18:45 2025]
+Finished job 171.
+13 of 177 steps (7%) done
+
+[Thu Apr 17 13:18:45 2025]
+rule calculate_full_gene_depth:
+    input: output/fragstats/depth_files/tempus/sample1.txt
+    output: output/metrics/full_gene_depth/tempus/sample1.fullgenedepth.tsv
+    jobid: 98
+    reason: Missing output files: output/metrics/full_gene_depth/tempus/sample1.fullgenedepth.tsv; Input files updated by another job: output/fragstats/depth_files/tempus/sample1.txt
+    wildcards: comm_panel=tempus, sample=sample1
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:45 2025]
+Finished job 175.
+14 of 177 steps (8%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:45 2025]
+rule calculate_small_frags:
+    input: output/fragstats/SE_files/guardant/sample2.txt.gz
+    output: output/metrics/small_frags/guardant/sample2.smallfrag.tsv
+    jobid: 91
+    reason: Missing output files: output/metrics/small_frags/guardant/sample2.smallfrag.tsv; Input files updated by another job: output/fragstats/SE_files/guardant/sample2.txt.gz
+    wildcards: comm_panel=guardant, sample=sample2
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:45 2025]
+Finished job 178.
+15 of 177 steps (8%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:45 2025]
+rule calculate_SE:
+    input: output/fragstats/SE_files/guardant/sample1.txt.gz
+    output: output/metrics/se/guardant/sample1.SE.tsv
+    jobid: 39
+    reason: Missing output files: output/metrics/se/guardant/sample1.SE.tsv; Input files updated by another job: output/fragstats/SE_files/guardant/sample1.txt.gz
+    wildcards: comm_panel=guardant, sample=sample1
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:45 2025]
+Finished job 26.
+16 of 177 steps (9%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:46 2025]
+rule calculate_SE:
+    input: output/fragstats/SE_files/tempus/sample1.txt.gz
+    output: output/metrics/se/tempus/sample1.SE.tsv
+    jobid: 38
+    reason: Missing output files: output/metrics/se/tempus/sample1.SE.tsv; Input files updated by another job: output/fragstats/SE_files/tempus/sample1.txt.gz
+    wildcards: comm_panel=tempus, sample=sample1
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:46 2025]
+Finished job 52.
+17 of 177 steps (10%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:46 2025]
+rule calculate_full_gene_depth:
+    input: output/fragstats/depth_files/guardant/sample3.txt
+    output: output/metrics/full_gene_depth/guardant/sample3.fullgenedepth.tsv
+    jobid: 107
+    reason: Missing output files: output/metrics/full_gene_depth/guardant/sample3.fullgenedepth.tsv; Input files updated by another job: output/fragstats/depth_files/guardant/sample3.txt
+    wildcards: comm_panel=guardant, sample=sample3
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:46 2025]
+Finished job 170.
+18 of 177 steps (10%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:46 2025]
+rule calculate_ATAC_entropy:
+    input: output/metrics/ATAC_entropy/tempus/sample1_ATAC_frag_count.txt.gz
+    output: output/metrics/ATAC_entropy/tempus/sample1_ATAC_entropy.txt
+    jobid: 182
+    reason: Missing output files: output/metrics/ATAC_entropy/tempus/sample1_ATAC_entropy.txt; Input files updated by another job: output/metrics/ATAC_entropy/tempus/sample1_ATAC_frag_count.txt.gz
+    wildcards: comm_panel=tempus, sample=sample1
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:46 2025]
+Finished job 30.
+19 of 177 steps (11%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:46 2025]
+rule calculate_small_frags:
+    input: output/fragstats/SE_files/tempus/sample2.txt.gz
+    output: output/metrics/small_frags/tempus/sample2.smallfrag.tsv
+    jobid: 90
+    reason: Missing output files: output/metrics/small_frags/tempus/sample2.smallfrag.tsv; Input files updated by another job: output/fragstats/SE_files/tempus/sample2.txt.gz
+    wildcards: comm_panel=tempus, sample=sample2
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:46 2025]
+Finished job 174.
+20 of 177 steps (11%) done
+[Thu Apr 17 13:18:46 2025]
+Finished job 56.
+21 of 177 steps (12%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:46 2025]
+rule calculate_small_frags:
+    input: output/fragstats/SE_files/guardant/sample3.txt.gz
+    output: output/metrics/small_frags/guardant/sample3.smallfrag.tsv
+    jobid: 95
+    reason: Missing output files: output/metrics/small_frags/guardant/sample3.smallfrag.tsv; Input files updated by another job: output/fragstats/SE_files/guardant/sample3.txt.gz
+    wildcards: comm_panel=guardant, sample=sample3
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:46 2025]
+rule calculate_small_frags:
+    input: output/fragstats/SE_files/tempus/sample1.txt.gz
+    output: output/metrics/small_frags/tempus/sample1.smallfrag.tsv
+    jobid: 86
+    reason: Missing output files: output/metrics/small_frags/tempus/sample1.smallfrag.tsv; Input files updated by another job: output/fragstats/SE_files/tempus/sample1.txt.gz
+    wildcards: comm_panel=tempus, sample=sample1
+    resources: tmpdir=/tmp
+
+Select jobs to execute...
+[Thu Apr 17 13:18:46 2025]
+Finished job 141.
+22 of 177 steps (12%) done
+
+[Thu Apr 17 13:18:46 2025]
+rule calculate_normalized_depth:
+    input: output/fragstats/depth_files/foundationOne/sample2.txt
+    output: output/metrics/depth/foundationOne/sample2.depth.tsv
+    jobid: 68
+    reason: Missing output files: output/metrics/depth/foundationOne/sample2.depth.tsv; Input files updated by another job: output/fragstats/depth_files/foundationOne/sample2.txt
+    wildcards: comm_panel=foundationOne, sample=sample2
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:46 2025]
+Finished job 140.
+23 of 177 steps (13%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:46 2025]
+rule calculate_SE:
+    input: output/fragstats/SE_files/guardant/sample3.txt.gz
+    output: output/metrics/se/guardant/sample3.SE.tsv
+    jobid: 47
+    reason: Missing output files: output/metrics/se/guardant/sample3.SE.tsv; Input files updated by another job: output/fragstats/SE_files/guardant/sample3.txt.gz
+    wildcards: comm_panel=guardant, sample=sample3
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:46 2025]
+Finished job 180.
+24 of 177 steps (14%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:46 2025]
+rule calculate_ATAC_entropy:
+    input: output/metrics/ATAC_entropy/tempus/sample3_ATAC_frag_count.txt.gz
+    output: output/metrics/ATAC_entropy/tempus/sample3_ATAC_entropy.txt
+    jobid: 190
+    reason: Missing output files: output/metrics/ATAC_entropy/tempus/sample3_ATAC_entropy.txt; Input files updated by another job: output/metrics/ATAC_entropy/tempus/sample3_ATAC_frag_count.txt.gz
+    wildcards: comm_panel=tempus, sample=sample3
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:46 2025]
+Finished job 36.
+25 of 177 steps (14%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:46 2025]
+rule calculate_frag_bins:
+    input: output/fragstats/SE_files/foundationOne/sample3.txt.gz
+    output: output/metrics/frag_bins/foundationOne/sample3.fragbins.tsv
+    jobid: 84
+    reason: Missing output files: output/metrics/frag_bins/foundationOne/sample3.fragbins.tsv; Input files updated by another job: output/fragstats/SE_files/foundationOne/sample3.txt.gz
+    wildcards: comm_panel=foundationOne, sample=sample3
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:47 2025]
+Finished job 75.
+26 of 177 steps (15%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:47 2025]
+rule calculate_normalized_depth:
+    input: output/fragstats/depth_files/tempus/sample3.txt
+    output: output/metrics/depth/tempus/sample3.depth.tsv
+    jobid: 70
+    reason: Missing output files: output/metrics/depth/tempus/sample3.depth.tsv; Input files updated by another job: output/fragstats/depth_files/tempus/sample3.txt
+    wildcards: comm_panel=tempus, sample=sample3
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:47 2025]
+Finished job 67.
+27 of 177 steps (15%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:47 2025]
+rule calculate_full_gene_depth:
+    input: output/fragstats/depth_files/foundationOne/sample1.txt
+    output: output/metrics/full_gene_depth/foundationOne/sample1.fullgenedepth.tsv
+    jobid: 100
+    reason: Missing output files: output/metrics/full_gene_depth/foundationOne/sample1.fullgenedepth.tsv; Input files updated by another job: output/fragstats/depth_files/foundationOne/sample1.txt
+    wildcards: comm_panel=foundationOne, sample=sample1
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:47 2025]
+Finished job 46.
+28 of 177 steps (16%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:47 2025]
+rule calculate_frag_bins:
+    input: output/fragstats/SE_files/tempus/sample2.txt.gz
+    output: output/metrics/frag_bins/tempus/sample2.fragbins.tsv
+    jobid: 78
+    reason: Missing output files: output/metrics/frag_bins/tempus/sample2.fragbins.tsv; Input files updated by another job: output/fragstats/SE_files/tempus/sample2.txt.gz
+    wildcards: comm_panel=tempus, sample=sample2
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:47 2025]
+Finished job 83.
+29 of 177 steps (16%) done
+[Thu Apr 17 13:18:47 2025]
+Finished job 91.
+30 of 177 steps (17%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:47 2025]
+rule calculate_ATAC_entropy:
+    input: output/metrics/ATAC_entropy/tempus/sample2_ATAC_frag_count.txt.gz
+    output: output/metrics/ATAC_entropy/tempus/sample2_ATAC_entropy.txt
+    jobid: 186
+    reason: Missing output files: output/metrics/ATAC_entropy/tempus/sample2_ATAC_entropy.txt; Input files updated by another job: output/metrics/ATAC_entropy/tempus/sample2_ATAC_frag_count.txt.gz
+    wildcards: comm_panel=tempus, sample=sample2
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:47 2025]
+rule calculate_MDS:
+    input: output/metrics/mds/guardant/sample3_left_4mers.txt.gz, output/metrics/mds/guardant/sample3_right_4mers.txt.gz, scripts/calculate_mds.R
+    output: output/metrics/mds/guardant/sample3_mds.txt
+    jobid: 139
+    reason: Missing output files: output/metrics/mds/guardant/sample3_mds.txt; Input files updated by another job: output/metrics/mds/guardant/sample3_right_4mers.txt.gz, output/metrics/mds/guardant/sample3_left_4mers.txt.gz
+    wildcards: comm_panel=guardant, sample=sample3
+    resources: tmpdir=/tmp
+
+Select jobs to execute...
+[Thu Apr 17 13:18:47 2025]
+Finished job 182.
+31 of 177 steps (18%) done
+
+[Thu Apr 17 13:18:47 2025]
+rule calculate_ATAC_entropy:
+    input: output/metrics/ATAC_entropy/guardant/sample1_ATAC_frag_count.txt.gz
+    output: output/metrics/ATAC_entropy/guardant/sample1_ATAC_entropy.txt
+    jobid: 183
+    reason: Missing output files: output/metrics/ATAC_entropy/guardant/sample1_ATAC_entropy.txt; Input files updated by another job: output/metrics/ATAC_entropy/guardant/sample1_ATAC_frag_count.txt.gz
+    wildcards: comm_panel=guardant, sample=sample1
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:47 2025]
+Finished job 39.
+32 of 177 steps (18%) done
+[Thu Apr 17 13:18:47 2025]
+Finished job 62.
+33 of 177 steps (19%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:47 2025]
+rule overlap_TFBS:
+    input: data/guardant/sample1.bed.gz, files/Homo_sapiens_meta_clusters_hg38_midpoint_top5k_sorted.bed
+    output: output/metrics/TFBS_entropy/guardant/sample1_TFBS_frag_count.txt.gz
+    jobid: 147
+    reason: Missing output files: output/metrics/TFBS_entropy/guardant/sample1_TFBS_frag_count.txt.gz
+    wildcards: comm_panel=guardant, sample=sample1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:47 2025]
+rule calculate_SE:
+    input: output/fragstats/SE_files/foundationOne/sample3.txt.gz
+    output: output/metrics/se/foundationOne/sample3.SE.tsv
+    jobid: 48
+    reason: Missing output files: output/metrics/se/foundationOne/sample3.SE.tsv; Input files updated by another job: output/fragstats/SE_files/foundationOne/sample3.txt.gz
+    wildcards: comm_panel=foundationOne, sample=sample3
+    resources: tmpdir=/tmp
+
+Select jobs to execute...
+[Thu Apr 17 13:18:47 2025]
+Finished job 172.
+34 of 177 steps (19%) done
+
+[Thu Apr 17 13:18:47 2025]
+rule calculate_normalized_depth:
+    input: output/fragstats/depth_files/guardant/sample1.txt
+    output: output/metrics/depth/guardant/sample1.depth.tsv
+    jobid: 63
+    reason: Missing output files: output/metrics/depth/guardant/sample1.depth.tsv; Input files updated by another job: output/fragstats/depth_files/guardant/sample1.txt
+    wildcards: comm_panel=guardant, sample=sample1
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:48 2025]
+Finished job 38.
+35 of 177 steps (20%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:48 2025]
+rule calculate_normalized_depth:
+    input: output/fragstats/depth_files/guardant/sample3.txt
+    output: output/metrics/depth/guardant/sample3.depth.tsv
+    jobid: 71
+    reason: Missing output files: output/metrics/depth/guardant/sample3.depth.tsv; Input files updated by another job: output/fragstats/depth_files/guardant/sample3.txt
+    wildcards: comm_panel=guardant, sample=sample3
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:48 2025]
+Finished job 95.
+36 of 177 steps (20%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:48 2025]
+rule calculate_ATAC_entropy:
+    input: output/metrics/ATAC_entropy/guardant/sample3_ATAC_frag_count.txt.gz
+    output: output/metrics/ATAC_entropy/guardant/sample3_ATAC_entropy.txt
+    jobid: 191
+    reason: Missing output files: output/metrics/ATAC_entropy/guardant/sample3_ATAC_entropy.txt; Input files updated by another job: output/metrics/ATAC_entropy/guardant/sample3_ATAC_frag_count.txt.gz
+    wildcards: comm_panel=guardant, sample=sample3
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:48 2025]
+Finished job 190.
+37 of 177 steps (21%) done
+[Thu Apr 17 13:18:48 2025]
+Finished job 137.
+38 of 177 steps (21%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:48 2025]
+rule calculate_full_gene_depth:
+    input: output/fragstats/depth_files/tempus/sample2.txt
+    output: output/metrics/full_gene_depth/tempus/sample2.fullgenedepth.tsv
+    jobid: 102
+    reason: Missing output files: output/metrics/full_gene_depth/tempus/sample2.fullgenedepth.tsv; Input files updated by another job: output/fragstats/depth_files/tempus/sample2.txt
+    wildcards: comm_panel=tempus, sample=sample2
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:48 2025]
+rule calculate_frag_bins:
+    input: output/fragstats/SE_files/tempus/sample3.txt.gz
+    output: output/metrics/frag_bins/tempus/sample3.fragbins.tsv
+    jobid: 82
+    reason: Missing output files: output/metrics/frag_bins/tempus/sample3.fragbins.tsv; Input files updated by another job: output/fragstats/SE_files/tempus/sample3.txt.gz
+    wildcards: comm_panel=tempus, sample=sample3
+    resources: tmpdir=/tmp
+
+Select jobs to execute...
+[Thu Apr 17 13:18:48 2025]
+Finished job 86.
+39 of 177 steps (22%) done
+
+[Thu Apr 17 13:18:48 2025]
+rule calculate_SE:
+    input: output/fragstats/SE_files/guardant/sample2.txt.gz
+    output: output/metrics/se/guardant/sample2.SE.tsv
+    jobid: 43
+    reason: Missing output files: output/metrics/se/guardant/sample2.SE.tsv; Input files updated by another job: output/fragstats/SE_files/guardant/sample2.txt.gz
+    wildcards: comm_panel=guardant, sample=sample2
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:48 2025]
+Finished job 90.
+40 of 177 steps (23%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:48 2025]
+rule calculate_frag_bins:
+    input: output/fragstats/SE_files/guardant/sample2.txt.gz
+    output: output/metrics/frag_bins/guardant/sample2.fragbins.tsv
+    jobid: 79
+    reason: Missing output files: output/metrics/frag_bins/guardant/sample2.fragbins.tsv; Input files updated by another job: output/fragstats/SE_files/guardant/sample2.txt.gz
+    wildcards: comm_panel=guardant, sample=sample2
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:48 2025]
+Finished job 128.
+41 of 177 steps (23%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:48 2025]
+rule calculate_normalized_depth:
+    input: output/fragstats/depth_files/foundationOne/sample1.txt
+    output: output/metrics/depth/foundationOne/sample1.depth.tsv
+    jobid: 64
+    reason: Missing output files: output/metrics/depth/foundationOne/sample1.depth.tsv; Input files updated by another job: output/fragstats/depth_files/foundationOne/sample1.txt
+    wildcards: comm_panel=foundationOne, sample=sample1
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:48 2025]
+Finished job 116.
+42 of 177 steps (24%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:48 2025]
+rule calculate_ATAC_entropy:
+    input: output/metrics/ATAC_entropy/foundationOne/sample3_ATAC_frag_count.txt.gz
+    output: output/metrics/ATAC_entropy/foundationOne/sample3_ATAC_entropy.txt
+    jobid: 192
+    reason: Missing output files: output/metrics/ATAC_entropy/foundationOne/sample3_ATAC_entropy.txt; Input files updated by another job: output/metrics/ATAC_entropy/foundationOne/sample3_ATAC_frag_count.txt.gz
+    wildcards: comm_panel=foundationOne, sample=sample3
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:48 2025]
+Finished job 57.
+43 of 177 steps (24%) done
+[Thu Apr 17 13:18:48 2025]
+Finished job 28.
+44 of 177 steps (25%) done
+[Thu Apr 17 13:18:48 2025]
+Finished job 138.
+45 of 177 steps (25%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:48 2025]
+rule calculate_small_frags:
+    input: output/fragstats/SE_files/tempus/sample3.txt.gz
+    output: output/metrics/small_frags/tempus/sample3.smallfrag.tsv
+    jobid: 94
+    reason: Missing output files: output/metrics/small_frags/tempus/sample3.smallfrag.tsv; Input files updated by another job: output/fragstats/SE_files/tempus/sample3.txt.gz
+    wildcards: comm_panel=tempus, sample=sample3
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:48 2025]
+rule calculate_full_gene_depth:
+    input: output/fragstats/depth_files/foundationOne/sample2.txt
+    output: output/metrics/full_gene_depth/foundationOne/sample2.fullgenedepth.tsv
+    jobid: 104
+    reason: Missing output files: output/metrics/full_gene_depth/foundationOne/sample2.fullgenedepth.tsv; Input files updated by another job: output/fragstats/depth_files/foundationOne/sample2.txt
+    wildcards: comm_panel=foundationOne, sample=sample2
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:48 2025]
+rule calculate_small_frags:
+    input: output/fragstats/SE_files/guardant/sample1.txt.gz
+    output: output/metrics/small_frags/guardant/sample1.smallfrag.tsv
+    jobid: 87
+    reason: Missing output files: output/metrics/small_frags/guardant/sample1.smallfrag.tsv; Input files updated by another job: output/fragstats/SE_files/guardant/sample1.txt.gz
+    wildcards: comm_panel=guardant, sample=sample1
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:48 2025]
+Finished job 47.
+46 of 177 steps (26%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:48 2025]
+rule calculate_full_gene_depth:
+    input: output/fragstats/depth_files/default/sample3.txt
+    output: output/metrics/full_gene_depth/default/sample3.fullgenedepth.tsv
+    jobid: 105
+    reason: Missing output files: output/metrics/full_gene_depth/default/sample3.fullgenedepth.tsv; Input files updated by another job: output/fragstats/depth_files/default/sample3.txt
+    wildcards: comm_panel=default, sample=sample3
+    resources: tmpdir=/tmp
+
+Select jobs to execute...
+[Thu Apr 17 13:18:48 2025]
+Finished job 129.
+47 of 177 steps (27%) done
+
+[Thu Apr 17 13:18:48 2025]
+rule calculate_ATAC_entropy:
+    input: output/metrics/ATAC_entropy/foundationOne/sample1_ATAC_frag_count.txt.gz
+    output: output/metrics/ATAC_entropy/foundationOne/sample1_ATAC_entropy.txt
+    jobid: 184
+    reason: Missing output files: output/metrics/ATAC_entropy/foundationOne/sample1_ATAC_entropy.txt; Input files updated by another job: output/metrics/ATAC_entropy/foundationOne/sample1_ATAC_frag_count.txt.gz
+    wildcards: comm_panel=foundationOne, sample=sample1
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:48 2025]
+Finished job 117.
+48 of 177 steps (27%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:49 2025]
+rule calculate_normalized_depth:
+    input: output/fragstats/depth_files/tempus/sample2.txt
+    output: output/metrics/depth/tempus/sample2.depth.tsv
+    jobid: 66
+    reason: Missing output files: output/metrics/depth/tempus/sample2.depth.tsv; Input files updated by another job: output/fragstats/depth_files/tempus/sample2.txt
+    wildcards: comm_panel=tempus, sample=sample2
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:49 2025]
+Finished job 155.
+49 of 177 steps (28%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:49 2025]
+rule calculate_TFBS_entropy:
+    input: output/metrics/TFBS_entropy/guardant/sample3_TFBS_frag_count.txt.gz
+    output: output/metrics/TFBS_entropy/guardant/sample3_TFBS_entropy.txt
+    jobid: 167
+    reason: Missing output files: output/metrics/TFBS_entropy/guardant/sample3_TFBS_entropy.txt; Input files updated by another job: output/metrics/TFBS_entropy/guardant/sample3_TFBS_frag_count.txt.gz
+    wildcards: comm_panel=guardant, sample=sample3
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:49 2025]
+Finished job 186.
+50 of 177 steps (28%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:49 2025]
+rule calculate_small_frags:
+    input: output/fragstats/SE_files/foundationOne/sample3.txt.gz
+    output: output/metrics/small_frags/foundationOne/sample3.smallfrag.tsv
+    jobid: 96
+    reason: Missing output files: output/metrics/small_frags/foundationOne/sample3.smallfrag.tsv; Input files updated by another job: output/fragstats/SE_files/foundationOne/sample3.txt.gz
+    wildcards: comm_panel=foundationOne, sample=sample3
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:49 2025]
+Finished job 32.
+51 of 177 steps (29%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:49 2025]
+rule calculate_small_frags:
+    input: output/fragstats/SE_files/foundationOne/sample2.txt.gz
+    output: output/metrics/small_frags/foundationOne/sample2.smallfrag.tsv
+    jobid: 92
+    reason: Missing output files: output/metrics/small_frags/foundationOne/sample2.smallfrag.tsv; Input files updated by another job: output/fragstats/SE_files/foundationOne/sample2.txt.gz
+    wildcards: comm_panel=foundationOne, sample=sample2
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:49 2025]
+Finished job 183.
+52 of 177 steps (29%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:49 2025]
+rule calculate_MDS:
+    input: output/metrics/mds/guardant/sample1_left_4mers.txt.gz, output/metrics/mds/guardant/sample1_right_4mers.txt.gz, scripts/calculate_mds.R
+    output: output/metrics/mds/guardant/sample1_mds.txt
+    jobid: 115
+    reason: Missing output files: output/metrics/mds/guardant/sample1_mds.txt; Input files updated by another job: output/metrics/mds/guardant/sample1_right_4mers.txt.gz, output/metrics/mds/guardant/sample1_left_4mers.txt.gz
+    wildcards: comm_panel=guardant, sample=sample1
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:49 2025]
+Finished job 151.
+53 of 177 steps (30%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:49 2025]
+rule calculate_TFBS_entropy:
+    input: output/metrics/TFBS_entropy/guardant/sample2_TFBS_frag_count.txt.gz
+    output: output/metrics/TFBS_entropy/guardant/sample2_TFBS_entropy.txt
+    jobid: 163
+    reason: Missing output files: output/metrics/TFBS_entropy/guardant/sample2_TFBS_entropy.txt; Input files updated by another job: output/metrics/TFBS_entropy/guardant/sample2_TFBS_frag_count.txt.gz
+    wildcards: comm_panel=guardant, sample=sample2
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:49 2025]
+Finished job 68.
+54 of 177 steps (31%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:49 2025]
+rule calculate_SE:
+    input: output/fragstats/SE_files/foundationOne/sample1.txt.gz
+    output: output/metrics/se/foundationOne/sample1.SE.tsv
+    jobid: 40
+    reason: Missing output files: output/metrics/se/foundationOne/sample1.SE.tsv; Input files updated by another job: output/fragstats/SE_files/foundationOne/sample1.txt.gz
+    wildcards: comm_panel=foundationOne, sample=sample1
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:49 2025]
+Finished job 191.
+55 of 177 steps (31%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:49 2025]
+rule calculate_frag_bins:
+    input: output/fragstats/SE_files/foundationOne/sample2.txt.gz
+    output: output/metrics/frag_bins/foundationOne/sample2.fragbins.tsv
+    jobid: 80
+    reason: Missing output files: output/metrics/frag_bins/foundationOne/sample2.fragbins.tsv; Input files updated by another job: output/fragstats/SE_files/foundationOne/sample2.txt.gz
+    wildcards: comm_panel=foundationOne, sample=sample2
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:49 2025]
+Finished job 154.
+56 of 177 steps (32%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:50 2025]
+rule calculate_frag_bins:
+    input: output/fragstats/SE_files/tempus/sample1.txt.gz
+    output: output/metrics/frag_bins/tempus/sample1.fragbins.tsv
+    jobid: 74
+    reason: Missing output files: output/metrics/frag_bins/tempus/sample1.fragbins.tsv; Input files updated by another job: output/fragstats/SE_files/tempus/sample1.txt.gz
+    wildcards: comm_panel=tempus, sample=sample1
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:50 2025]
+Finished job 192.
+57 of 177 steps (32%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:50 2025]
+rule calculate_SE:
+    input: output/fragstats/SE_files/foundationOne/sample2.txt.gz
+    output: output/metrics/se/foundationOne/sample2.SE.tsv
+    jobid: 44
+    reason: Missing output files: output/metrics/se/foundationOne/sample2.SE.tsv; Input files updated by another job: output/fragstats/SE_files/foundationOne/sample2.txt.gz
+    wildcards: comm_panel=foundationOne, sample=sample2
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:50 2025]
+Finished job 146.
+58 of 177 steps (33%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:50 2025]
+rule calculate_TFBS_entropy:
+    input: output/metrics/TFBS_entropy/tempus/sample3_TFBS_frag_count.txt.gz
+    output: output/metrics/TFBS_entropy/tempus/sample3_TFBS_entropy.txt
+    jobid: 166
+    reason: Missing output files: output/metrics/TFBS_entropy/tempus/sample3_TFBS_entropy.txt; Input files updated by another job: output/metrics/TFBS_entropy/tempus/sample3_TFBS_frag_count.txt.gz
+    wildcards: comm_panel=tempus, sample=sample3
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:50 2025]
+Finished job 139.
+59 of 177 steps (33%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:50 2025]
+rule calculate_MDS:
+    input: output/metrics/mds/guardant/sample2_left_4mers.txt.gz, output/metrics/mds/guardant/sample2_right_4mers.txt.gz, scripts/calculate_mds.R
+    output: output/metrics/mds/guardant/sample2_mds.txt
+    jobid: 127
+    reason: Missing output files: output/metrics/mds/guardant/sample2_mds.txt; Input files updated by another job: output/metrics/mds/guardant/sample2_right_4mers.txt.gz, output/metrics/mds/guardant/sample2_left_4mers.txt.gz
+    wildcards: comm_panel=guardant, sample=sample2
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:50 2025]
+Finished job 184.
+60 of 177 steps (34%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:50 2025]
+rule calculate_ATAC_entropy:
+    input: output/metrics/ATAC_entropy/guardant/sample2_ATAC_frag_count.txt.gz
+    output: output/metrics/ATAC_entropy/guardant/sample2_ATAC_entropy.txt
+    jobid: 187
+    reason: Missing output files: output/metrics/ATAC_entropy/guardant/sample2_ATAC_entropy.txt; Input files updated by another job: output/metrics/ATAC_entropy/guardant/sample2_ATAC_frag_count.txt.gz
+    wildcards: comm_panel=guardant, sample=sample2
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:50 2025]
+Finished job 43.
+61 of 177 steps (34%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:50 2025]
+rule calculate_normalized_depth:
+    input: output/fragstats/depth_files/default/sample3.txt
+    output: output/metrics/depth/default/sample3.depth.tsv
+    jobid: 69
+    reason: Missing output files: output/metrics/depth/default/sample3.depth.tsv; Input files updated by another job: output/fragstats/depth_files/default/sample3.txt
+    wildcards: comm_panel=default, sample=sample3
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:50 2025]
+Finished job 87.
+62 of 177 steps (35%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:50 2025]
+rule calculate_small_frags:
+    input: output/fragstats/SE_files/foundationOne/sample1.txt.gz
+    output: output/metrics/small_frags/foundationOne/sample1.smallfrag.tsv
+    jobid: 88
+    reason: Missing output files: output/metrics/small_frags/foundationOne/sample1.smallfrag.tsv; Input files updated by another job: output/fragstats/SE_files/foundationOne/sample1.txt.gz
+    wildcards: comm_panel=foundationOne, sample=sample1
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:50 2025]
+Finished job 70.
+63 of 177 steps (36%) done
+[Thu Apr 17 13:18:50 2025]
+Finished job 94.
+64 of 177 steps (36%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:50 2025]
+rule get_right_4mer:
+    input: data/default/sample3.bed.gz, /mnt/Data01/genome/hg38.fa
+    output: output/metrics/mds/default/sample3_right_4mers.txt.gz
+    jobid: 135
+    reason: Missing output files: output/metrics/mds/default/sample3_right_4mers.txt.gz
+    wildcards: comm_panel=default, sample=sample3
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:50 2025]
+rule calculate_TFBS_entropy:
+    input: output/metrics/TFBS_entropy/tempus/sample1_TFBS_frag_count.txt.gz
+    output: output/metrics/TFBS_entropy/tempus/sample1_TFBS_entropy.txt
+    jobid: 158
+    reason: Missing output files: output/metrics/TFBS_entropy/tempus/sample1_TFBS_entropy.txt; Input files updated by another job: output/metrics/TFBS_entropy/tempus/sample1_TFBS_frag_count.txt.gz
+    wildcards: comm_panel=tempus, sample=sample1
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:50 2025]
+Finished job 63.
+65 of 177 steps (37%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:50 2025]
+rule overlap_ATAC:
+    input: data/foundationOne/sample2.bed.gz, files/TCGA_ATAC_peak.all.probeMap.simple.hg38.bed
+    output: output/metrics/ATAC_entropy/foundationOne/sample2_ATAC_frag_count.txt.gz
+    jobid: 176
+    reason: Missing output files: output/metrics/ATAC_entropy/foundationOne/sample2_ATAC_frag_count.txt.gz
+    wildcards: comm_panel=foundationOne, sample=sample2
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:50 2025]
+Finished job 78.
+66 of 177 steps (37%) done
+[Thu Apr 17 13:18:50 2025]
+Finished job 113.
+67 of 177 steps (38%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:50 2025]
+rule calculate_normalized_depth:
+    input: output/fragstats/depth_files/foundationOne/sample3.txt
+    output: output/metrics/depth/foundationOne/sample3.depth.tsv
+    jobid: 72
+    reason: Missing output files: output/metrics/depth/foundationOne/sample3.depth.tsv; Input files updated by another job: output/fragstats/depth_files/foundationOne/sample3.txt
+    wildcards: comm_panel=foundationOne, sample=sample3
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:50 2025]
+rule overlap_ATAC:
+    input: data/default/sample3.bed.gz, files/TCGA_ATAC_peak.all.probeMap.simple.hg38.bed
+    output: output/metrics/ATAC_entropy/default/sample3_ATAC_frag_count.txt.gz
+    jobid: 177
+    reason: Missing output files: output/metrics/ATAC_entropy/default/sample3_ATAC_frag_count.txt.gz
+    wildcards: comm_panel=default, sample=sample3
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:50 2025]
+Finished job 79.
+68 of 177 steps (38%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:50 2025]
+rule calculate_MDS:
+    input: output/metrics/mds/tempus/sample3_left_4mers.txt.gz, output/metrics/mds/tempus/sample3_right_4mers.txt.gz, scripts/calculate_mds.R
+    output: output/metrics/mds/tempus/sample3_mds.txt
+    jobid: 136
+    reason: Missing output files: output/metrics/mds/tempus/sample3_mds.txt; Input files updated by another job: output/metrics/mds/tempus/sample3_right_4mers.txt.gz, output/metrics/mds/tempus/sample3_left_4mers.txt.gz
+    wildcards: comm_panel=tempus, sample=sample3
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:50 2025]
+Finished job 150.
+69 of 177 steps (39%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:50 2025]
+rule calculate_TFBS_entropy:
+    input: output/metrics/TFBS_entropy/tempus/sample2_TFBS_frag_count.txt.gz
+    output: output/metrics/TFBS_entropy/tempus/sample2_TFBS_entropy.txt
+    jobid: 162
+    reason: Missing output files: output/metrics/TFBS_entropy/tempus/sample2_TFBS_entropy.txt; Input files updated by another job: output/metrics/TFBS_entropy/tempus/sample2_TFBS_frag_count.txt.gz
+    wildcards: comm_panel=tempus, sample=sample2
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:50 2025]
+Finished job 48.
+70 of 177 steps (40%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:51 2025]
+rule calculate_frag_bins:
+    input: output/fragstats/SE_files/foundationOne/sample1.txt.gz
+    output: output/metrics/frag_bins/foundationOne/sample1.fragbins.tsv
+    jobid: 76
+    reason: Missing output files: output/metrics/frag_bins/foundationOne/sample1.fragbins.tsv; Input files updated by another job: output/fragstats/SE_files/foundationOne/sample1.txt.gz
+    wildcards: comm_panel=foundationOne, sample=sample1
+    resources: tmpdir=/tmp
+
+Select jobs to execute...
+[Thu Apr 17 13:18:51 2025]
+Finished job 167.
+71 of 177 steps (40%) done
+
+[Thu Apr 17 13:18:51 2025]
+rule calculate_SE:
+    input: output/fragstats/SE_files/tempus/sample2.txt.gz
+    output: output/metrics/se/tempus/sample2.SE.tsv
+    jobid: 42
+    reason: Missing output files: output/metrics/se/tempus/sample2.SE.tsv; Input files updated by another job: output/fragstats/SE_files/tempus/sample2.txt.gz
+    wildcards: comm_panel=tempus, sample=sample2
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:51 2025]
+Finished job 71.
+72 of 177 steps (41%) done
+[Thu Apr 17 13:18:51 2025]
+Finished job 84.
+73 of 177 steps (41%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:51 2025]
+rule get_left_4mer:
+    input: data/default/sample3.bed.gz, /mnt/Data01/genome/hg38.fa
+    output: output/metrics/mds/default/sample3_left_4mers.txt.gz
+    jobid: 134
+    reason: Missing output files: output/metrics/mds/default/sample3_left_4mers.txt.gz
+    wildcards: comm_panel=default, sample=sample3
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:51 2025]
+Finished job 82.
+74 of 177 steps (42%) done
+[Thu Apr 17 13:18:51 2025]
+Finished job 163.
+75 of 177 steps (42%) done
+[Thu Apr 17 13:18:51 2025]
+Finished job 114.
+76 of 177 steps (43%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:51 2025]
+rule calculate_MDS:
+    input: output/metrics/mds/tempus/sample1_left_4mers.txt.gz, output/metrics/mds/tempus/sample1_right_4mers.txt.gz, scripts/calculate_mds.R
+    output: output/metrics/mds/tempus/sample1_mds.txt
+    jobid: 112
+    reason: Missing output files: output/metrics/mds/tempus/sample1_mds.txt; Input files updated by another job: output/metrics/mds/tempus/sample1_left_4mers.txt.gz, output/metrics/mds/tempus/sample1_right_4mers.txt.gz
+    wildcards: comm_panel=tempus, sample=sample1
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:51 2025]
+Finished job 64.
+77 of 177 steps (44%) done
+[Thu Apr 17 13:18:51 2025]
+Finished job 96.
+78 of 177 steps (44%) done
+[Thu Apr 17 13:18:51 2025]
+Finished job 66.
+79 of 177 steps (45%) done
+[Thu Apr 17 13:18:51 2025]
+Finished job 49.
+80 of 177 steps (45%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:51 2025]
+rule calculate_full_gene_depth:
+    input: output/fragstats/depth_files/default/sample1.txt
+    output: output/metrics/full_gene_depth/default/sample1.fullgenedepth.tsv
+    jobid: 97
+    reason: Missing output files: output/metrics/full_gene_depth/default/sample1.fullgenedepth.tsv; Input files updated by another job: output/fragstats/depth_files/default/sample1.txt
+    wildcards: comm_panel=default, sample=sample1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:51 2025]
+rule calculate_normalized_depth:
+    input: output/fragstats/depth_files/default/sample1.txt
+    output: output/metrics/depth/default/sample1.depth.tsv
+    jobid: 61
+    reason: Missing output files: output/metrics/depth/default/sample1.depth.tsv; Input files updated by another job: output/fragstats/depth_files/default/sample1.txt
+    wildcards: comm_panel=default, sample=sample1
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:51 2025]
+Finished job 92.
+81 of 177 steps (46%) done
+[Thu Apr 17 13:18:52 2025]
+Finished job 187.
+82 of 177 steps (46%) done
+[Thu Apr 17 13:18:52 2025]
+Finished job 99.
+83 of 177 steps (47%) done
+[Thu Apr 17 13:18:52 2025]
+Finished job 125.
+84 of 177 steps (47%) done
+[Thu Apr 17 13:18:52 2025]
+Finished job 115.
+85 of 177 steps (48%) done
+[Thu Apr 17 13:18:52 2025]
+Finished job 158.
+86 of 177 steps (49%) done
+[Thu Apr 17 13:18:52 2025]
+Finished job 166.
+87 of 177 steps (49%) done
+[Thu Apr 17 13:18:52 2025]
+Finished job 106.
+88 of 177 steps (50%) done
+[Thu Apr 17 13:18:52 2025]
+Finished job 40.
+89 of 177 steps (50%) done
+[Thu Apr 17 13:18:52 2025]
+Finished job 126.
+90 of 177 steps (51%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:52 2025]
+rule calculate_MDS:
+    input: output/metrics/mds/tempus/sample2_left_4mers.txt.gz, output/metrics/mds/tempus/sample2_right_4mers.txt.gz, scripts/calculate_mds.R
+    output: output/metrics/mds/tempus/sample2_mds.txt
+    jobid: 124
+    reason: Missing output files: output/metrics/mds/tempus/sample2_mds.txt; Input files updated by another job: output/metrics/mds/tempus/sample2_right_4mers.txt.gz, output/metrics/mds/tempus/sample2_left_4mers.txt.gz
+    wildcards: comm_panel=tempus, sample=sample2
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:52 2025]
+Finished job 74.
+91 of 177 steps (51%) done
+[Thu Apr 17 13:18:52 2025]
+Finished job 156.
+92 of 177 steps (52%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:52 2025]
+rule calculate_TFBS_entropy:
+    input: output/metrics/TFBS_entropy/foundationOne/sample3_TFBS_frag_count.txt.gz
+    output: output/metrics/TFBS_entropy/foundationOne/sample3_TFBS_entropy.txt
+    jobid: 168
+    reason: Missing output files: output/metrics/TFBS_entropy/foundationOne/sample3_TFBS_entropy.txt; Input files updated by another job: output/metrics/TFBS_entropy/foundationOne/sample3_TFBS_frag_count.txt.gz
+    wildcards: comm_panel=foundationOne, sample=sample3
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:52 2025]
+Finished job 53.
+93 of 177 steps (53%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:52 2025]
+rule calculate_full_gene_depth:
+    input: output/fragstats/depth_files/default/sample2.txt
+    output: output/metrics/full_gene_depth/default/sample2.fullgenedepth.tsv
+    jobid: 101
+    reason: Missing output files: output/metrics/full_gene_depth/default/sample2.fullgenedepth.tsv; Input files updated by another job: output/fragstats/depth_files/default/sample2.txt
+    wildcards: comm_panel=default, sample=sample2
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:52 2025]
+rule calculate_normalized_depth:
+    input: output/fragstats/depth_files/default/sample2.txt
+    output: output/metrics/depth/default/sample2.depth.tsv
+    jobid: 65
+    reason: Missing output files: output/metrics/depth/default/sample2.depth.tsv; Input files updated by another job: output/fragstats/depth_files/default/sample2.txt
+    wildcards: comm_panel=default, sample=sample2
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:52 2025]
+Finished job 162.
+94 of 177 steps (53%) done
+[Thu Apr 17 13:18:52 2025]
+Finished job 103.
+95 of 177 steps (54%) done
+[Thu Apr 17 13:18:52 2025]
+Finished job 88.
+96 of 177 steps (54%) done
+[Thu Apr 17 13:18:53 2025]
+Finished job 148.
+97 of 177 steps (55%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:53 2025]
+rule calculate_TFBS_entropy:
+    input: output/metrics/TFBS_entropy/foundationOne/sample1_TFBS_frag_count.txt.gz
+    output: output/metrics/TFBS_entropy/foundationOne/sample1_TFBS_entropy.txt
+    jobid: 160
+    reason: Missing output files: output/metrics/TFBS_entropy/foundationOne/sample1_TFBS_entropy.txt; Input files updated by another job: output/metrics/TFBS_entropy/foundationOne/sample1_TFBS_frag_count.txt.gz
+    wildcards: comm_panel=foundationOne, sample=sample1
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:53 2025]
+Finished job 108.
+98 of 177 steps (55%) done
+[Thu Apr 17 13:18:53 2025]
+Finished job 147.
+99 of 177 steps (56%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:53 2025]
+rule calculate_TFBS_entropy:
+    input: output/metrics/TFBS_entropy/guardant/sample1_TFBS_frag_count.txt.gz
+    output: output/metrics/TFBS_entropy/guardant/sample1_TFBS_entropy.txt
+    jobid: 159
+    reason: Missing output files: output/metrics/TFBS_entropy/guardant/sample1_TFBS_entropy.txt; Input files updated by another job: output/metrics/TFBS_entropy/guardant/sample1_TFBS_frag_count.txt.gz
+    wildcards: comm_panel=guardant, sample=sample1
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:53 2025]
+Finished job 127.
+100 of 177 steps (56%) done
+[Thu Apr 17 13:18:53 2025]
+Finished job 143.
+101 of 177 steps (57%) done
+[Thu Apr 17 13:18:53 2025]
+Finished job 42.
+102 of 177 steps (58%) done
+[Thu Apr 17 13:18:53 2025]
+Finished job 98.
+103 of 177 steps (58%) done
+[Thu Apr 17 13:18:53 2025]
+Finished job 144.
+104 of 177 steps (59%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:53 2025]
+rule calculate_MDS:
+    input: output/metrics/mds/foundationOne/sample3_left_4mers.txt.gz, output/metrics/mds/foundationOne/sample3_right_4mers.txt.gz, scripts/calculate_mds.R
+    output: output/metrics/mds/foundationOne/sample3_mds.txt
+    jobid: 142
+    reason: Missing output files: output/metrics/mds/foundationOne/sample3_mds.txt; Input files updated by another job: output/metrics/mds/foundationOne/sample3_right_4mers.txt.gz, output/metrics/mds/foundationOne/sample3_left_4mers.txt.gz
+    wildcards: comm_panel=foundationOne, sample=sample3
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:53 2025]
+Finished job 44.
+105 of 177 steps (59%) done
+[Thu Apr 17 13:18:53 2025]
+Finished job 72.
+106 of 177 steps (60%) done
+[Thu Apr 17 13:18:54 2025]
+Finished job 33.
+107 of 177 steps (60%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:54 2025]
+rule calculate_SE:
+    input: output/fragstats/SE_files/default/sample3.txt.gz
+    output: output/metrics/se/default/sample3.SE.tsv
+    jobid: 45
+    reason: Missing output files: output/metrics/se/default/sample3.SE.tsv; Input files updated by another job: output/fragstats/SE_files/default/sample3.txt.gz
+    wildcards: comm_panel=default, sample=sample3
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:54 2025]
+rule calculate_small_frags:
+    input: output/fragstats/SE_files/default/sample3.txt.gz
+    output: output/metrics/small_frags/default/sample3.smallfrag.tsv
+    jobid: 93
+    reason: Missing output files: output/metrics/small_frags/default/sample3.smallfrag.tsv; Input files updated by another job: output/fragstats/SE_files/default/sample3.txt.gz
+    wildcards: comm_panel=default, sample=sample3
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:54 2025]
+rule calculate_frag_bins:
+    input: output/fragstats/SE_files/default/sample3.txt.gz
+    output: output/metrics/frag_bins/default/sample3.fragbins.tsv
+    jobid: 81
+    reason: Missing output files: output/metrics/frag_bins/default/sample3.fragbins.tsv; Input files updated by another job: output/fragstats/SE_files/default/sample3.txt.gz
+    wildcards: comm_panel=default, sample=sample3
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:54 2025]
+Finished job 107.
+108 of 177 steps (61%) done
+[Thu Apr 17 13:18:54 2025]
+Finished job 80.
+109 of 177 steps (62%) done
+[Thu Apr 17 13:18:54 2025]
+Finished job 168.
+110 of 177 steps (62%) done
+[Thu Apr 17 13:18:54 2025]
+Finished job 136.
+111 of 177 steps (63%) done
+[Thu Apr 17 13:18:54 2025]
+Finished job 69.
+112 of 177 steps (63%) done
+[Thu Apr 17 13:18:54 2025]
+Finished job 152.
+113 of 177 steps (64%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:54 2025]
+rule calculate_TFBS_entropy:
+    input: output/metrics/TFBS_entropy/foundationOne/sample2_TFBS_frag_count.txt.gz
+    output: output/metrics/TFBS_entropy/foundationOne/sample2_TFBS_entropy.txt
+    jobid: 164
+    reason: Missing output files: output/metrics/TFBS_entropy/foundationOne/sample2_TFBS_entropy.txt; Input files updated by another job: output/metrics/TFBS_entropy/foundationOne/sample2_TFBS_frag_count.txt.gz
+    wildcards: comm_panel=foundationOne, sample=sample2
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:54 2025]
+Finished job 159.
+114 of 177 steps (64%) done
+[Thu Apr 17 13:18:54 2025]
+Finished job 76.
+115 of 177 steps (65%) done
+[Thu Apr 17 13:18:54 2025]
+Finished job 160.
+116 of 177 steps (66%) done
+[Thu Apr 17 13:18:54 2025]
+Finished job 176.
+117 of 177 steps (66%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:54 2025]
+rule calculate_ATAC_entropy:
+    input: output/metrics/ATAC_entropy/foundationOne/sample2_ATAC_frag_count.txt.gz
+    output: output/metrics/ATAC_entropy/foundationOne/sample2_ATAC_entropy.txt
+    jobid: 188
+    reason: Missing output files: output/metrics/ATAC_entropy/foundationOne/sample2_ATAC_entropy.txt; Input files updated by another job: output/metrics/ATAC_entropy/foundationOne/sample2_ATAC_frag_count.txt.gz
+    wildcards: comm_panel=foundationOne, sample=sample2
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:55 2025]
+Finished job 112.
+118 of 177 steps (67%) done
+[Thu Apr 17 13:18:55 2025]
+Finished job 169.
+119 of 177 steps (67%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:55 2025]
+rule calculate_ATAC_entropy:
+    input: output/metrics/ATAC_entropy/default/sample1_ATAC_frag_count.txt.gz
+    output: output/metrics/ATAC_entropy/default/sample1_ATAC_entropy.txt
+    jobid: 181
+    reason: Missing output files: output/metrics/ATAC_entropy/default/sample1_ATAC_entropy.txt; Input files updated by another job: output/metrics/ATAC_entropy/default/sample1_ATAC_frag_count.txt.gz
+    wildcards: comm_panel=default, sample=sample1
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:55 2025]
+Finished job 100.
+120 of 177 steps (68%) done
+[Thu Apr 17 13:18:55 2025]
+Finished job 61.
+121 of 177 steps (68%) done
+[Thu Apr 17 13:18:56 2025]
+Finished job 102.
+122 of 177 steps (69%) done
+[Thu Apr 17 13:18:56 2025]
+Finished job 124.
+123 of 177 steps (69%) done
+[Thu Apr 17 13:18:56 2025]
+Finished job 104.
+124 of 177 steps (70%) done
+[Thu Apr 17 13:18:56 2025]
+Finished job 188.
+125 of 177 steps (71%) done
+[Thu Apr 17 13:18:56 2025]
+Finished job 181.
+126 of 177 steps (71%) done
+[Thu Apr 17 13:18:56 2025]
+Finished job 105.
+127 of 177 steps (72%) done
+[Thu Apr 17 13:18:56 2025]
+Finished job 164.
+128 of 177 steps (72%) done
+[Thu Apr 17 13:18:56 2025]
+Finished job 65.
+129 of 177 steps (73%) done
+[Thu Apr 17 13:18:57 2025]
+Finished job 173.
+130 of 177 steps (73%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:57 2025]
+rule calculate_ATAC_entropy:
+    input: output/metrics/ATAC_entropy/default/sample2_ATAC_frag_count.txt.gz
+    output: output/metrics/ATAC_entropy/default/sample2_ATAC_entropy.txt
+    jobid: 185
+    reason: Missing output files: output/metrics/ATAC_entropy/default/sample2_ATAC_entropy.txt; Input files updated by another job: output/metrics/ATAC_entropy/default/sample2_ATAC_frag_count.txt.gz
+    wildcards: comm_panel=default, sample=sample2
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:57 2025]
+Finished job 177.
+131 of 177 steps (74%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:57 2025]
+rule calculate_ATAC_entropy:
+    input: output/metrics/ATAC_entropy/default/sample3_ATAC_frag_count.txt.gz
+    output: output/metrics/ATAC_entropy/default/sample3_ATAC_entropy.txt
+    jobid: 189
+    reason: Missing output files: output/metrics/ATAC_entropy/default/sample3_ATAC_entropy.txt; Input files updated by another job: output/metrics/ATAC_entropy/default/sample3_ATAC_frag_count.txt.gz
+    wildcards: comm_panel=default, sample=sample3
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:18:58 2025]
+Finished job 93.
+132 of 177 steps (75%) done
+[Thu Apr 17 13:18:59 2025]
+Finished job 185.
+133 of 177 steps (75%) done
+[Thu Apr 17 13:18:59 2025]
+Finished job 97.
+134 of 177 steps (76%) done
+[Thu Apr 17 13:18:59 2025]
+Finished job 142.
+135 of 177 steps (76%) done
+[Thu Apr 17 13:18:59 2025]
+Finished job 119.
+136 of 177 steps (77%) done
+[Thu Apr 17 13:18:59 2025]
+Finished job 189.
+137 of 177 steps (77%) done
+[Thu Apr 17 13:18:59 2025]
+Finished job 25.
+138 of 177 steps (78%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:18:59 2025]
+rule calculate_SE:
+    input: output/fragstats/SE_files/default/sample1.txt.gz
+    output: output/metrics/se/default/sample1.SE.tsv
+    jobid: 37
+    reason: Missing output files: output/metrics/se/default/sample1.SE.tsv; Input files updated by another job: output/fragstats/SE_files/default/sample1.txt.gz
+    wildcards: comm_panel=default, sample=sample1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:59 2025]
+rule calculate_small_frags:
+    input: output/fragstats/SE_files/default/sample1.txt.gz
+    output: output/metrics/small_frags/default/sample1.smallfrag.tsv
+    jobid: 85
+    reason: Missing output files: output/metrics/small_frags/default/sample1.smallfrag.tsv; Input files updated by another job: output/fragstats/SE_files/default/sample1.txt.gz
+    wildcards: comm_panel=default, sample=sample1
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:18:59 2025]
+rule calculate_frag_bins:
+    input: output/fragstats/SE_files/default/sample1.txt.gz
+    output: output/metrics/frag_bins/default/sample1.fragbins.tsv
+    jobid: 73
+    reason: Missing output files: output/metrics/frag_bins/default/sample1.fragbins.tsv; Input files updated by another job: output/fragstats/SE_files/default/sample1.txt.gz
+    wildcards: comm_panel=default, sample=sample1
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:19:00 2025]
+Finished job 101.
+139 of 177 steps (79%) done
+[Thu Apr 17 13:19:00 2025]
+Finished job 120.
+140 of 177 steps (79%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:19:00 2025]
+rule calculate_MDS:
+    input: output/metrics/mds/foundationOne/sample1_left_4mers.txt.gz, output/metrics/mds/foundationOne/sample1_right_4mers.txt.gz, scripts/calculate_mds.R
+    output: output/metrics/mds/foundationOne/sample1_mds.txt
+    jobid: 118
+    reason: Missing output files: output/metrics/mds/foundationOne/sample1_mds.txt; Input files updated by another job: output/metrics/mds/foundationOne/sample1_right_4mers.txt.gz, output/metrics/mds/foundationOne/sample1_left_4mers.txt.gz
+    wildcards: comm_panel=foundationOne, sample=sample1
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:19:00 2025]
+Finished job 81.
+141 of 177 steps (80%) done
+[Thu Apr 17 13:19:00 2025]
+Finished job 45.
+142 of 177 steps (80%) done
+[Thu Apr 17 13:19:00 2025]
+Finished job 131.
+143 of 177 steps (81%) done
+[Thu Apr 17 13:19:01 2025]
+Finished job 132.
+144 of 177 steps (81%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:19:01 2025]
+rule calculate_MDS:
+    input: output/metrics/mds/foundationOne/sample2_left_4mers.txt.gz, output/metrics/mds/foundationOne/sample2_right_4mers.txt.gz, scripts/calculate_mds.R
+    output: output/metrics/mds/foundationOne/sample2_mds.txt
+    jobid: 130
+    reason: Missing output files: output/metrics/mds/foundationOne/sample2_mds.txt; Input files updated by another job: output/metrics/mds/foundationOne/sample2_right_4mers.txt.gz, output/metrics/mds/foundationOne/sample2_left_4mers.txt.gz
+    wildcards: comm_panel=foundationOne, sample=sample2
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:19:01 2025]
+Finished job 153.
+145 of 177 steps (82%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:19:01 2025]
+rule calculate_TFBS_entropy:
+    input: output/metrics/TFBS_entropy/default/sample3_TFBS_frag_count.txt.gz
+    output: output/metrics/TFBS_entropy/default/sample3_TFBS_entropy.txt
+    jobid: 165
+    reason: Missing output files: output/metrics/TFBS_entropy/default/sample3_TFBS_entropy.txt; Input files updated by another job: output/metrics/TFBS_entropy/default/sample3_TFBS_frag_count.txt.gz
+    wildcards: comm_panel=default, sample=sample3
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:19:02 2025]
+Finished job 29.
+146 of 177 steps (82%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:19:02 2025]
+rule calculate_frag_bins:
+    input: output/fragstats/SE_files/default/sample2.txt.gz
+    output: output/metrics/frag_bins/default/sample2.fragbins.tsv
+    jobid: 77
+    reason: Missing output files: output/metrics/frag_bins/default/sample2.fragbins.tsv; Input files updated by another job: output/fragstats/SE_files/default/sample2.txt.gz
+    wildcards: comm_panel=default, sample=sample2
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:19:02 2025]
+rule calculate_small_frags:
+    input: output/fragstats/SE_files/default/sample2.txt.gz
+    output: output/metrics/small_frags/default/sample2.smallfrag.tsv
+    jobid: 89
+    reason: Missing output files: output/metrics/small_frags/default/sample2.smallfrag.tsv; Input files updated by another job: output/fragstats/SE_files/default/sample2.txt.gz
+    wildcards: comm_panel=default, sample=sample2
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:19:02 2025]
+rule calculate_SE:
+    input: output/fragstats/SE_files/default/sample2.txt.gz
+    output: output/metrics/se/default/sample2.SE.tsv
+    jobid: 41
+    reason: Missing output files: output/metrics/se/default/sample2.SE.tsv; Input files updated by another job: output/fragstats/SE_files/default/sample2.txt.gz
+    wildcards: comm_panel=default, sample=sample2
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:19:03 2025]
+Finished job 85.
+147 of 177 steps (83%) done
+[Thu Apr 17 13:19:03 2025]
+Finished job 165.
+148 of 177 steps (84%) done
+[Thu Apr 17 13:19:03 2025]
+Finished job 145.
+149 of 177 steps (84%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:19:03 2025]
+rule calculate_TFBS_entropy:
+    input: output/metrics/TFBS_entropy/default/sample1_TFBS_frag_count.txt.gz
+    output: output/metrics/TFBS_entropy/default/sample1_TFBS_entropy.txt
+    jobid: 157
+    reason: Missing output files: output/metrics/TFBS_entropy/default/sample1_TFBS_entropy.txt; Input files updated by another job: output/metrics/TFBS_entropy/default/sample1_TFBS_frag_count.txt.gz
+    wildcards: comm_panel=default, sample=sample1
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:19:04 2025]
+Finished job 37.
+150 of 177 steps (85%) done
+[Thu Apr 17 13:19:04 2025]
+Finished job 73.
+151 of 177 steps (85%) done
+[Thu Apr 17 13:19:05 2025]
+Finished job 157.
+152 of 177 steps (86%) done
+[Thu Apr 17 13:19:05 2025]
+Finished job 118.
+153 of 177 steps (86%) done
+[Thu Apr 17 13:19:06 2025]
+Finished job 89.
+154 of 177 steps (87%) done
+[Thu Apr 17 13:19:07 2025]
+Finished job 130.
+155 of 177 steps (88%) done
+[Thu Apr 17 13:19:09 2025]
+Finished job 149.
+156 of 177 steps (88%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:19:09 2025]
+rule calculate_TFBS_entropy:
+    input: output/metrics/TFBS_entropy/default/sample2_TFBS_frag_count.txt.gz
+    output: output/metrics/TFBS_entropy/default/sample2_TFBS_entropy.txt
+    jobid: 161
+    reason: Missing output files: output/metrics/TFBS_entropy/default/sample2_TFBS_entropy.txt; Input files updated by another job: output/metrics/TFBS_entropy/default/sample2_TFBS_frag_count.txt.gz
+    wildcards: comm_panel=default, sample=sample2
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:19:09 2025]
+Finished job 77.
+157 of 177 steps (89%) done
+[Thu Apr 17 13:19:09 2025]
+Finished job 41.
+158 of 177 steps (89%) done
+[Thu Apr 17 13:19:11 2025]
+Finished job 161.
+159 of 177 steps (90%) done
+[Thu Apr 17 13:19:22 2025]
+Finished job 134.
+160 of 177 steps (90%) done
+[Thu Apr 17 13:19:23 2025]
+Finished job 135.
+161 of 177 steps (91%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:19:23 2025]
+rule calculate_MDS:
+    input: output/metrics/mds/default/sample3_left_4mers.txt.gz, output/metrics/mds/default/sample3_right_4mers.txt.gz, scripts/calculate_mds.R
+    output: output/metrics/mds/default/sample3_mds.txt
+    jobid: 133
+    reason: Missing output files: output/metrics/mds/default/sample3_mds.txt; Input files updated by another job: output/metrics/mds/default/sample3_right_4mers.txt.gz, output/metrics/mds/default/sample3_left_4mers.txt.gz
+    wildcards: comm_panel=default, sample=sample3
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:19:35 2025]
+Finished job 110.
+162 of 177 steps (92%) done
+[Thu Apr 17 13:19:38 2025]
+Finished job 111.
+163 of 177 steps (92%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:19:38 2025]
+rule calculate_MDS:
+    input: output/metrics/mds/default/sample1_left_4mers.txt.gz, output/metrics/mds/default/sample1_right_4mers.txt.gz, scripts/calculate_mds.R
+    output: output/metrics/mds/default/sample1_mds.txt
+    jobid: 109
+    reason: Missing output files: output/metrics/mds/default/sample1_mds.txt; Input files updated by another job: output/metrics/mds/default/sample1_left_4mers.txt.gz, output/metrics/mds/default/sample1_right_4mers.txt.gz
+    wildcards: comm_panel=default, sample=sample1
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:19:39 2025]
+Finished job 133.
+164 of 177 steps (93%) done
+[Thu Apr 17 13:19:41 2025]
+Finished job 122.
+165 of 177 steps (93%) done
+[Thu Apr 17 13:19:44 2025]
+Finished job 123.
+166 of 177 steps (94%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:19:44 2025]
+rule calculate_MDS:
+    input: output/metrics/mds/default/sample2_left_4mers.txt.gz, output/metrics/mds/default/sample2_right_4mers.txt.gz, scripts/calculate_mds.R
+    output: output/metrics/mds/default/sample2_mds.txt
+    jobid: 121
+    reason: Missing output files: output/metrics/mds/default/sample2_mds.txt; Input files updated by another job: output/metrics/mds/default/sample2_right_4mers.txt.gz, output/metrics/mds/default/sample2_left_4mers.txt.gz
+    wildcards: comm_panel=default, sample=sample2
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:19:53 2025]
+Finished job 109.
+167 of 177 steps (94%) done
+[Thu Apr 17 13:20:01 2025]
+Finished job 121.
+168 of 177 steps (95%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:20:01 2025]
+rule build_feature_tables:
+    input: output/metrics/se/default/sample1.SE.tsv, output/metrics/se/tempus/sample1.SE.tsv, output/metrics/se/guardant/sample1.SE.tsv, output/metrics/se/foundationOne/sample1.SE.tsv, output/metrics/se/default/sample2.SE.tsv, output/metrics/se/tempus/sample2.SE.tsv, output/metrics/se/guardant/sample2.SE.tsv, output/metrics/se/foundationOne/sample2.SE.tsv, output/metrics/se/default/sample3.SE.tsv, output/metrics/se/tempus/sample3.SE.tsv, output/metrics/se/guardant/sample3.SE.tsv, output/metrics/se/foundationOne/sample3.SE.tsv, output/metrics/depth/default/sample1.depth.tsv, output/metrics/depth/tempus/sample1.depth.tsv, output/metrics/depth/guardant/sample1.depth.tsv, output/metrics/depth/foundationOne/sample1.depth.tsv, output/metrics/depth/default/sample2.depth.tsv, output/metrics/depth/tempus/sample2.depth.tsv, output/metrics/depth/guardant/sample2.depth.tsv, output/metrics/depth/foundationOne/sample2.depth.tsv, output/metrics/depth/default/sample3.depth.tsv, output/metrics/depth/tempus/sample3.depth.tsv, output/metrics/depth/guardant/sample3.depth.tsv, output/metrics/depth/foundationOne/sample3.depth.tsv, output/metrics/frag_bins/default/sample1.fragbins.tsv, output/metrics/frag_bins/tempus/sample1.fragbins.tsv, output/metrics/frag_bins/guardant/sample1.fragbins.tsv, output/metrics/frag_bins/foundationOne/sample1.fragbins.tsv, output/metrics/frag_bins/default/sample2.fragbins.tsv, output/metrics/frag_bins/tempus/sample2.fragbins.tsv, output/metrics/frag_bins/guardant/sample2.fragbins.tsv, output/metrics/frag_bins/foundationOne/sample2.fragbins.tsv, output/metrics/frag_bins/default/sample3.fragbins.tsv, output/metrics/frag_bins/tempus/sample3.fragbins.tsv, output/metrics/frag_bins/guardant/sample3.fragbins.tsv, output/metrics/frag_bins/foundationOne/sample3.fragbins.tsv, output/metrics/small_frags/default/sample1.smallfrag.tsv, output/metrics/small_frags/tempus/sample1.smallfrag.tsv, output/metrics/small_frags/guardant/sample1.smallfrag.tsv, output/metrics/small_frags/foundationOne/sample1.smallfrag.tsv, output/metrics/small_frags/default/sample2.smallfrag.tsv, output/metrics/small_frags/tempus/sample2.smallfrag.tsv, output/metrics/small_frags/guardant/sample2.smallfrag.tsv, output/metrics/small_frags/foundationOne/sample2.smallfrag.tsv, output/metrics/small_frags/default/sample3.smallfrag.tsv, output/metrics/small_frags/tempus/sample3.smallfrag.tsv, output/metrics/small_frags/guardant/sample3.smallfrag.tsv, output/metrics/small_frags/foundationOne/sample3.smallfrag.tsv, output/metrics/full_gene_depth/default/sample1.fullgenedepth.tsv, output/metrics/full_gene_depth/tempus/sample1.fullgenedepth.tsv, output/metrics/full_gene_depth/guardant/sample1.fullgenedepth.tsv, output/metrics/full_gene_depth/foundationOne/sample1.fullgenedepth.tsv, output/metrics/full_gene_depth/default/sample2.fullgenedepth.tsv, output/metrics/full_gene_depth/tempus/sample2.fullgenedepth.tsv, output/metrics/full_gene_depth/guardant/sample2.fullgenedepth.tsv, output/metrics/full_gene_depth/foundationOne/sample2.fullgenedepth.tsv, output/metrics/full_gene_depth/default/sample3.fullgenedepth.tsv, output/metrics/full_gene_depth/tempus/sample3.fullgenedepth.tsv, output/metrics/full_gene_depth/guardant/sample3.fullgenedepth.tsv, output/metrics/full_gene_depth/foundationOne/sample3.fullgenedepth.tsv, output/metrics/mds/default/sample1_mds.txt, output/metrics/mds/tempus/sample1_mds.txt, output/metrics/mds/guardant/sample1_mds.txt, output/metrics/mds/foundationOne/sample1_mds.txt, output/metrics/mds/default/sample2_mds.txt, output/metrics/mds/tempus/sample2_mds.txt, output/metrics/mds/guardant/sample2_mds.txt, output/metrics/mds/foundationOne/sample2_mds.txt, output/metrics/mds/default/sample3_mds.txt, output/metrics/mds/tempus/sample3_mds.txt, output/metrics/mds/guardant/sample3_mds.txt, output/metrics/mds/foundationOne/sample3_mds.txt, output/metrics/TFBS_entropy/default/sample1_TFBS_entropy.txt, output/metrics/TFBS_entropy/tempus/sample1_TFBS_entropy.txt, output/metrics/TFBS_entropy/guardant/sample1_TFBS_entropy.txt, output/metrics/TFBS_entropy/foundationOne/sample1_TFBS_entropy.txt, output/metrics/TFBS_entropy/default/sample2_TFBS_entropy.txt, output/metrics/TFBS_entropy/tempus/sample2_TFBS_entropy.txt, output/metrics/TFBS_entropy/guardant/sample2_TFBS_entropy.txt, output/metrics/TFBS_entropy/foundationOne/sample2_TFBS_entropy.txt, output/metrics/TFBS_entropy/default/sample3_TFBS_entropy.txt, output/metrics/TFBS_entropy/tempus/sample3_TFBS_entropy.txt, output/metrics/TFBS_entropy/guardant/sample3_TFBS_entropy.txt, output/metrics/TFBS_entropy/foundationOne/sample3_TFBS_entropy.txt, output/metrics/ATAC_entropy/default/sample1_ATAC_entropy.txt, output/metrics/ATAC_entropy/tempus/sample1_ATAC_entropy.txt, output/metrics/ATAC_entropy/guardant/sample1_ATAC_entropy.txt, output/metrics/ATAC_entropy/foundationOne/sample1_ATAC_entropy.txt, output/metrics/ATAC_entropy/default/sample2_ATAC_entropy.txt, output/metrics/ATAC_entropy/tempus/sample2_ATAC_entropy.txt, output/metrics/ATAC_entropy/guardant/sample2_ATAC_entropy.txt, output/metrics/ATAC_entropy/foundationOne/sample2_ATAC_entropy.txt, output/metrics/ATAC_entropy/default/sample3_ATAC_entropy.txt, output/metrics/ATAC_entropy/tempus/sample3_ATAC_entropy.txt, output/metrics/ATAC_entropy/guardant/sample3_ATAC_entropy.txt, output/metrics/ATAC_entropy/foundationOne/sample3_ATAC_entropy.txt
+    output: output/feature_tables/tempus/se.rds, output/feature_tables/tempus/depth.rds, output/feature_tables/tempus/frag_bins.rds, output/feature_tables/tempus/small_frags.rds, output/feature_tables/tempus/full_gene_depth.rds, output/feature_tables/tempus/mds.rds, output/feature_tables/tempus/TFBS_entropy.rds, output/feature_tables/tempus/ATAC_entropy.rds
+    jobid: 194
+    reason: Missing output files: output/feature_tables/tempus/full_gene_depth.rds, output/feature_tables/tempus/mds.rds, output/feature_tables/tempus/depth.rds, output/feature_tables/tempus/small_frags.rds, output/feature_tables/tempus/se.rds, output/feature_tables/tempus/frag_bins.rds, output/feature_tables/tempus/TFBS_entropy.rds, output/feature_tables/tempus/ATAC_entropy.rds; Input files updated by another job: output/metrics/mds/foundationOne/sample3_mds.txt, output/metrics/depth/guardant/sample1.depth.tsv, output/metrics/mds/tempus/sample2_mds.txt, output/metrics/TFBS_entropy/guardant/sample2_TFBS_entropy.txt, output/metrics/frag_bins/default/sample3.fragbins.tsv, output/metrics/ATAC_entropy/tempus/sample1_ATAC_entropy.txt, output/metrics/TFBS_entropy/default/sample3_TFBS_entropy.txt, output/metrics/TFBS_entropy/foundationOne/sample1_TFBS_entropy.txt, output/metrics/full_gene_depth/default/sample3.fullgenedepth.tsv, output/metrics/frag_bins/guardant/sample1.fragbins.tsv, output/metrics/depth/guardant/sample3.depth.tsv, output/metrics/se/tempus/sample1.SE.tsv, output/metrics/frag_bins/guardant/sample2.fragbins.tsv, output/metrics/mds/guardant/sample1_mds.txt, output/metrics/se/foundationOne/sample1.SE.tsv, output/metrics/mds/tempus/sample3_mds.txt, output/metrics/ATAC_entropy/tempus/sample2_ATAC_entropy.txt, output/metrics/mds/default/sample2_mds.txt, output/metrics/full_gene_depth/guardant/sample3.fullgenedepth.tsv, output/metrics/full_gene_depth/tempus/sample3.fullgenedepth.tsv, output/metrics/se/guardant/sample2.SE.tsv, output/metrics/small_frags/tempus/sample3.smallfrag.tsv, output/metrics/small_frags/tempus/sample2.smallfrag.tsv, output/metrics/frag_bins/foundationOne/sample2.fragbins.tsv, output/metrics/small_frags/foundationOne/sample1.smallfrag.tsv, output/metrics/TFBS_entropy/default/sample2_TFBS_entropy.txt, output/metrics/TFBS_entropy/foundationOne/sample3_TFBS_entropy.txt, output/metrics/full_gene_depth/guardant/sample2.fullgenedepth.tsv, output/metrics/small_frags/guardant/sample2.smallfrag.tsv, output/metrics/TFBS_entropy/default/sample1_TFBS_entropy.txt, output/metrics/full_gene_depth/guardant/sample1.fullgenedepth.tsv, output/metrics/frag_bins/tempus/sample1.fragbins.tsv, output/metrics/small_frags/tempus/sample1.smallfrag.tsv, output/metrics/ATAC_entropy/foundationOne/sample3_ATAC_entropy.txt, output/metrics/ATAC_entropy/foundationOne/sample2_ATAC_entropy.txt, output/metrics/frag_bins/foundationOne/sample1.fragbins.tsv, output/metrics/ATAC_entropy/foundationOne/sample1_ATAC_entropy.txt, output/metrics/se/default/sample3.SE.tsv, output/metrics/frag_bins/tempus/sample2.fragbins.tsv, output/metrics/small_frags/default/sample2.smallfrag.tsv, output/metrics/small_frags/guardant/sample1.smallfrag.tsv, output/metrics/ATAC_entropy/guardant/sample3_ATAC_entropy.txt, output/metrics/TFBS_entropy/tempus/sample2_TFBS_entropy.txt, output/metrics/depth/tempus/sample2.depth.tsv, output/metrics/se/default/sample2.SE.tsv, output/metrics/TFBS_entropy/tempus/sample3_TFBS_entropy.txt, output/metrics/mds/tempus/sample1_mds.txt, output/metrics/se/tempus/sample2.SE.tsv, output/metrics/full_gene_depth/default/sample2.fullgenedepth.tsv, output/metrics/mds/guardant/sample3_mds.txt, output/metrics/TFBS_entropy/guardant/sample3_TFBS_entropy.txt, output/metrics/TFBS_entropy/guardant/sample1_TFBS_entropy.txt, output/metrics/depth/default/sample2.depth.tsv, output/metrics/ATAC_entropy/default/sample3_ATAC_entropy.txt, output/metrics/depth/tempus/sample3.depth.tsv, output/metrics/mds/guardant/sample2_mds.txt, output/metrics/se/tempus/sample3.SE.tsv, output/metrics/frag_bins/default/sample2.fragbins.tsv, output/metrics/small_frags/guardant/sample3.smallfrag.tsv, output/metrics/mds/default/sample3_mds.txt, output/metrics/depth/foundationOne/sample3.depth.tsv, output/metrics/frag_bins/foundationOne/sample3.fragbins.tsv, output/metrics/TFBS_entropy/foundationOne/sample2_TFBS_entropy.txt, output/metrics/full_gene_depth/tempus/sample1.fullgenedepth.tsv, output/metrics/depth/foundationOne/sample2.depth.tsv, output/metrics/frag_bins/guardant/sample3.fragbins.tsv, output/metrics/small_frags/foundationOne/sample3.smallfrag.tsv, output/metrics/se/foundationOne/sample2.SE.tsv, output/metrics/frag_bins/tempus/sample3.fragbins.tsv, output/metrics/se/foundationOne/sample3.SE.tsv, output/metrics/depth/default/sample1.depth.tsv, output/metrics/full_gene_depth/default/sample1.fullgenedepth.tsv, output/metrics/ATAC_entropy/guardant/sample1_ATAC_entropy.txt, output/metrics/depth/tempus/sample1.depth.tsv, output/metrics/TFBS_entropy/tempus/sample1_TFBS_entropy.txt, output/metrics/mds/default/sample1_mds.txt, output/metrics/ATAC_entropy/tempus/sample3_ATAC_entropy.txt, output/metrics/mds/foundationOne/sample2_mds.txt, output/metrics/se/default/sample1.SE.tsv, output/metrics/frag_bins/default/sample1.fragbins.tsv, output/metrics/ATAC_entropy/default/sample1_ATAC_entropy.txt, output/metrics/small_frags/default/sample1.smallfrag.tsv, output/metrics/small_frags/foundationOne/sample2.smallfrag.tsv, output/metrics/mds/foundationOne/sample1_mds.txt, output/metrics/full_gene_depth/tempus/sample2.fullgenedepth.tsv, output/metrics/depth/foundationOne/sample1.depth.tsv, output/metrics/depth/guardant/sample2.depth.tsv, output/metrics/se/guardant/sample3.SE.tsv, output/metrics/full_gene_depth/foundationOne/sample2.fullgenedepth.tsv, output/metrics/full_gene_depth/foundationOne/sample3.fullgenedepth.tsv, output/metrics/small_frags/default/sample3.smallfrag.tsv, output/metrics/full_gene_depth/foundationOne/sample1.fullgenedepth.tsv, output/metrics/ATAC_entropy/guardant/sample2_ATAC_entropy.txt, output/metrics/se/guardant/sample1.SE.tsv, output/metrics/ATAC_entropy/default/sample2_ATAC_entropy.txt, output/metrics/depth/default/sample3.depth.tsv
+    wildcards: comm_panel=tempus
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:20:01 2025]
+rule build_feature_tables:
+    input: output/metrics/se/default/sample1.SE.tsv, output/metrics/se/tempus/sample1.SE.tsv, output/metrics/se/guardant/sample1.SE.tsv, output/metrics/se/foundationOne/sample1.SE.tsv, output/metrics/se/default/sample2.SE.tsv, output/metrics/se/tempus/sample2.SE.tsv, output/metrics/se/guardant/sample2.SE.tsv, output/metrics/se/foundationOne/sample2.SE.tsv, output/metrics/se/default/sample3.SE.tsv, output/metrics/se/tempus/sample3.SE.tsv, output/metrics/se/guardant/sample3.SE.tsv, output/metrics/se/foundationOne/sample3.SE.tsv, output/metrics/depth/default/sample1.depth.tsv, output/metrics/depth/tempus/sample1.depth.tsv, output/metrics/depth/guardant/sample1.depth.tsv, output/metrics/depth/foundationOne/sample1.depth.tsv, output/metrics/depth/default/sample2.depth.tsv, output/metrics/depth/tempus/sample2.depth.tsv, output/metrics/depth/guardant/sample2.depth.tsv, output/metrics/depth/foundationOne/sample2.depth.tsv, output/metrics/depth/default/sample3.depth.tsv, output/metrics/depth/tempus/sample3.depth.tsv, output/metrics/depth/guardant/sample3.depth.tsv, output/metrics/depth/foundationOne/sample3.depth.tsv, output/metrics/frag_bins/default/sample1.fragbins.tsv, output/metrics/frag_bins/tempus/sample1.fragbins.tsv, output/metrics/frag_bins/guardant/sample1.fragbins.tsv, output/metrics/frag_bins/foundationOne/sample1.fragbins.tsv, output/metrics/frag_bins/default/sample2.fragbins.tsv, output/metrics/frag_bins/tempus/sample2.fragbins.tsv, output/metrics/frag_bins/guardant/sample2.fragbins.tsv, output/metrics/frag_bins/foundationOne/sample2.fragbins.tsv, output/metrics/frag_bins/default/sample3.fragbins.tsv, output/metrics/frag_bins/tempus/sample3.fragbins.tsv, output/metrics/frag_bins/guardant/sample3.fragbins.tsv, output/metrics/frag_bins/foundationOne/sample3.fragbins.tsv, output/metrics/small_frags/default/sample1.smallfrag.tsv, output/metrics/small_frags/tempus/sample1.smallfrag.tsv, output/metrics/small_frags/guardant/sample1.smallfrag.tsv, output/metrics/small_frags/foundationOne/sample1.smallfrag.tsv, output/metrics/small_frags/default/sample2.smallfrag.tsv, output/metrics/small_frags/tempus/sample2.smallfrag.tsv, output/metrics/small_frags/guardant/sample2.smallfrag.tsv, output/metrics/small_frags/foundationOne/sample2.smallfrag.tsv, output/metrics/small_frags/default/sample3.smallfrag.tsv, output/metrics/small_frags/tempus/sample3.smallfrag.tsv, output/metrics/small_frags/guardant/sample3.smallfrag.tsv, output/metrics/small_frags/foundationOne/sample3.smallfrag.tsv, output/metrics/full_gene_depth/default/sample1.fullgenedepth.tsv, output/metrics/full_gene_depth/tempus/sample1.fullgenedepth.tsv, output/metrics/full_gene_depth/guardant/sample1.fullgenedepth.tsv, output/metrics/full_gene_depth/foundationOne/sample1.fullgenedepth.tsv, output/metrics/full_gene_depth/default/sample2.fullgenedepth.tsv, output/metrics/full_gene_depth/tempus/sample2.fullgenedepth.tsv, output/metrics/full_gene_depth/guardant/sample2.fullgenedepth.tsv, output/metrics/full_gene_depth/foundationOne/sample2.fullgenedepth.tsv, output/metrics/full_gene_depth/default/sample3.fullgenedepth.tsv, output/metrics/full_gene_depth/tempus/sample3.fullgenedepth.tsv, output/metrics/full_gene_depth/guardant/sample3.fullgenedepth.tsv, output/metrics/full_gene_depth/foundationOne/sample3.fullgenedepth.tsv, output/metrics/mds/default/sample1_mds.txt, output/metrics/mds/tempus/sample1_mds.txt, output/metrics/mds/guardant/sample1_mds.txt, output/metrics/mds/foundationOne/sample1_mds.txt, output/metrics/mds/default/sample2_mds.txt, output/metrics/mds/tempus/sample2_mds.txt, output/metrics/mds/guardant/sample2_mds.txt, output/metrics/mds/foundationOne/sample2_mds.txt, output/metrics/mds/default/sample3_mds.txt, output/metrics/mds/tempus/sample3_mds.txt, output/metrics/mds/guardant/sample3_mds.txt, output/metrics/mds/foundationOne/sample3_mds.txt, output/metrics/TFBS_entropy/default/sample1_TFBS_entropy.txt, output/metrics/TFBS_entropy/tempus/sample1_TFBS_entropy.txt, output/metrics/TFBS_entropy/guardant/sample1_TFBS_entropy.txt, output/metrics/TFBS_entropy/foundationOne/sample1_TFBS_entropy.txt, output/metrics/TFBS_entropy/default/sample2_TFBS_entropy.txt, output/metrics/TFBS_entropy/tempus/sample2_TFBS_entropy.txt, output/metrics/TFBS_entropy/guardant/sample2_TFBS_entropy.txt, output/metrics/TFBS_entropy/foundationOne/sample2_TFBS_entropy.txt, output/metrics/TFBS_entropy/default/sample3_TFBS_entropy.txt, output/metrics/TFBS_entropy/tempus/sample3_TFBS_entropy.txt, output/metrics/TFBS_entropy/guardant/sample3_TFBS_entropy.txt, output/metrics/TFBS_entropy/foundationOne/sample3_TFBS_entropy.txt, output/metrics/ATAC_entropy/default/sample1_ATAC_entropy.txt, output/metrics/ATAC_entropy/tempus/sample1_ATAC_entropy.txt, output/metrics/ATAC_entropy/guardant/sample1_ATAC_entropy.txt, output/metrics/ATAC_entropy/foundationOne/sample1_ATAC_entropy.txt, output/metrics/ATAC_entropy/default/sample2_ATAC_entropy.txt, output/metrics/ATAC_entropy/tempus/sample2_ATAC_entropy.txt, output/metrics/ATAC_entropy/guardant/sample2_ATAC_entropy.txt, output/metrics/ATAC_entropy/foundationOne/sample2_ATAC_entropy.txt, output/metrics/ATAC_entropy/default/sample3_ATAC_entropy.txt, output/metrics/ATAC_entropy/tempus/sample3_ATAC_entropy.txt, output/metrics/ATAC_entropy/guardant/sample3_ATAC_entropy.txt, output/metrics/ATAC_entropy/foundationOne/sample3_ATAC_entropy.txt
+    output: output/feature_tables/guardant/se.rds, output/feature_tables/guardant/depth.rds, output/feature_tables/guardant/frag_bins.rds, output/feature_tables/guardant/small_frags.rds, output/feature_tables/guardant/full_gene_depth.rds, output/feature_tables/guardant/mds.rds, output/feature_tables/guardant/TFBS_entropy.rds, output/feature_tables/guardant/ATAC_entropy.rds
+    jobid: 195
+    reason: Missing output files: output/feature_tables/guardant/se.rds, output/feature_tables/guardant/small_frags.rds, output/feature_tables/guardant/depth.rds, output/feature_tables/guardant/frag_bins.rds, output/feature_tables/guardant/ATAC_entropy.rds, output/feature_tables/guardant/full_gene_depth.rds, output/feature_tables/guardant/TFBS_entropy.rds, output/feature_tables/guardant/mds.rds; Input files updated by another job: output/metrics/mds/foundationOne/sample3_mds.txt, output/metrics/depth/guardant/sample1.depth.tsv, output/metrics/mds/tempus/sample2_mds.txt, output/metrics/TFBS_entropy/guardant/sample2_TFBS_entropy.txt, output/metrics/frag_bins/default/sample3.fragbins.tsv, output/metrics/ATAC_entropy/tempus/sample1_ATAC_entropy.txt, output/metrics/TFBS_entropy/default/sample3_TFBS_entropy.txt, output/metrics/TFBS_entropy/foundationOne/sample1_TFBS_entropy.txt, output/metrics/full_gene_depth/default/sample3.fullgenedepth.tsv, output/metrics/frag_bins/guardant/sample1.fragbins.tsv, output/metrics/depth/guardant/sample3.depth.tsv, output/metrics/se/tempus/sample1.SE.tsv, output/metrics/frag_bins/guardant/sample2.fragbins.tsv, output/metrics/mds/guardant/sample1_mds.txt, output/metrics/se/foundationOne/sample1.SE.tsv, output/metrics/mds/tempus/sample3_mds.txt, output/metrics/ATAC_entropy/tempus/sample2_ATAC_entropy.txt, output/metrics/mds/default/sample2_mds.txt, output/metrics/full_gene_depth/guardant/sample3.fullgenedepth.tsv, output/metrics/full_gene_depth/tempus/sample3.fullgenedepth.tsv, output/metrics/se/guardant/sample2.SE.tsv, output/metrics/small_frags/tempus/sample3.smallfrag.tsv, output/metrics/small_frags/tempus/sample2.smallfrag.tsv, output/metrics/frag_bins/foundationOne/sample2.fragbins.tsv, output/metrics/small_frags/foundationOne/sample1.smallfrag.tsv, output/metrics/TFBS_entropy/default/sample2_TFBS_entropy.txt, output/metrics/TFBS_entropy/foundationOne/sample3_TFBS_entropy.txt, output/metrics/full_gene_depth/guardant/sample2.fullgenedepth.tsv, output/metrics/small_frags/guardant/sample2.smallfrag.tsv, output/metrics/TFBS_entropy/default/sample1_TFBS_entropy.txt, output/metrics/full_gene_depth/guardant/sample1.fullgenedepth.tsv, output/metrics/frag_bins/tempus/sample1.fragbins.tsv, output/metrics/small_frags/tempus/sample1.smallfrag.tsv, output/metrics/ATAC_entropy/foundationOne/sample3_ATAC_entropy.txt, output/metrics/ATAC_entropy/foundationOne/sample2_ATAC_entropy.txt, output/metrics/frag_bins/foundationOne/sample1.fragbins.tsv, output/metrics/ATAC_entropy/foundationOne/sample1_ATAC_entropy.txt, output/metrics/se/default/sample3.SE.tsv, output/metrics/frag_bins/tempus/sample2.fragbins.tsv, output/metrics/small_frags/default/sample2.smallfrag.tsv, output/metrics/small_frags/guardant/sample1.smallfrag.tsv, output/metrics/ATAC_entropy/guardant/sample3_ATAC_entropy.txt, output/metrics/TFBS_entropy/tempus/sample2_TFBS_entropy.txt, output/metrics/depth/tempus/sample2.depth.tsv, output/metrics/se/default/sample2.SE.tsv, output/metrics/TFBS_entropy/tempus/sample3_TFBS_entropy.txt, output/metrics/mds/tempus/sample1_mds.txt, output/metrics/se/tempus/sample2.SE.tsv, output/metrics/full_gene_depth/default/sample2.fullgenedepth.tsv, output/metrics/mds/guardant/sample3_mds.txt, output/metrics/TFBS_entropy/guardant/sample3_TFBS_entropy.txt, output/metrics/TFBS_entropy/guardant/sample1_TFBS_entropy.txt, output/metrics/depth/default/sample2.depth.tsv, output/metrics/ATAC_entropy/default/sample3_ATAC_entropy.txt, output/metrics/depth/tempus/sample3.depth.tsv, output/metrics/mds/guardant/sample2_mds.txt, output/metrics/se/tempus/sample3.SE.tsv, output/metrics/frag_bins/default/sample2.fragbins.tsv, output/metrics/small_frags/guardant/sample3.smallfrag.tsv, output/metrics/mds/default/sample3_mds.txt, output/metrics/depth/foundationOne/sample3.depth.tsv, output/metrics/frag_bins/foundationOne/sample3.fragbins.tsv, output/metrics/TFBS_entropy/foundationOne/sample2_TFBS_entropy.txt, output/metrics/full_gene_depth/tempus/sample1.fullgenedepth.tsv, output/metrics/depth/foundationOne/sample2.depth.tsv, output/metrics/frag_bins/guardant/sample3.fragbins.tsv, output/metrics/small_frags/foundationOne/sample3.smallfrag.tsv, output/metrics/se/foundationOne/sample2.SE.tsv, output/metrics/frag_bins/tempus/sample3.fragbins.tsv, output/metrics/se/foundationOne/sample3.SE.tsv, output/metrics/depth/default/sample1.depth.tsv, output/metrics/full_gene_depth/default/sample1.fullgenedepth.tsv, output/metrics/ATAC_entropy/guardant/sample1_ATAC_entropy.txt, output/metrics/depth/tempus/sample1.depth.tsv, output/metrics/TFBS_entropy/tempus/sample1_TFBS_entropy.txt, output/metrics/mds/default/sample1_mds.txt, output/metrics/ATAC_entropy/tempus/sample3_ATAC_entropy.txt, output/metrics/mds/foundationOne/sample2_mds.txt, output/metrics/se/default/sample1.SE.tsv, output/metrics/frag_bins/default/sample1.fragbins.tsv, output/metrics/ATAC_entropy/default/sample1_ATAC_entropy.txt, output/metrics/small_frags/default/sample1.smallfrag.tsv, output/metrics/small_frags/foundationOne/sample2.smallfrag.tsv, output/metrics/mds/foundationOne/sample1_mds.txt, output/metrics/full_gene_depth/tempus/sample2.fullgenedepth.tsv, output/metrics/depth/foundationOne/sample1.depth.tsv, output/metrics/depth/guardant/sample2.depth.tsv, output/metrics/se/guardant/sample3.SE.tsv, output/metrics/full_gene_depth/foundationOne/sample2.fullgenedepth.tsv, output/metrics/full_gene_depth/foundationOne/sample3.fullgenedepth.tsv, output/metrics/small_frags/default/sample3.smallfrag.tsv, output/metrics/full_gene_depth/foundationOne/sample1.fullgenedepth.tsv, output/metrics/ATAC_entropy/guardant/sample2_ATAC_entropy.txt, output/metrics/se/guardant/sample1.SE.tsv, output/metrics/ATAC_entropy/default/sample2_ATAC_entropy.txt, output/metrics/depth/default/sample3.depth.tsv
+    wildcards: comm_panel=guardant
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:20:01 2025]
+rule build_feature_tables:
+    input: output/metrics/se/default/sample1.SE.tsv, output/metrics/se/tempus/sample1.SE.tsv, output/metrics/se/guardant/sample1.SE.tsv, output/metrics/se/foundationOne/sample1.SE.tsv, output/metrics/se/default/sample2.SE.tsv, output/metrics/se/tempus/sample2.SE.tsv, output/metrics/se/guardant/sample2.SE.tsv, output/metrics/se/foundationOne/sample2.SE.tsv, output/metrics/se/default/sample3.SE.tsv, output/metrics/se/tempus/sample3.SE.tsv, output/metrics/se/guardant/sample3.SE.tsv, output/metrics/se/foundationOne/sample3.SE.tsv, output/metrics/depth/default/sample1.depth.tsv, output/metrics/depth/tempus/sample1.depth.tsv, output/metrics/depth/guardant/sample1.depth.tsv, output/metrics/depth/foundationOne/sample1.depth.tsv, output/metrics/depth/default/sample2.depth.tsv, output/metrics/depth/tempus/sample2.depth.tsv, output/metrics/depth/guardant/sample2.depth.tsv, output/metrics/depth/foundationOne/sample2.depth.tsv, output/metrics/depth/default/sample3.depth.tsv, output/metrics/depth/tempus/sample3.depth.tsv, output/metrics/depth/guardant/sample3.depth.tsv, output/metrics/depth/foundationOne/sample3.depth.tsv, output/metrics/frag_bins/default/sample1.fragbins.tsv, output/metrics/frag_bins/tempus/sample1.fragbins.tsv, output/metrics/frag_bins/guardant/sample1.fragbins.tsv, output/metrics/frag_bins/foundationOne/sample1.fragbins.tsv, output/metrics/frag_bins/default/sample2.fragbins.tsv, output/metrics/frag_bins/tempus/sample2.fragbins.tsv, output/metrics/frag_bins/guardant/sample2.fragbins.tsv, output/metrics/frag_bins/foundationOne/sample2.fragbins.tsv, output/metrics/frag_bins/default/sample3.fragbins.tsv, output/metrics/frag_bins/tempus/sample3.fragbins.tsv, output/metrics/frag_bins/guardant/sample3.fragbins.tsv, output/metrics/frag_bins/foundationOne/sample3.fragbins.tsv, output/metrics/small_frags/default/sample1.smallfrag.tsv, output/metrics/small_frags/tempus/sample1.smallfrag.tsv, output/metrics/small_frags/guardant/sample1.smallfrag.tsv, output/metrics/small_frags/foundationOne/sample1.smallfrag.tsv, output/metrics/small_frags/default/sample2.smallfrag.tsv, output/metrics/small_frags/tempus/sample2.smallfrag.tsv, output/metrics/small_frags/guardant/sample2.smallfrag.tsv, output/metrics/small_frags/foundationOne/sample2.smallfrag.tsv, output/metrics/small_frags/default/sample3.smallfrag.tsv, output/metrics/small_frags/tempus/sample3.smallfrag.tsv, output/metrics/small_frags/guardant/sample3.smallfrag.tsv, output/metrics/small_frags/foundationOne/sample3.smallfrag.tsv, output/metrics/full_gene_depth/default/sample1.fullgenedepth.tsv, output/metrics/full_gene_depth/tempus/sample1.fullgenedepth.tsv, output/metrics/full_gene_depth/guardant/sample1.fullgenedepth.tsv, output/metrics/full_gene_depth/foundationOne/sample1.fullgenedepth.tsv, output/metrics/full_gene_depth/default/sample2.fullgenedepth.tsv, output/metrics/full_gene_depth/tempus/sample2.fullgenedepth.tsv, output/metrics/full_gene_depth/guardant/sample2.fullgenedepth.tsv, output/metrics/full_gene_depth/foundationOne/sample2.fullgenedepth.tsv, output/metrics/full_gene_depth/default/sample3.fullgenedepth.tsv, output/metrics/full_gene_depth/tempus/sample3.fullgenedepth.tsv, output/metrics/full_gene_depth/guardant/sample3.fullgenedepth.tsv, output/metrics/full_gene_depth/foundationOne/sample3.fullgenedepth.tsv, output/metrics/mds/default/sample1_mds.txt, output/metrics/mds/tempus/sample1_mds.txt, output/metrics/mds/guardant/sample1_mds.txt, output/metrics/mds/foundationOne/sample1_mds.txt, output/metrics/mds/default/sample2_mds.txt, output/metrics/mds/tempus/sample2_mds.txt, output/metrics/mds/guardant/sample2_mds.txt, output/metrics/mds/foundationOne/sample2_mds.txt, output/metrics/mds/default/sample3_mds.txt, output/metrics/mds/tempus/sample3_mds.txt, output/metrics/mds/guardant/sample3_mds.txt, output/metrics/mds/foundationOne/sample3_mds.txt, output/metrics/TFBS_entropy/default/sample1_TFBS_entropy.txt, output/metrics/TFBS_entropy/tempus/sample1_TFBS_entropy.txt, output/metrics/TFBS_entropy/guardant/sample1_TFBS_entropy.txt, output/metrics/TFBS_entropy/foundationOne/sample1_TFBS_entropy.txt, output/metrics/TFBS_entropy/default/sample2_TFBS_entropy.txt, output/metrics/TFBS_entropy/tempus/sample2_TFBS_entropy.txt, output/metrics/TFBS_entropy/guardant/sample2_TFBS_entropy.txt, output/metrics/TFBS_entropy/foundationOne/sample2_TFBS_entropy.txt, output/metrics/TFBS_entropy/default/sample3_TFBS_entropy.txt, output/metrics/TFBS_entropy/tempus/sample3_TFBS_entropy.txt, output/metrics/TFBS_entropy/guardant/sample3_TFBS_entropy.txt, output/metrics/TFBS_entropy/foundationOne/sample3_TFBS_entropy.txt, output/metrics/ATAC_entropy/default/sample1_ATAC_entropy.txt, output/metrics/ATAC_entropy/tempus/sample1_ATAC_entropy.txt, output/metrics/ATAC_entropy/guardant/sample1_ATAC_entropy.txt, output/metrics/ATAC_entropy/foundationOne/sample1_ATAC_entropy.txt, output/metrics/ATAC_entropy/default/sample2_ATAC_entropy.txt, output/metrics/ATAC_entropy/tempus/sample2_ATAC_entropy.txt, output/metrics/ATAC_entropy/guardant/sample2_ATAC_entropy.txt, output/metrics/ATAC_entropy/foundationOne/sample2_ATAC_entropy.txt, output/metrics/ATAC_entropy/default/sample3_ATAC_entropy.txt, output/metrics/ATAC_entropy/tempus/sample3_ATAC_entropy.txt, output/metrics/ATAC_entropy/guardant/sample3_ATAC_entropy.txt, output/metrics/ATAC_entropy/foundationOne/sample3_ATAC_entropy.txt
+    output: output/feature_tables/foundationOne/se.rds, output/feature_tables/foundationOne/depth.rds, output/feature_tables/foundationOne/frag_bins.rds, output/feature_tables/foundationOne/small_frags.rds, output/feature_tables/foundationOne/full_gene_depth.rds, output/feature_tables/foundationOne/mds.rds, output/feature_tables/foundationOne/TFBS_entropy.rds, output/feature_tables/foundationOne/ATAC_entropy.rds
+    jobid: 196
+    reason: Missing output files: output/feature_tables/foundationOne/small_frags.rds, output/feature_tables/foundationOne/se.rds, output/feature_tables/foundationOne/TFBS_entropy.rds, output/feature_tables/foundationOne/depth.rds, output/feature_tables/foundationOne/ATAC_entropy.rds, output/feature_tables/foundationOne/full_gene_depth.rds, output/feature_tables/foundationOne/mds.rds, output/feature_tables/foundationOne/frag_bins.rds; Input files updated by another job: output/metrics/mds/foundationOne/sample3_mds.txt, output/metrics/depth/guardant/sample1.depth.tsv, output/metrics/mds/tempus/sample2_mds.txt, output/metrics/TFBS_entropy/guardant/sample2_TFBS_entropy.txt, output/metrics/frag_bins/default/sample3.fragbins.tsv, output/metrics/ATAC_entropy/tempus/sample1_ATAC_entropy.txt, output/metrics/TFBS_entropy/default/sample3_TFBS_entropy.txt, output/metrics/TFBS_entropy/foundationOne/sample1_TFBS_entropy.txt, output/metrics/full_gene_depth/default/sample3.fullgenedepth.tsv, output/metrics/frag_bins/guardant/sample1.fragbins.tsv, output/metrics/depth/guardant/sample3.depth.tsv, output/metrics/se/tempus/sample1.SE.tsv, output/metrics/frag_bins/guardant/sample2.fragbins.tsv, output/metrics/mds/guardant/sample1_mds.txt, output/metrics/se/foundationOne/sample1.SE.tsv, output/metrics/mds/tempus/sample3_mds.txt, output/metrics/ATAC_entropy/tempus/sample2_ATAC_entropy.txt, output/metrics/mds/default/sample2_mds.txt, output/metrics/full_gene_depth/guardant/sample3.fullgenedepth.tsv, output/metrics/full_gene_depth/tempus/sample3.fullgenedepth.tsv, output/metrics/se/guardant/sample2.SE.tsv, output/metrics/small_frags/tempus/sample3.smallfrag.tsv, output/metrics/small_frags/tempus/sample2.smallfrag.tsv, output/metrics/frag_bins/foundationOne/sample2.fragbins.tsv, output/metrics/small_frags/foundationOne/sample1.smallfrag.tsv, output/metrics/TFBS_entropy/default/sample2_TFBS_entropy.txt, output/metrics/TFBS_entropy/foundationOne/sample3_TFBS_entropy.txt, output/metrics/full_gene_depth/guardant/sample2.fullgenedepth.tsv, output/metrics/small_frags/guardant/sample2.smallfrag.tsv, output/metrics/TFBS_entropy/default/sample1_TFBS_entropy.txt, output/metrics/full_gene_depth/guardant/sample1.fullgenedepth.tsv, output/metrics/frag_bins/tempus/sample1.fragbins.tsv, output/metrics/small_frags/tempus/sample1.smallfrag.tsv, output/metrics/ATAC_entropy/foundationOne/sample3_ATAC_entropy.txt, output/metrics/ATAC_entropy/foundationOne/sample2_ATAC_entropy.txt, output/metrics/frag_bins/foundationOne/sample1.fragbins.tsv, output/metrics/ATAC_entropy/foundationOne/sample1_ATAC_entropy.txt, output/metrics/se/default/sample3.SE.tsv, output/metrics/frag_bins/tempus/sample2.fragbins.tsv, output/metrics/small_frags/default/sample2.smallfrag.tsv, output/metrics/small_frags/guardant/sample1.smallfrag.tsv, output/metrics/ATAC_entropy/guardant/sample3_ATAC_entropy.txt, output/metrics/TFBS_entropy/tempus/sample2_TFBS_entropy.txt, output/metrics/depth/tempus/sample2.depth.tsv, output/metrics/se/default/sample2.SE.tsv, output/metrics/TFBS_entropy/tempus/sample3_TFBS_entropy.txt, output/metrics/mds/tempus/sample1_mds.txt, output/metrics/se/tempus/sample2.SE.tsv, output/metrics/full_gene_depth/default/sample2.fullgenedepth.tsv, output/metrics/mds/guardant/sample3_mds.txt, output/metrics/TFBS_entropy/guardant/sample3_TFBS_entropy.txt, output/metrics/TFBS_entropy/guardant/sample1_TFBS_entropy.txt, output/metrics/depth/default/sample2.depth.tsv, output/metrics/ATAC_entropy/default/sample3_ATAC_entropy.txt, output/metrics/depth/tempus/sample3.depth.tsv, output/metrics/mds/guardant/sample2_mds.txt, output/metrics/se/tempus/sample3.SE.tsv, output/metrics/frag_bins/default/sample2.fragbins.tsv, output/metrics/small_frags/guardant/sample3.smallfrag.tsv, output/metrics/mds/default/sample3_mds.txt, output/metrics/depth/foundationOne/sample3.depth.tsv, output/metrics/frag_bins/foundationOne/sample3.fragbins.tsv, output/metrics/TFBS_entropy/foundationOne/sample2_TFBS_entropy.txt, output/metrics/full_gene_depth/tempus/sample1.fullgenedepth.tsv, output/metrics/depth/foundationOne/sample2.depth.tsv, output/metrics/frag_bins/guardant/sample3.fragbins.tsv, output/metrics/small_frags/foundationOne/sample3.smallfrag.tsv, output/metrics/se/foundationOne/sample2.SE.tsv, output/metrics/frag_bins/tempus/sample3.fragbins.tsv, output/metrics/se/foundationOne/sample3.SE.tsv, output/metrics/depth/default/sample1.depth.tsv, output/metrics/full_gene_depth/default/sample1.fullgenedepth.tsv, output/metrics/ATAC_entropy/guardant/sample1_ATAC_entropy.txt, output/metrics/depth/tempus/sample1.depth.tsv, output/metrics/TFBS_entropy/tempus/sample1_TFBS_entropy.txt, output/metrics/mds/default/sample1_mds.txt, output/metrics/ATAC_entropy/tempus/sample3_ATAC_entropy.txt, output/metrics/mds/foundationOne/sample2_mds.txt, output/metrics/se/default/sample1.SE.tsv, output/metrics/frag_bins/default/sample1.fragbins.tsv, output/metrics/ATAC_entropy/default/sample1_ATAC_entropy.txt, output/metrics/small_frags/default/sample1.smallfrag.tsv, output/metrics/small_frags/foundationOne/sample2.smallfrag.tsv, output/metrics/mds/foundationOne/sample1_mds.txt, output/metrics/full_gene_depth/tempus/sample2.fullgenedepth.tsv, output/metrics/depth/foundationOne/sample1.depth.tsv, output/metrics/depth/guardant/sample2.depth.tsv, output/metrics/se/guardant/sample3.SE.tsv, output/metrics/full_gene_depth/foundationOne/sample2.fullgenedepth.tsv, output/metrics/full_gene_depth/foundationOne/sample3.fullgenedepth.tsv, output/metrics/small_frags/default/sample3.smallfrag.tsv, output/metrics/full_gene_depth/foundationOne/sample1.fullgenedepth.tsv, output/metrics/ATAC_entropy/guardant/sample2_ATAC_entropy.txt, output/metrics/se/guardant/sample1.SE.tsv, output/metrics/ATAC_entropy/default/sample2_ATAC_entropy.txt, output/metrics/depth/default/sample3.depth.tsv
+    wildcards: comm_panel=foundationOne
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:20:01 2025]
+rule build_feature_tables:
+    input: output/metrics/se/default/sample1.SE.tsv, output/metrics/se/tempus/sample1.SE.tsv, output/metrics/se/guardant/sample1.SE.tsv, output/metrics/se/foundationOne/sample1.SE.tsv, output/metrics/se/default/sample2.SE.tsv, output/metrics/se/tempus/sample2.SE.tsv, output/metrics/se/guardant/sample2.SE.tsv, output/metrics/se/foundationOne/sample2.SE.tsv, output/metrics/se/default/sample3.SE.tsv, output/metrics/se/tempus/sample3.SE.tsv, output/metrics/se/guardant/sample3.SE.tsv, output/metrics/se/foundationOne/sample3.SE.tsv, output/metrics/depth/default/sample1.depth.tsv, output/metrics/depth/tempus/sample1.depth.tsv, output/metrics/depth/guardant/sample1.depth.tsv, output/metrics/depth/foundationOne/sample1.depth.tsv, output/metrics/depth/default/sample2.depth.tsv, output/metrics/depth/tempus/sample2.depth.tsv, output/metrics/depth/guardant/sample2.depth.tsv, output/metrics/depth/foundationOne/sample2.depth.tsv, output/metrics/depth/default/sample3.depth.tsv, output/metrics/depth/tempus/sample3.depth.tsv, output/metrics/depth/guardant/sample3.depth.tsv, output/metrics/depth/foundationOne/sample3.depth.tsv, output/metrics/frag_bins/default/sample1.fragbins.tsv, output/metrics/frag_bins/tempus/sample1.fragbins.tsv, output/metrics/frag_bins/guardant/sample1.fragbins.tsv, output/metrics/frag_bins/foundationOne/sample1.fragbins.tsv, output/metrics/frag_bins/default/sample2.fragbins.tsv, output/metrics/frag_bins/tempus/sample2.fragbins.tsv, output/metrics/frag_bins/guardant/sample2.fragbins.tsv, output/metrics/frag_bins/foundationOne/sample2.fragbins.tsv, output/metrics/frag_bins/default/sample3.fragbins.tsv, output/metrics/frag_bins/tempus/sample3.fragbins.tsv, output/metrics/frag_bins/guardant/sample3.fragbins.tsv, output/metrics/frag_bins/foundationOne/sample3.fragbins.tsv, output/metrics/small_frags/default/sample1.smallfrag.tsv, output/metrics/small_frags/tempus/sample1.smallfrag.tsv, output/metrics/small_frags/guardant/sample1.smallfrag.tsv, output/metrics/small_frags/foundationOne/sample1.smallfrag.tsv, output/metrics/small_frags/default/sample2.smallfrag.tsv, output/metrics/small_frags/tempus/sample2.smallfrag.tsv, output/metrics/small_frags/guardant/sample2.smallfrag.tsv, output/metrics/small_frags/foundationOne/sample2.smallfrag.tsv, output/metrics/small_frags/default/sample3.smallfrag.tsv, output/metrics/small_frags/tempus/sample3.smallfrag.tsv, output/metrics/small_frags/guardant/sample3.smallfrag.tsv, output/metrics/small_frags/foundationOne/sample3.smallfrag.tsv, output/metrics/full_gene_depth/default/sample1.fullgenedepth.tsv, output/metrics/full_gene_depth/tempus/sample1.fullgenedepth.tsv, output/metrics/full_gene_depth/guardant/sample1.fullgenedepth.tsv, output/metrics/full_gene_depth/foundationOne/sample1.fullgenedepth.tsv, output/metrics/full_gene_depth/default/sample2.fullgenedepth.tsv, output/metrics/full_gene_depth/tempus/sample2.fullgenedepth.tsv, output/metrics/full_gene_depth/guardant/sample2.fullgenedepth.tsv, output/metrics/full_gene_depth/foundationOne/sample2.fullgenedepth.tsv, output/metrics/full_gene_depth/default/sample3.fullgenedepth.tsv, output/metrics/full_gene_depth/tempus/sample3.fullgenedepth.tsv, output/metrics/full_gene_depth/guardant/sample3.fullgenedepth.tsv, output/metrics/full_gene_depth/foundationOne/sample3.fullgenedepth.tsv, output/metrics/mds/default/sample1_mds.txt, output/metrics/mds/tempus/sample1_mds.txt, output/metrics/mds/guardant/sample1_mds.txt, output/metrics/mds/foundationOne/sample1_mds.txt, output/metrics/mds/default/sample2_mds.txt, output/metrics/mds/tempus/sample2_mds.txt, output/metrics/mds/guardant/sample2_mds.txt, output/metrics/mds/foundationOne/sample2_mds.txt, output/metrics/mds/default/sample3_mds.txt, output/metrics/mds/tempus/sample3_mds.txt, output/metrics/mds/guardant/sample3_mds.txt, output/metrics/mds/foundationOne/sample3_mds.txt, output/metrics/TFBS_entropy/default/sample1_TFBS_entropy.txt, output/metrics/TFBS_entropy/tempus/sample1_TFBS_entropy.txt, output/metrics/TFBS_entropy/guardant/sample1_TFBS_entropy.txt, output/metrics/TFBS_entropy/foundationOne/sample1_TFBS_entropy.txt, output/metrics/TFBS_entropy/default/sample2_TFBS_entropy.txt, output/metrics/TFBS_entropy/tempus/sample2_TFBS_entropy.txt, output/metrics/TFBS_entropy/guardant/sample2_TFBS_entropy.txt, output/metrics/TFBS_entropy/foundationOne/sample2_TFBS_entropy.txt, output/metrics/TFBS_entropy/default/sample3_TFBS_entropy.txt, output/metrics/TFBS_entropy/tempus/sample3_TFBS_entropy.txt, output/metrics/TFBS_entropy/guardant/sample3_TFBS_entropy.txt, output/metrics/TFBS_entropy/foundationOne/sample3_TFBS_entropy.txt, output/metrics/ATAC_entropy/default/sample1_ATAC_entropy.txt, output/metrics/ATAC_entropy/tempus/sample1_ATAC_entropy.txt, output/metrics/ATAC_entropy/guardant/sample1_ATAC_entropy.txt, output/metrics/ATAC_entropy/foundationOne/sample1_ATAC_entropy.txt, output/metrics/ATAC_entropy/default/sample2_ATAC_entropy.txt, output/metrics/ATAC_entropy/tempus/sample2_ATAC_entropy.txt, output/metrics/ATAC_entropy/guardant/sample2_ATAC_entropy.txt, output/metrics/ATAC_entropy/foundationOne/sample2_ATAC_entropy.txt, output/metrics/ATAC_entropy/default/sample3_ATAC_entropy.txt, output/metrics/ATAC_entropy/tempus/sample3_ATAC_entropy.txt, output/metrics/ATAC_entropy/guardant/sample3_ATAC_entropy.txt, output/metrics/ATAC_entropy/foundationOne/sample3_ATAC_entropy.txt
+    output: output/feature_tables/default/se.rds, output/feature_tables/default/depth.rds, output/feature_tables/default/frag_bins.rds, output/feature_tables/default/small_frags.rds, output/feature_tables/default/full_gene_depth.rds, output/feature_tables/default/mds.rds, output/feature_tables/default/TFBS_entropy.rds, output/feature_tables/default/ATAC_entropy.rds
+    jobid: 193
+    reason: Missing output files: output/feature_tables/default/se.rds, output/feature_tables/default/TFBS_entropy.rds, output/feature_tables/default/mds.rds, output/feature_tables/default/ATAC_entropy.rds, output/feature_tables/default/full_gene_depth.rds, output/feature_tables/default/small_frags.rds, output/feature_tables/default/frag_bins.rds, output/feature_tables/default/depth.rds; Input files updated by another job: output/metrics/mds/foundationOne/sample3_mds.txt, output/metrics/depth/guardant/sample1.depth.tsv, output/metrics/mds/tempus/sample2_mds.txt, output/metrics/TFBS_entropy/guardant/sample2_TFBS_entropy.txt, output/metrics/frag_bins/default/sample3.fragbins.tsv, output/metrics/ATAC_entropy/tempus/sample1_ATAC_entropy.txt, output/metrics/TFBS_entropy/default/sample3_TFBS_entropy.txt, output/metrics/TFBS_entropy/foundationOne/sample1_TFBS_entropy.txt, output/metrics/full_gene_depth/default/sample3.fullgenedepth.tsv, output/metrics/frag_bins/guardant/sample1.fragbins.tsv, output/metrics/depth/guardant/sample3.depth.tsv, output/metrics/se/tempus/sample1.SE.tsv, output/metrics/frag_bins/guardant/sample2.fragbins.tsv, output/metrics/mds/guardant/sample1_mds.txt, output/metrics/se/foundationOne/sample1.SE.tsv, output/metrics/mds/tempus/sample3_mds.txt, output/metrics/ATAC_entropy/tempus/sample2_ATAC_entropy.txt, output/metrics/mds/default/sample2_mds.txt, output/metrics/full_gene_depth/guardant/sample3.fullgenedepth.tsv, output/metrics/full_gene_depth/tempus/sample3.fullgenedepth.tsv, output/metrics/se/guardant/sample2.SE.tsv, output/metrics/small_frags/tempus/sample3.smallfrag.tsv, output/metrics/small_frags/tempus/sample2.smallfrag.tsv, output/metrics/frag_bins/foundationOne/sample2.fragbins.tsv, output/metrics/small_frags/foundationOne/sample1.smallfrag.tsv, output/metrics/TFBS_entropy/default/sample2_TFBS_entropy.txt, output/metrics/TFBS_entropy/foundationOne/sample3_TFBS_entropy.txt, output/metrics/full_gene_depth/guardant/sample2.fullgenedepth.tsv, output/metrics/small_frags/guardant/sample2.smallfrag.tsv, output/metrics/TFBS_entropy/default/sample1_TFBS_entropy.txt, output/metrics/full_gene_depth/guardant/sample1.fullgenedepth.tsv, output/metrics/frag_bins/tempus/sample1.fragbins.tsv, output/metrics/small_frags/tempus/sample1.smallfrag.tsv, output/metrics/ATAC_entropy/foundationOne/sample3_ATAC_entropy.txt, output/metrics/ATAC_entropy/foundationOne/sample2_ATAC_entropy.txt, output/metrics/frag_bins/foundationOne/sample1.fragbins.tsv, output/metrics/ATAC_entropy/foundationOne/sample1_ATAC_entropy.txt, output/metrics/se/default/sample3.SE.tsv, output/metrics/frag_bins/tempus/sample2.fragbins.tsv, output/metrics/small_frags/default/sample2.smallfrag.tsv, output/metrics/small_frags/guardant/sample1.smallfrag.tsv, output/metrics/ATAC_entropy/guardant/sample3_ATAC_entropy.txt, output/metrics/TFBS_entropy/tempus/sample2_TFBS_entropy.txt, output/metrics/depth/tempus/sample2.depth.tsv, output/metrics/se/default/sample2.SE.tsv, output/metrics/TFBS_entropy/tempus/sample3_TFBS_entropy.txt, output/metrics/mds/tempus/sample1_mds.txt, output/metrics/se/tempus/sample2.SE.tsv, output/metrics/full_gene_depth/default/sample2.fullgenedepth.tsv, output/metrics/mds/guardant/sample3_mds.txt, output/metrics/TFBS_entropy/guardant/sample3_TFBS_entropy.txt, output/metrics/TFBS_entropy/guardant/sample1_TFBS_entropy.txt, output/metrics/depth/default/sample2.depth.tsv, output/metrics/ATAC_entropy/default/sample3_ATAC_entropy.txt, output/metrics/depth/tempus/sample3.depth.tsv, output/metrics/mds/guardant/sample2_mds.txt, output/metrics/se/tempus/sample3.SE.tsv, output/metrics/frag_bins/default/sample2.fragbins.tsv, output/metrics/small_frags/guardant/sample3.smallfrag.tsv, output/metrics/mds/default/sample3_mds.txt, output/metrics/depth/foundationOne/sample3.depth.tsv, output/metrics/frag_bins/foundationOne/sample3.fragbins.tsv, output/metrics/TFBS_entropy/foundationOne/sample2_TFBS_entropy.txt, output/metrics/full_gene_depth/tempus/sample1.fullgenedepth.tsv, output/metrics/depth/foundationOne/sample2.depth.tsv, output/metrics/frag_bins/guardant/sample3.fragbins.tsv, output/metrics/small_frags/foundationOne/sample3.smallfrag.tsv, output/metrics/se/foundationOne/sample2.SE.tsv, output/metrics/frag_bins/tempus/sample3.fragbins.tsv, output/metrics/se/foundationOne/sample3.SE.tsv, output/metrics/depth/default/sample1.depth.tsv, output/metrics/full_gene_depth/default/sample1.fullgenedepth.tsv, output/metrics/ATAC_entropy/guardant/sample1_ATAC_entropy.txt, output/metrics/depth/tempus/sample1.depth.tsv, output/metrics/TFBS_entropy/tempus/sample1_TFBS_entropy.txt, output/metrics/mds/default/sample1_mds.txt, output/metrics/ATAC_entropy/tempus/sample3_ATAC_entropy.txt, output/metrics/mds/foundationOne/sample2_mds.txt, output/metrics/se/default/sample1.SE.tsv, output/metrics/frag_bins/default/sample1.fragbins.tsv, output/metrics/ATAC_entropy/default/sample1_ATAC_entropy.txt, output/metrics/small_frags/default/sample1.smallfrag.tsv, output/metrics/small_frags/foundationOne/sample2.smallfrag.tsv, output/metrics/mds/foundationOne/sample1_mds.txt, output/metrics/full_gene_depth/tempus/sample2.fullgenedepth.tsv, output/metrics/depth/foundationOne/sample1.depth.tsv, output/metrics/depth/guardant/sample2.depth.tsv, output/metrics/se/guardant/sample3.SE.tsv, output/metrics/full_gene_depth/foundationOne/sample2.fullgenedepth.tsv, output/metrics/full_gene_depth/foundationOne/sample3.fullgenedepth.tsv, output/metrics/small_frags/default/sample3.smallfrag.tsv, output/metrics/full_gene_depth/foundationOne/sample1.fullgenedepth.tsv, output/metrics/ATAC_entropy/guardant/sample2_ATAC_entropy.txt, output/metrics/se/guardant/sample1.SE.tsv, output/metrics/ATAC_entropy/default/sample2_ATAC_entropy.txt, output/metrics/depth/default/sample3.depth.tsv
+    wildcards: comm_panel=default
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:22:30 2025]
+Finished job 196.
+169 of 177 steps (95%) done
+[Thu Apr 17 13:22:31 2025]
+Finished job 194.
+170 of 177 steps (96%) done
+[Thu Apr 17 13:22:32 2025]
+Finished job 193.
+171 of 177 steps (97%) done
+[Thu Apr 17 13:22:33 2025]
+Finished job 195.
+172 of 177 steps (97%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:22:33 2025]
+rule extract_first_exon:
+    input: output/feature_tables/default/se.rds, output/feature_tables/tempus/se.rds, output/feature_tables/guardant/se.rds, output/feature_tables/foundationOne/se.rds, output/feature_tables/default/depth.rds, output/feature_tables/tempus/depth.rds, output/feature_tables/guardant/depth.rds, output/feature_tables/foundationOne/depth.rds, output/feature_tables/default/frag_bins.rds, output/feature_tables/tempus/frag_bins.rds, output/feature_tables/guardant/frag_bins.rds, output/feature_tables/foundationOne/frag_bins.rds, output/feature_tables/default/small_frags.rds, output/feature_tables/tempus/small_frags.rds, output/feature_tables/guardant/small_frags.rds, output/feature_tables/foundationOne/small_frags.rds, output/feature_tables/default/full_gene_depth.rds, output/feature_tables/tempus/full_gene_depth.rds, output/feature_tables/guardant/full_gene_depth.rds, output/feature_tables/foundationOne/full_gene_depth.rds, output/feature_tables/default/mds.rds, output/feature_tables/tempus/mds.rds, output/feature_tables/guardant/mds.rds, output/feature_tables/foundationOne/mds.rds, output/feature_tables/default/TFBS_entropy.rds, output/feature_tables/tempus/TFBS_entropy.rds, output/feature_tables/guardant/TFBS_entropy.rds, output/feature_tables/foundationOne/TFBS_entropy.rds, output/feature_tables/default/ATAC_entropy.rds, output/feature_tables/tempus/ATAC_entropy.rds, output/feature_tables/guardant/ATAC_entropy.rds, output/feature_tables/foundationOne/ATAC_entropy.rds
+    output: output/feature_tables/default/se_E1.rds, output/feature_tables/default/depth_E1.rds, output/feature_tables/default/small_frags_E1.rds, output/feature_tables/default/mds_E1.rds
+    jobid: 197
+    reason: Missing output files: output/feature_tables/default/small_frags_E1.rds, output/feature_tables/default/se_E1.rds, output/feature_tables/default/depth_E1.rds, output/feature_tables/default/mds_E1.rds; Input files updated by another job: output/feature_tables/default/se.rds, output/feature_tables/default/TFBS_entropy.rds, output/feature_tables/tempus/full_gene_depth.rds, output/feature_tables/default/mds.rds, output/feature_tables/guardant/depth.rds, output/feature_tables/foundationOne/small_frags.rds, output/feature_tables/foundationOne/se.rds, output/feature_tables/tempus/depth.rds, output/feature_tables/tempus/small_frags.rds, output/feature_tables/default/full_gene_depth.rds, output/feature_tables/tempus/frag_bins.rds, output/feature_tables/foundationOne/depth.rds, output/feature_tables/default/small_frags.rds, output/feature_tables/default/frag_bins.rds, output/feature_tables/guardant/ATAC_entropy.rds, output/feature_tables/guardant/full_gene_depth.rds, output/feature_tables/tempus/ATAC_entropy.rds, output/feature_tables/guardant/se.rds, output/feature_tables/guardant/small_frags.rds, output/feature_tables/default/ATAC_entropy.rds, output/feature_tables/guardant/mds.rds, output/feature_tables/foundationOne/TFBS_entropy.rds, output/feature_tables/guardant/frag_bins.rds, output/feature_tables/tempus/se.rds, output/feature_tables/tempus/TFBS_entropy.rds, output/feature_tables/foundationOne/ATAC_entropy.rds, output/feature_tables/foundationOne/full_gene_depth.rds, output/feature_tables/foundationOne/mds.rds, output/feature_tables/foundationOne/frag_bins.rds, output/feature_tables/guardant/TFBS_entropy.rds, output/feature_tables/default/depth.rds, output/feature_tables/tempus/mds.rds
+    wildcards: comm_panel=default
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:22:33 2025]
+rule extract_first_exon:
+    input: output/feature_tables/default/se.rds, output/feature_tables/tempus/se.rds, output/feature_tables/guardant/se.rds, output/feature_tables/foundationOne/se.rds, output/feature_tables/default/depth.rds, output/feature_tables/tempus/depth.rds, output/feature_tables/guardant/depth.rds, output/feature_tables/foundationOne/depth.rds, output/feature_tables/default/frag_bins.rds, output/feature_tables/tempus/frag_bins.rds, output/feature_tables/guardant/frag_bins.rds, output/feature_tables/foundationOne/frag_bins.rds, output/feature_tables/default/small_frags.rds, output/feature_tables/tempus/small_frags.rds, output/feature_tables/guardant/small_frags.rds, output/feature_tables/foundationOne/small_frags.rds, output/feature_tables/default/full_gene_depth.rds, output/feature_tables/tempus/full_gene_depth.rds, output/feature_tables/guardant/full_gene_depth.rds, output/feature_tables/foundationOne/full_gene_depth.rds, output/feature_tables/default/mds.rds, output/feature_tables/tempus/mds.rds, output/feature_tables/guardant/mds.rds, output/feature_tables/foundationOne/mds.rds, output/feature_tables/default/TFBS_entropy.rds, output/feature_tables/tempus/TFBS_entropy.rds, output/feature_tables/guardant/TFBS_entropy.rds, output/feature_tables/foundationOne/TFBS_entropy.rds, output/feature_tables/default/ATAC_entropy.rds, output/feature_tables/tempus/ATAC_entropy.rds, output/feature_tables/guardant/ATAC_entropy.rds, output/feature_tables/foundationOne/ATAC_entropy.rds
+    output: output/feature_tables/tempus/se_E1.rds, output/feature_tables/tempus/depth_E1.rds, output/feature_tables/tempus/small_frags_E1.rds, output/feature_tables/tempus/mds_E1.rds
+    jobid: 198
+    reason: Missing output files: output/feature_tables/tempus/se_E1.rds, output/feature_tables/tempus/small_frags_E1.rds, output/feature_tables/tempus/depth_E1.rds, output/feature_tables/tempus/mds_E1.rds; Input files updated by another job: output/feature_tables/default/se.rds, output/feature_tables/default/TFBS_entropy.rds, output/feature_tables/tempus/full_gene_depth.rds, output/feature_tables/default/mds.rds, output/feature_tables/guardant/depth.rds, output/feature_tables/foundationOne/small_frags.rds, output/feature_tables/foundationOne/se.rds, output/feature_tables/tempus/depth.rds, output/feature_tables/tempus/small_frags.rds, output/feature_tables/default/full_gene_depth.rds, output/feature_tables/tempus/frag_bins.rds, output/feature_tables/foundationOne/depth.rds, output/feature_tables/default/small_frags.rds, output/feature_tables/default/frag_bins.rds, output/feature_tables/guardant/ATAC_entropy.rds, output/feature_tables/guardant/full_gene_depth.rds, output/feature_tables/tempus/ATAC_entropy.rds, output/feature_tables/guardant/se.rds, output/feature_tables/guardant/small_frags.rds, output/feature_tables/default/ATAC_entropy.rds, output/feature_tables/guardant/mds.rds, output/feature_tables/foundationOne/TFBS_entropy.rds, output/feature_tables/guardant/frag_bins.rds, output/feature_tables/tempus/se.rds, output/feature_tables/tempus/TFBS_entropy.rds, output/feature_tables/foundationOne/ATAC_entropy.rds, output/feature_tables/foundationOne/full_gene_depth.rds, output/feature_tables/foundationOne/mds.rds, output/feature_tables/foundationOne/frag_bins.rds, output/feature_tables/guardant/TFBS_entropy.rds, output/feature_tables/default/depth.rds, output/feature_tables/tempus/mds.rds
+    wildcards: comm_panel=tempus
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:22:33 2025]
+rule extract_first_exon:
+    input: output/feature_tables/default/se.rds, output/feature_tables/tempus/se.rds, output/feature_tables/guardant/se.rds, output/feature_tables/foundationOne/se.rds, output/feature_tables/default/depth.rds, output/feature_tables/tempus/depth.rds, output/feature_tables/guardant/depth.rds, output/feature_tables/foundationOne/depth.rds, output/feature_tables/default/frag_bins.rds, output/feature_tables/tempus/frag_bins.rds, output/feature_tables/guardant/frag_bins.rds, output/feature_tables/foundationOne/frag_bins.rds, output/feature_tables/default/small_frags.rds, output/feature_tables/tempus/small_frags.rds, output/feature_tables/guardant/small_frags.rds, output/feature_tables/foundationOne/small_frags.rds, output/feature_tables/default/full_gene_depth.rds, output/feature_tables/tempus/full_gene_depth.rds, output/feature_tables/guardant/full_gene_depth.rds, output/feature_tables/foundationOne/full_gene_depth.rds, output/feature_tables/default/mds.rds, output/feature_tables/tempus/mds.rds, output/feature_tables/guardant/mds.rds, output/feature_tables/foundationOne/mds.rds, output/feature_tables/default/TFBS_entropy.rds, output/feature_tables/tempus/TFBS_entropy.rds, output/feature_tables/guardant/TFBS_entropy.rds, output/feature_tables/foundationOne/TFBS_entropy.rds, output/feature_tables/default/ATAC_entropy.rds, output/feature_tables/tempus/ATAC_entropy.rds, output/feature_tables/guardant/ATAC_entropy.rds, output/feature_tables/foundationOne/ATAC_entropy.rds
+    output: output/feature_tables/guardant/se_E1.rds, output/feature_tables/guardant/depth_E1.rds, output/feature_tables/guardant/small_frags_E1.rds, output/feature_tables/guardant/mds_E1.rds
+    jobid: 199
+    reason: Missing output files: output/feature_tables/guardant/se_E1.rds, output/feature_tables/guardant/depth_E1.rds, output/feature_tables/guardant/small_frags_E1.rds, output/feature_tables/guardant/mds_E1.rds; Input files updated by another job: output/feature_tables/default/se.rds, output/feature_tables/default/TFBS_entropy.rds, output/feature_tables/tempus/full_gene_depth.rds, output/feature_tables/default/mds.rds, output/feature_tables/guardant/depth.rds, output/feature_tables/foundationOne/small_frags.rds, output/feature_tables/foundationOne/se.rds, output/feature_tables/tempus/depth.rds, output/feature_tables/tempus/small_frags.rds, output/feature_tables/default/full_gene_depth.rds, output/feature_tables/tempus/frag_bins.rds, output/feature_tables/foundationOne/depth.rds, output/feature_tables/default/small_frags.rds, output/feature_tables/default/frag_bins.rds, output/feature_tables/guardant/ATAC_entropy.rds, output/feature_tables/guardant/full_gene_depth.rds, output/feature_tables/tempus/ATAC_entropy.rds, output/feature_tables/guardant/se.rds, output/feature_tables/guardant/small_frags.rds, output/feature_tables/default/ATAC_entropy.rds, output/feature_tables/guardant/mds.rds, output/feature_tables/foundationOne/TFBS_entropy.rds, output/feature_tables/guardant/frag_bins.rds, output/feature_tables/tempus/se.rds, output/feature_tables/tempus/TFBS_entropy.rds, output/feature_tables/foundationOne/ATAC_entropy.rds, output/feature_tables/foundationOne/full_gene_depth.rds, output/feature_tables/foundationOne/mds.rds, output/feature_tables/foundationOne/frag_bins.rds, output/feature_tables/guardant/TFBS_entropy.rds, output/feature_tables/default/depth.rds, output/feature_tables/tempus/mds.rds
+    wildcards: comm_panel=guardant
+    resources: tmpdir=/tmp
+
+
+[Thu Apr 17 13:22:33 2025]
+rule extract_first_exon:
+    input: output/feature_tables/default/se.rds, output/feature_tables/tempus/se.rds, output/feature_tables/guardant/se.rds, output/feature_tables/foundationOne/se.rds, output/feature_tables/default/depth.rds, output/feature_tables/tempus/depth.rds, output/feature_tables/guardant/depth.rds, output/feature_tables/foundationOne/depth.rds, output/feature_tables/default/frag_bins.rds, output/feature_tables/tempus/frag_bins.rds, output/feature_tables/guardant/frag_bins.rds, output/feature_tables/foundationOne/frag_bins.rds, output/feature_tables/default/small_frags.rds, output/feature_tables/tempus/small_frags.rds, output/feature_tables/guardant/small_frags.rds, output/feature_tables/foundationOne/small_frags.rds, output/feature_tables/default/full_gene_depth.rds, output/feature_tables/tempus/full_gene_depth.rds, output/feature_tables/guardant/full_gene_depth.rds, output/feature_tables/foundationOne/full_gene_depth.rds, output/feature_tables/default/mds.rds, output/feature_tables/tempus/mds.rds, output/feature_tables/guardant/mds.rds, output/feature_tables/foundationOne/mds.rds, output/feature_tables/default/TFBS_entropy.rds, output/feature_tables/tempus/TFBS_entropy.rds, output/feature_tables/guardant/TFBS_entropy.rds, output/feature_tables/foundationOne/TFBS_entropy.rds, output/feature_tables/default/ATAC_entropy.rds, output/feature_tables/tempus/ATAC_entropy.rds, output/feature_tables/guardant/ATAC_entropy.rds, output/feature_tables/foundationOne/ATAC_entropy.rds
+    output: output/feature_tables/foundationOne/se_E1.rds, output/feature_tables/foundationOne/depth_E1.rds, output/feature_tables/foundationOne/small_frags_E1.rds, output/feature_tables/foundationOne/mds_E1.rds
+    jobid: 200
+    reason: Missing output files: output/feature_tables/foundationOne/mds_E1.rds, output/feature_tables/foundationOne/se_E1.rds, output/feature_tables/foundationOne/depth_E1.rds, output/feature_tables/foundationOne/small_frags_E1.rds; Input files updated by another job: output/feature_tables/default/se.rds, output/feature_tables/default/TFBS_entropy.rds, output/feature_tables/tempus/full_gene_depth.rds, output/feature_tables/default/mds.rds, output/feature_tables/guardant/depth.rds, output/feature_tables/foundationOne/small_frags.rds, output/feature_tables/foundationOne/se.rds, output/feature_tables/tempus/depth.rds, output/feature_tables/tempus/small_frags.rds, output/feature_tables/default/full_gene_depth.rds, output/feature_tables/tempus/frag_bins.rds, output/feature_tables/foundationOne/depth.rds, output/feature_tables/default/small_frags.rds, output/feature_tables/default/frag_bins.rds, output/feature_tables/guardant/ATAC_entropy.rds, output/feature_tables/guardant/full_gene_depth.rds, output/feature_tables/tempus/ATAC_entropy.rds, output/feature_tables/guardant/se.rds, output/feature_tables/guardant/small_frags.rds, output/feature_tables/default/ATAC_entropy.rds, output/feature_tables/guardant/mds.rds, output/feature_tables/foundationOne/TFBS_entropy.rds, output/feature_tables/guardant/frag_bins.rds, output/feature_tables/tempus/se.rds, output/feature_tables/tempus/TFBS_entropy.rds, output/feature_tables/foundationOne/ATAC_entropy.rds, output/feature_tables/foundationOne/full_gene_depth.rds, output/feature_tables/foundationOne/mds.rds, output/feature_tables/foundationOne/frag_bins.rds, output/feature_tables/guardant/TFBS_entropy.rds, output/feature_tables/default/depth.rds, output/feature_tables/tempus/mds.rds
+    wildcards: comm_panel=foundationOne
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:22:39 2025]
+Finished job 198.
+173 of 177 steps (98%) done
+[Thu Apr 17 13:22:40 2025]
+Finished job 199.
+174 of 177 steps (98%) done
+[Thu Apr 17 13:22:40 2025]
+Finished job 197.
+175 of 177 steps (99%) done
+[Thu Apr 17 13:22:40 2025]
+Finished job 200.
+176 of 177 steps (99%) done
+Select jobs to execute...
+
+[Thu Apr 17 13:22:40 2025]
+localrule all:
+    input: data/default/sample1.bed.gz, data/tempus/sample1.bed.gz, data/guardant/sample1.bed.gz, data/foundationOne/sample1.bed.gz, data/default/sample2.bed.gz, data/tempus/sample2.bed.gz, data/guardant/sample2.bed.gz, data/foundationOne/sample2.bed.gz, data/default/sample3.bed.gz, data/tempus/sample3.bed.gz, data/guardant/sample3.bed.gz, data/foundationOne/sample3.bed.gz, output/fragstats/SE_files/default/sample1.txt.gz, output/fragstats/SE_files/tempus/sample1.txt.gz, output/fragstats/SE_files/guardant/sample1.txt.gz, output/fragstats/SE_files/foundationOne/sample1.txt.gz, output/fragstats/SE_files/default/sample2.txt.gz, output/fragstats/SE_files/tempus/sample2.txt.gz, output/fragstats/SE_files/guardant/sample2.txt.gz, output/fragstats/SE_files/foundationOne/sample2.txt.gz, output/fragstats/SE_files/default/sample3.txt.gz, output/fragstats/SE_files/tempus/sample3.txt.gz, output/fragstats/SE_files/guardant/sample3.txt.gz, output/fragstats/SE_files/foundationOne/sample3.txt.gz, output/metrics/se/default/sample1.SE.tsv, output/metrics/se/tempus/sample1.SE.tsv, output/metrics/se/guardant/sample1.SE.tsv, output/metrics/se/foundationOne/sample1.SE.tsv, output/metrics/se/default/sample2.SE.tsv, output/metrics/se/tempus/sample2.SE.tsv, output/metrics/se/guardant/sample2.SE.tsv, output/metrics/se/foundationOne/sample2.SE.tsv, output/metrics/se/default/sample3.SE.tsv, output/metrics/se/tempus/sample3.SE.tsv, output/metrics/se/guardant/sample3.SE.tsv, output/metrics/se/foundationOne/sample3.SE.tsv, output/fragstats/depth_files/default/sample1.txt, output/fragstats/depth_files/tempus/sample1.txt, output/fragstats/depth_files/guardant/sample1.txt, output/fragstats/depth_files/foundationOne/sample1.txt, output/fragstats/depth_files/default/sample2.txt, output/fragstats/depth_files/tempus/sample2.txt, output/fragstats/depth_files/guardant/sample2.txt, output/fragstats/depth_files/foundationOne/sample2.txt, output/fragstats/depth_files/default/sample3.txt, output/fragstats/depth_files/tempus/sample3.txt, output/fragstats/depth_files/guardant/sample3.txt, output/fragstats/depth_files/foundationOne/sample3.txt, output/metrics/depth/default/sample1.depth.tsv, output/metrics/depth/tempus/sample1.depth.tsv, output/metrics/depth/guardant/sample1.depth.tsv, output/metrics/depth/foundationOne/sample1.depth.tsv, output/metrics/depth/default/sample2.depth.tsv, output/metrics/depth/tempus/sample2.depth.tsv, output/metrics/depth/guardant/sample2.depth.tsv, output/metrics/depth/foundationOne/sample2.depth.tsv, output/metrics/depth/default/sample3.depth.tsv, output/metrics/depth/tempus/sample3.depth.tsv, output/metrics/depth/guardant/sample3.depth.tsv, output/metrics/depth/foundationOne/sample3.depth.tsv, output/metrics/frag_bins/default/sample1.fragbins.tsv, output/metrics/frag_bins/tempus/sample1.fragbins.tsv, output/metrics/frag_bins/guardant/sample1.fragbins.tsv, output/metrics/frag_bins/foundationOne/sample1.fragbins.tsv, output/metrics/frag_bins/default/sample2.fragbins.tsv, output/metrics/frag_bins/tempus/sample2.fragbins.tsv, output/metrics/frag_bins/guardant/sample2.fragbins.tsv, output/metrics/frag_bins/foundationOne/sample2.fragbins.tsv, output/metrics/frag_bins/default/sample3.fragbins.tsv, output/metrics/frag_bins/tempus/sample3.fragbins.tsv, output/metrics/frag_bins/guardant/sample3.fragbins.tsv, output/metrics/frag_bins/foundationOne/sample3.fragbins.tsv, output/metrics/small_frags/default/sample1.smallfrag.tsv, output/metrics/small_frags/tempus/sample1.smallfrag.tsv, output/metrics/small_frags/guardant/sample1.smallfrag.tsv, output/metrics/small_frags/foundationOne/sample1.smallfrag.tsv, output/metrics/small_frags/default/sample2.smallfrag.tsv, output/metrics/small_frags/tempus/sample2.smallfrag.tsv, output/metrics/small_frags/guardant/sample2.smallfrag.tsv, output/metrics/small_frags/foundationOne/sample2.smallfrag.tsv, output/metrics/small_frags/default/sample3.smallfrag.tsv, output/metrics/small_frags/tempus/sample3.smallfrag.tsv, output/metrics/small_frags/guardant/sample3.smallfrag.tsv, output/metrics/small_frags/foundationOne/sample3.smallfrag.tsv, output/metrics/full_gene_depth/default/sample1.fullgenedepth.tsv, output/metrics/full_gene_depth/tempus/sample1.fullgenedepth.tsv, output/metrics/full_gene_depth/guardant/sample1.fullgenedepth.tsv, output/metrics/full_gene_depth/foundationOne/sample1.fullgenedepth.tsv, output/metrics/full_gene_depth/default/sample2.fullgenedepth.tsv, output/metrics/full_gene_depth/tempus/sample2.fullgenedepth.tsv, output/metrics/full_gene_depth/guardant/sample2.fullgenedepth.tsv, output/metrics/full_gene_depth/foundationOne/sample2.fullgenedepth.tsv, output/metrics/full_gene_depth/default/sample3.fullgenedepth.tsv, output/metrics/full_gene_depth/tempus/sample3.fullgenedepth.tsv, output/metrics/full_gene_depth/guardant/sample3.fullgenedepth.tsv, output/metrics/full_gene_depth/foundationOne/sample3.fullgenedepth.tsv, output/metrics/mds/default/sample1_mds.txt, output/metrics/mds/tempus/sample1_mds.txt, output/metrics/mds/guardant/sample1_mds.txt, output/metrics/mds/foundationOne/sample1_mds.txt, output/metrics/mds/default/sample2_mds.txt, output/metrics/mds/tempus/sample2_mds.txt, output/metrics/mds/guardant/sample2_mds.txt, output/metrics/mds/foundationOne/sample2_mds.txt, output/metrics/mds/default/sample3_mds.txt, output/metrics/mds/tempus/sample3_mds.txt, output/metrics/mds/guardant/sample3_mds.txt, output/metrics/mds/foundationOne/sample3_mds.txt, output/metrics/TFBS_entropy/default/sample1_TFBS_frag_count.txt.gz, output/metrics/TFBS_entropy/tempus/sample1_TFBS_frag_count.txt.gz, output/metrics/TFBS_entropy/guardant/sample1_TFBS_frag_count.txt.gz, output/metrics/TFBS_entropy/foundationOne/sample1_TFBS_frag_count.txt.gz, output/metrics/TFBS_entropy/default/sample2_TFBS_frag_count.txt.gz, output/metrics/TFBS_entropy/tempus/sample2_TFBS_frag_count.txt.gz, output/metrics/TFBS_entropy/guardant/sample2_TFBS_frag_count.txt.gz, output/metrics/TFBS_entropy/foundationOne/sample2_TFBS_frag_count.txt.gz, output/metrics/TFBS_entropy/default/sample3_TFBS_frag_count.txt.gz, output/metrics/TFBS_entropy/tempus/sample3_TFBS_frag_count.txt.gz, output/metrics/TFBS_entropy/guardant/sample3_TFBS_frag_count.txt.gz, output/metrics/TFBS_entropy/foundationOne/sample3_TFBS_frag_count.txt.gz, output/metrics/TFBS_entropy/default/sample1_TFBS_entropy.txt, output/metrics/TFBS_entropy/tempus/sample1_TFBS_entropy.txt, output/metrics/TFBS_entropy/guardant/sample1_TFBS_entropy.txt, output/metrics/TFBS_entropy/foundationOne/sample1_TFBS_entropy.txt, output/metrics/TFBS_entropy/default/sample2_TFBS_entropy.txt, output/metrics/TFBS_entropy/tempus/sample2_TFBS_entropy.txt, output/metrics/TFBS_entropy/guardant/sample2_TFBS_entropy.txt, output/metrics/TFBS_entropy/foundationOne/sample2_TFBS_entropy.txt, output/metrics/TFBS_entropy/default/sample3_TFBS_entropy.txt, output/metrics/TFBS_entropy/tempus/sample3_TFBS_entropy.txt, output/metrics/TFBS_entropy/guardant/sample3_TFBS_entropy.txt, output/metrics/TFBS_entropy/foundationOne/sample3_TFBS_entropy.txt, output/metrics/ATAC_entropy/default/sample1_ATAC_frag_count.txt.gz, output/metrics/ATAC_entropy/tempus/sample1_ATAC_frag_count.txt.gz, output/metrics/ATAC_entropy/guardant/sample1_ATAC_frag_count.txt.gz, output/metrics/ATAC_entropy/foundationOne/sample1_ATAC_frag_count.txt.gz, output/metrics/ATAC_entropy/default/sample2_ATAC_frag_count.txt.gz, output/metrics/ATAC_entropy/tempus/sample2_ATAC_frag_count.txt.gz, output/metrics/ATAC_entropy/guardant/sample2_ATAC_frag_count.txt.gz, output/metrics/ATAC_entropy/foundationOne/sample2_ATAC_frag_count.txt.gz, output/metrics/ATAC_entropy/default/sample3_ATAC_frag_count.txt.gz, output/metrics/ATAC_entropy/tempus/sample3_ATAC_frag_count.txt.gz, output/metrics/ATAC_entropy/guardant/sample3_ATAC_frag_count.txt.gz, output/metrics/ATAC_entropy/foundationOne/sample3_ATAC_frag_count.txt.gz, output/metrics/ATAC_entropy/default/sample1_ATAC_entropy.txt, output/metrics/ATAC_entropy/tempus/sample1_ATAC_entropy.txt, output/metrics/ATAC_entropy/guardant/sample1_ATAC_entropy.txt, output/metrics/ATAC_entropy/foundationOne/sample1_ATAC_entropy.txt, output/metrics/ATAC_entropy/default/sample2_ATAC_entropy.txt, output/metrics/ATAC_entropy/tempus/sample2_ATAC_entropy.txt, output/metrics/ATAC_entropy/guardant/sample2_ATAC_entropy.txt, output/metrics/ATAC_entropy/foundationOne/sample2_ATAC_entropy.txt, output/metrics/ATAC_entropy/default/sample3_ATAC_entropy.txt, output/metrics/ATAC_entropy/tempus/sample3_ATAC_entropy.txt, output/metrics/ATAC_entropy/guardant/sample3_ATAC_entropy.txt, output/metrics/ATAC_entropy/foundationOne/sample3_ATAC_entropy.txt, output/feature_tables/default/se.rds, output/feature_tables/tempus/se.rds, output/feature_tables/guardant/se.rds, output/feature_tables/foundationOne/se.rds, output/feature_tables/default/depth.rds, output/feature_tables/tempus/depth.rds, output/feature_tables/guardant/depth.rds, output/feature_tables/foundationOne/depth.rds, output/feature_tables/default/frag_bins.rds, output/feature_tables/tempus/frag_bins.rds, output/feature_tables/guardant/frag_bins.rds, output/feature_tables/foundationOne/frag_bins.rds, output/feature_tables/default/small_frags.rds, output/feature_tables/tempus/small_frags.rds, output/feature_tables/guardant/small_frags.rds, output/feature_tables/foundationOne/small_frags.rds, output/feature_tables/default/full_gene_depth.rds, output/feature_tables/tempus/full_gene_depth.rds, output/feature_tables/guardant/full_gene_depth.rds, output/feature_tables/foundationOne/full_gene_depth.rds, output/feature_tables/default/mds.rds, output/feature_tables/tempus/mds.rds, output/feature_tables/guardant/mds.rds, output/feature_tables/foundationOne/mds.rds, output/feature_tables/default/TFBS_entropy.rds, output/feature_tables/tempus/TFBS_entropy.rds, output/feature_tables/guardant/TFBS_entropy.rds, output/feature_tables/foundationOne/TFBS_entropy.rds, output/feature_tables/default/ATAC_entropy.rds, output/feature_tables/tempus/ATAC_entropy.rds, output/feature_tables/guardant/ATAC_entropy.rds, output/feature_tables/foundationOne/ATAC_entropy.rds, output/feature_tables/default/se_E1.rds, output/feature_tables/tempus/se_E1.rds, output/feature_tables/guardant/se_E1.rds, output/feature_tables/foundationOne/se_E1.rds, output/feature_tables/default/depth_E1.rds, output/feature_tables/tempus/depth_E1.rds, output/feature_tables/guardant/depth_E1.rds, output/feature_tables/foundationOne/depth_E1.rds, output/feature_tables/default/small_frags_E1.rds, output/feature_tables/tempus/small_frags_E1.rds, output/feature_tables/guardant/small_frags_E1.rds, output/feature_tables/foundationOne/small_frags_E1.rds, output/feature_tables/default/mds_E1.rds, output/feature_tables/tempus/mds_E1.rds, output/feature_tables/guardant/mds_E1.rds, output/feature_tables/foundationOne/mds_E1.rds
+    jobid: 0
+    reason: Input files updated by another job: output/feature_tables/foundationOne/se.rds, output/metrics/depth/guardant/sample1.depth.tsv, output/metrics/ATAC_entropy/tempus/sample1_ATAC_entropy.txt, output/metrics/frag_bins/default/sample3.fragbins.tsv, output/metrics/TFBS_entropy/default/sample3_TFBS_entropy.txt, output/metrics/TFBS_entropy/foundationOne/sample1_TFBS_entropy.txt, output/fragstats/depth_files/foundationOne/sample3.txt, output/metrics/TFBS_entropy/guardant/sample2_TFBS_frag_count.txt.gz, output/fragstats/SE_files/guardant/sample3.txt.gz, output/metrics/frag_bins/guardant/sample1.fragbins.tsv, output/metrics/depth/guardant/sample3.depth.tsv, output/metrics/se/tempus/sample1.SE.tsv, output/metrics/mds/guardant/sample1_mds.txt, output/metrics/TFBS_entropy/foundationOne/sample1_TFBS_frag_count.txt.gz, output/fragstats/depth_files/default/sample3.txt, output/metrics/ATAC_entropy/tempus/sample2_ATAC_entropy.txt, output/feature_tables/foundationOne/ATAC_entropy.rds, output/fragstats/SE_files/default/sample1.txt.gz, output/metrics/full_gene_depth/tempus/sample3.fullgenedepth.tsv, output/metrics/small_frags/tempus/sample2.smallfrag.tsv, output/metrics/TFBS_entropy/default/sample2_TFBS_entropy.txt, output/metrics/ATAC_entropy/tempus/sample2_ATAC_frag_count.txt.gz, output/feature_tables/default/TFBS_entropy.rds, output/feature_tables/default/mds.rds, output/metrics/small_frags/guardant/sample2.smallfrag.tsv, output/metrics/full_gene_depth/guardant/sample1.fullgenedepth.tsv, output/metrics/TFBS_entropy/default/sample1_TFBS_frag_count.txt.gz, output/metrics/small_frags/tempus/sample1.smallfrag.tsv, output/metrics/ATAC_entropy/foundationOne/sample3_ATAC_entropy.txt, output/metrics/ATAC_entropy/foundationOne/sample2_ATAC_entropy.txt, output/metrics/ATAC_entropy/foundationOne/sample1_ATAC_entropy.txt, output/fragstats/depth_files/tempus/sample2.txt, output/metrics/se/default/sample3.SE.tsv, output/metrics/small_frags/default/sample2.smallfrag.tsv, output/feature_tables/tempus/se_E1.rds, output/feature_tables/foundationOne/full_gene_depth.rds, output/feature_tables/foundationOne/mds.rds, output/feature_tables/foundationOne/frag_bins.rds, output/feature_tables/default/depth.rds, output/fragstats/depth_files/foundationOne/sample1.txt, output/metrics/se/default/sample2.SE.tsv, output/metrics/TFBS_entropy/tempus/sample2_TFBS_frag_count.txt.gz, output/metrics/TFBS_entropy/tempus/sample3_TFBS_entropy.txt, output/feature_tables/default/se.rds, output/metrics/se/tempus/sample2.SE.tsv, output/metrics/full_gene_depth/default/sample2.fullgenedepth.tsv, output/metrics/mds/guardant/sample3_mds.txt, output/metrics/TFBS_entropy/tempus/sample3_TFBS_frag_count.txt.gz, output/metrics/depth/default/sample2.depth.tsv, output/feature_tables/tempus/small_frags.rds, output/metrics/depth/tempus/sample3.depth.tsv, output/feature_tables/default/full_gene_depth.rds, output/fragstats/SE_files/guardant/sample2.txt.gz, output/fragstats/SE_files/default/sample2.txt.gz, output/metrics/small_frags/guardant/sample3.smallfrag.tsv, output/metrics/mds/default/sample3_mds.txt, output/metrics/TFBS_entropy/foundationOne/sample3_TFBS_frag_count.txt.gz, output/metrics/TFBS_entropy/guardant/sample3_TFBS_frag_count.txt.gz, output/metrics/depth/foundationOne/sample3.depth.tsv, output/metrics/frag_bins/foundationOne/sample3.fragbins.tsv, output/metrics/TFBS_entropy/foundationOne/sample2_TFBS_entropy.txt, output/metrics/full_gene_depth/tempus/sample1.fullgenedepth.tsv, output/metrics/depth/foundationOne/sample2.depth.tsv, output/metrics/ATAC_entropy/default/sample1_ATAC_frag_count.txt.gz, output/metrics/small_frags/foundationOne/sample3.smallfrag.tsv, output/metrics/se/foundationOne/sample2.SE.tsv, output/feature_tables/default/small_frags_E1.rds, output/metrics/se/foundationOne/sample3.SE.tsv, output/metrics/depth/default/sample1.depth.tsv, output/metrics/full_gene_depth/default/sample1.fullgenedepth.tsv, output/feature_tables/foundationOne/depth_E1.rds, output/feature_tables/guardant/depth.rds, output/feature_tables/tempus/full_gene_depth.rds, output/metrics/mds/foundationOne/sample2_mds.txt, output/fragstats/depth_files/tempus/sample3.txt, output/metrics/frag_bins/default/sample1.fragbins.tsv, output/metrics/ATAC_entropy/default/sample1_ATAC_entropy.txt, output/feature_tables/foundationOne/depth.rds, output/metrics/mds/foundationOne/sample1_mds.txt, output/feature_tables/foundationOne/small_frags_E1.rds, output/metrics/depth/foundationOne/sample1.depth.tsv, output/metrics/depth/guardant/sample2.depth.tsv, output/metrics/ATAC_entropy/foundationOne/sample1_ATAC_frag_count.txt.gz, output/feature_tables/foundationOne/mds_E1.rds, output/metrics/se/guardant/sample3.SE.tsv, output/metrics/TFBS_entropy/foundationOne/sample2_TFBS_frag_count.txt.gz, output/metrics/full_gene_depth/foundationOne/sample2.fullgenedepth.tsv, output/feature_tables/default/ATAC_entropy.rds, output/feature_tables/foundationOne/TFBS_entropy.rds, output/metrics/TFBS_entropy/default/sample3_TFBS_frag_count.txt.gz, output/metrics/ATAC_entropy/guardant/sample2_ATAC_entropy.txt, output/metrics/se/guardant/sample1.SE.tsv, output/metrics/ATAC_entropy/default/sample2_ATAC_frag_count.txt.gz, output/feature_tables/guardant/small_frags_E1.rds, output/feature_tables/guardant/mds_E1.rds, output/metrics/TFBS_entropy/tempus/sample1_TFBS_frag_count.txt.gz, output/feature_tables/tempus/mds_E1.rds, output/fragstats/SE_files/tempus/sample2.txt.gz, output/fragstats/SE_files/foundationOne/sample2.txt.gz, output/metrics/mds/foundationOne/sample3_mds.txt, output/metrics/mds/tempus/sample2_mds.txt, output/feature_tables/tempus/depth.rds, output/metrics/TFBS_entropy/guardant/sample2_TFBS_entropy.txt, output/metrics/full_gene_depth/default/sample3.fullgenedepth.tsv, output/feature_tables/guardant/se.rds, output/feature_tables/guardant/small_frags.rds, output/feature_tables/tempus/small_frags_E1.rds, output/fragstats/depth_files/guardant/sample3.txt, output/metrics/frag_bins/guardant/sample2.fragbins.tsv, output/metrics/se/foundationOne/sample1.SE.tsv, output/metrics/mds/tempus/sample3_mds.txt, output/metrics/mds/default/sample2_mds.txt, output/fragstats/depth_files/guardant/sample1.txt, output/metrics/full_gene_depth/guardant/sample3.fullgenedepth.tsv, output/fragstats/SE_files/tempus/sample3.txt.gz, output/metrics/se/guardant/sample2.SE.tsv, output/metrics/small_frags/tempus/sample3.smallfrag.tsv, output/feature_tables/guardant/mds.rds, output/metrics/frag_bins/foundationOne/sample2.fragbins.tsv, output/metrics/small_frags/foundationOne/sample1.smallfrag.tsv, output/metrics/TFBS_entropy/foundationOne/sample3_TFBS_entropy.txt, output/feature_tables/guardant/TFBS_entropy.rds, output/feature_tables/tempus/depth_E1.rds, output/feature_tables/default/depth_E1.rds, output/metrics/full_gene_depth/guardant/sample2.fullgenedepth.tsv, output/metrics/TFBS_entropy/default/sample1_TFBS_entropy.txt, output/metrics/frag_bins/tempus/sample1.fragbins.tsv, output/fragstats/SE_files/tempus/sample1.txt.gz, output/feature_tables/tempus/frag_bins.rds, output/feature_tables/default/small_frags.rds, output/fragstats/depth_files/foundationOne/sample2.txt, output/metrics/frag_bins/foundationOne/sample1.fragbins.tsv, output/feature_tables/default/mds_E1.rds, output/fragstats/depth_files/default/sample2.txt, output/metrics/frag_bins/tempus/sample2.fragbins.tsv, output/metrics/TFBS_entropy/guardant/sample1_TFBS_frag_count.txt.gz, output/feature_tables/guardant/depth_E1.rds, output/metrics/small_frags/guardant/sample1.smallfrag.tsv, output/feature_tables/tempus/se.rds, output/feature_tables/tempus/TFBS_entropy.rds, output/metrics/ATAC_entropy/guardant/sample3_ATAC_entropy.txt, output/feature_tables/foundationOne/se_E1.rds, output/metrics/TFBS_entropy/tempus/sample2_TFBS_entropy.txt, output/feature_tables/guardant/se_E1.rds, output/metrics/depth/tempus/sample2.depth.tsv, output/metrics/ATAC_entropy/default/sample3_ATAC_frag_count.txt.gz, output/fragstats/SE_files/guardant/sample1.txt.gz, output/feature_tables/tempus/mds.rds, output/metrics/mds/tempus/sample1_mds.txt, output/metrics/ATAC_entropy/default/sample3_ATAC_entropy.txt, output/metrics/TFBS_entropy/guardant/sample3_TFBS_entropy.txt, output/metrics/TFBS_entropy/guardant/sample1_TFBS_entropy.txt, output/metrics/mds/guardant/sample2_mds.txt, output/feature_tables/default/se_E1.rds, output/feature_tables/default/frag_bins.rds, output/feature_tables/guardant/ATAC_entropy.rds, output/feature_tables/guardant/full_gene_depth.rds, output/metrics/se/tempus/sample3.SE.tsv, output/metrics/frag_bins/default/sample2.fragbins.tsv, output/fragstats/SE_files/foundationOne/sample1.txt.gz, output/metrics/ATAC_entropy/tempus/sample3_ATAC_frag_count.txt.gz, output/metrics/frag_bins/guardant/sample3.fragbins.tsv, output/metrics/ATAC_entropy/guardant/sample2_ATAC_frag_count.txt.gz, output/fragstats/SE_files/default/sample3.txt.gz, output/metrics/frag_bins/tempus/sample3.fragbins.tsv, output/metrics/TFBS_entropy/default/sample2_TFBS_frag_count.txt.gz, output/metrics/ATAC_entropy/guardant/sample1_ATAC_entropy.txt, output/metrics/depth/tempus/sample1.depth.tsv, output/fragstats/depth_files/guardant/sample2.txt, output/metrics/mds/default/sample1_mds.txt, output/metrics/TFBS_entropy/tempus/sample1_TFBS_entropy.txt, output/metrics/ATAC_entropy/tempus/sample3_ATAC_entropy.txt, output/feature_tables/foundationOne/small_frags.rds, output/metrics/se/default/sample1.SE.tsv, output/metrics/ATAC_entropy/guardant/sample3_ATAC_frag_count.txt.gz, output/metrics/small_frags/default/sample1.smallfrag.tsv, output/metrics/small_frags/foundationOne/sample2.smallfrag.tsv, output/fragstats/depth_files/default/sample1.txt, output/fragstats/SE_files/foundationOne/sample3.txt.gz, output/metrics/full_gene_depth/tempus/sample2.fullgenedepth.tsv, output/metrics/ATAC_entropy/tempus/sample1_ATAC_frag_count.txt.gz, output/fragstats/depth_files/tempus/sample1.txt, output/feature_tables/tempus/ATAC_entropy.rds, output/metrics/full_gene_depth/foundationOne/sample3.fullgenedepth.tsv, output/metrics/small_frags/default/sample3.smallfrag.tsv, output/feature_tables/guardant/frag_bins.rds, output/metrics/full_gene_depth/foundationOne/sample1.fullgenedepth.tsv, output/metrics/ATAC_entropy/foundationOne/sample3_ATAC_frag_count.txt.gz, output/metrics/ATAC_entropy/guardant/sample1_ATAC_frag_count.txt.gz, output/metrics/ATAC_entropy/foundationOne/sample2_ATAC_frag_count.txt.gz, output/metrics/ATAC_entropy/default/sample2_ATAC_entropy.txt, output/metrics/depth/default/sample3.depth.tsv
+    resources: tmpdir=/tmp
+
+[Thu Apr 17 13:22:40 2025]
+Finished job 0.
+177 of 177 steps (100%) done
+Complete log: .snakemake/log/2025-04-17T131843.515870.snakemake.log

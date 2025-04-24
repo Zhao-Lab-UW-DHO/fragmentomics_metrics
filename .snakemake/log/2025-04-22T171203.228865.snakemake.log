@@ -1,0 +1,3 @@
+NameErrorin line 228 of /mnt/Data01/projects/fragmentomics/scripts/paper_2_code_upload/fragmentomics_metrics/grail_mixing_generate_samples_FTs.snakemake.py:
+name 'TFBS' is not defined
+  File "/mnt/Data01/projects/fragmentomics/scripts/paper_2_code_upload/fragmentomics_metrics/grail_mixing_generate_samples_FTs.snakemake.py", line 228, in <module>
