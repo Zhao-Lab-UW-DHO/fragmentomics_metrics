@@ -1,7 +1,0 @@
-Building DAG of jobs...
-MissingInputException in rule get_left_4mer in line 180 of /mnt/Data01/projects/fragmentomics/scripts/paper_2_code_upload/fragmentomics_metrics/grail_mixing_generate_samples_FTs.snakemake.py:
-Missing input files for rule get_left_4mer:
-    output: output/mixing_data/metrics/mds/MRL0002CH_MRL0001CH_1_99_left_4mers.txt.gz
-    wildcards: sample=MRL0002CH_MRL0001CH_1_99
-    affected files:
-        output/mixing_data/cds_overlap/MRL0002CH_MRL0001CH_1_99.bed.gz

@@ -1,3 +1,0 @@
-NameErrorin line 179 of /mnt/Data01/projects/fragmentomics/scripts/paper_2_code_upload/fragmentomics_metrics/grail_mixing_generate_samples_FTs.snakemake.py:
-name 'GENOME' is not defined
-  File "/mnt/Data01/projects/fragmentomics/scripts/paper_2_code_upload/fragmentomics_metrics/grail_mixing_generate_samples_FTs.snakemake.py", line 179, in <module>

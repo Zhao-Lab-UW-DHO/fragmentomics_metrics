@@ -1,4 +1,0 @@
-Building DAG of jobs...
-WildcardErrorin line 204 of /mnt/Data01/projects/fragmentomics/scripts/paper_2_code_upload/fragmentomics_metrics/get_fragmentomics_metrics_from_bed_comm_panels.snakemake.py:
-Wildcards in input files cannot be determined from output files:
-'comm_panel'

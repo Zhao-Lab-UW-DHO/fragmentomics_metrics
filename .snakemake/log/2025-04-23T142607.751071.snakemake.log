@@ -1,3 +1,0 @@
-Building DAG of jobs...
-CyclicGraphException in rule filter_comm_panel_genes in line 75 of /mnt/Data01/projects/fragmentomics/scripts/paper_2_code_upload/fragmentomics_metrics/get_fragmentomics_metrics_from_bed.snakemake.py:
-Cyclic dependency on rule filter_comm_panel_genes.
