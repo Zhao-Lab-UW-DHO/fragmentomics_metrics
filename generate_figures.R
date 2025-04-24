@@ -3,8 +3,6 @@ library(RColorBrewer)
 library(pals)
 library(patchwork)
 
-setwd("/mnt/Data01/projects/fragmentomics/scripts/paper_2_code_upload/fragmentomics_metrics/")
-
 # Load in Data
 
 # Machine Learning Outputs
